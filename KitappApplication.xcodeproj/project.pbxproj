@@ -1,0 +1,431 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		917700EB1B42869D002864D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 917700EA1B42869D002864D1 /* main.m */; };
+		917700EE1B42869D002864D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 917700ED1B42869D002864D1 /* AppDelegate.m */; };
+		917700F11B42869D002864D1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 917700F01B42869D002864D1 /* ViewController.m */; };
+		917700F41B42869D002864D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 917700F21B42869D002864D1 /* Main.storyboard */; };
+		917700F61B42869D002864D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 917700F51B42869D002864D1 /* Images.xcassets */; };
+		917700F91B42869D002864D1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 917700F71B42869D002864D1 /* LaunchScreen.xib */; };
+		917701051B42869D002864D1 /* KitappApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 917701041B42869D002864D1 /* KitappApplicationTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		917700FF1B42869D002864D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 917700DD1B42869D002864D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 917700E41B42869D002864D1;
+			remoteInfo = KitappApplication;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		917700E51B42869D002864D1 /* KitappApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KitappApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		917700E91B42869D002864D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		917700EA1B42869D002864D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		917700EC1B42869D002864D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		917700ED1B42869D002864D1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		917700EF1B42869D002864D1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		917700F01B42869D002864D1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		917700F31B42869D002864D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		917700F51B42869D002864D1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		917700F81B42869D002864D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		917700FE1B42869D002864D1 /* KitappApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KitappApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		917701031B42869D002864D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		917701041B42869D002864D1 /* KitappApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KitappApplicationTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		917700E21B42869D002864D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		917700FB1B42869D002864D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		917700DC1B42869D002864D1 = {
+			isa = PBXGroup;
+			children = (
+				917700E71B42869D002864D1 /* KitappApplication */,
+				917701011B42869D002864D1 /* KitappApplicationTests */,
+				917700E61B42869D002864D1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		917700E61B42869D002864D1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				917700E51B42869D002864D1 /* KitappApplication.app */,
+				917700FE1B42869D002864D1 /* KitappApplicationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		917700E71B42869D002864D1 /* KitappApplication */ = {
+			isa = PBXGroup;
+			children = (
+				917700EC1B42869D002864D1 /* AppDelegate.h */,
+				917700ED1B42869D002864D1 /* AppDelegate.m */,
+				917700EF1B42869D002864D1 /* ViewController.h */,
+				917700F01B42869D002864D1 /* ViewController.m */,
+				917700F21B42869D002864D1 /* Main.storyboard */,
+				917700F51B42869D002864D1 /* Images.xcassets */,
+				917700F71B42869D002864D1 /* LaunchScreen.xib */,
+				917700E81B42869D002864D1 /* Supporting Files */,
+			);
+			path = KitappApplication;
+			sourceTree = "<group>";
+		};
+		917700E81B42869D002864D1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				917700E91B42869D002864D1 /* Info.plist */,
+				917700EA1B42869D002864D1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		917701011B42869D002864D1 /* KitappApplicationTests */ = {
+			isa = PBXGroup;
+			children = (
+				917701041B42869D002864D1 /* KitappApplicationTests.m */,
+				917701021B42869D002864D1 /* Supporting Files */,
+			);
+			path = KitappApplicationTests;
+			sourceTree = "<group>";
+		};
+		917701021B42869D002864D1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				917701031B42869D002864D1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		917700E41B42869D002864D1 /* KitappApplication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 917701081B42869D002864D1 /* Build configuration list for PBXNativeTarget "KitappApplication" */;
+			buildPhases = (
+				917700E11B42869D002864D1 /* Sources */,
+				917700E21B42869D002864D1 /* Frameworks */,
+				917700E31B42869D002864D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KitappApplication;
+			productName = KitappApplication;
+			productReference = 917700E51B42869D002864D1 /* KitappApplication.app */;
+			productType = "com.apple.product-type.application";
+		};
+		917700FD1B42869D002864D1 /* KitappApplicationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9177010B1B42869D002864D1 /* Build configuration list for PBXNativeTarget "KitappApplicationTests" */;
+			buildPhases = (
+				917700FA1B42869D002864D1 /* Sources */,
+				917700FB1B42869D002864D1 /* Frameworks */,
+				917700FC1B42869D002864D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				917701001B42869D002864D1 /* PBXTargetDependency */,
+			);
+			name = KitappApplicationTests;
+			productName = KitappApplicationTests;
+			productReference = 917700FE1B42869D002864D1 /* KitappApplicationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		917700DD1B42869D002864D1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Olga Khvan";
+				TargetAttributes = {
+					917700E41B42869D002864D1 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					917700FD1B42869D002864D1 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 917700E41B42869D002864D1;
+					};
+				};
+			};
+			buildConfigurationList = 917700E01B42869D002864D1 /* Build configuration list for PBXProject "KitappApplication" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 917700DC1B42869D002864D1;
+			productRefGroup = 917700E61B42869D002864D1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				917700E41B42869D002864D1 /* KitappApplication */,
+				917700FD1B42869D002864D1 /* KitappApplicationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		917700E31B42869D002864D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				917700F41B42869D002864D1 /* Main.storyboard in Resources */,
+				917700F91B42869D002864D1 /* LaunchScreen.xib in Resources */,
+				917700F61B42869D002864D1 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		917700FC1B42869D002864D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		917700E11B42869D002864D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				917700F11B42869D002864D1 /* ViewController.m in Sources */,
+				917700EE1B42869D002864D1 /* AppDelegate.m in Sources */,
+				917700EB1B42869D002864D1 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		917700FA1B42869D002864D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				917701051B42869D002864D1 /* KitappApplicationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		917701001B42869D002864D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 917700E41B42869D002864D1 /* KitappApplication */;
+			targetProxy = 917700FF1B42869D002864D1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		917700F21B42869D002864D1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				917700F31B42869D002864D1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		917700F71B42869D002864D1 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				917700F81B42869D002864D1 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		917701061B42869D002864D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		917701071B42869D002864D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		917701091B42869D002864D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KitappApplication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9177010A1B42869D002864D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KitappApplication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9177010C1B42869D002864D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KitappApplicationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KitappApplication.app/KitappApplication";
+			};
+			name = Debug;
+		};
+		9177010D1B42869D002864D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KitappApplicationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KitappApplication.app/KitappApplication";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		917700E01B42869D002864D1 /* Build configuration list for PBXProject "KitappApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				917701061B42869D002864D1 /* Debug */,
+				917701071B42869D002864D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		917701081B42869D002864D1 /* Build configuration list for PBXNativeTarget "KitappApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				917701091B42869D002864D1 /* Debug */,
+				9177010A1B42869D002864D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9177010B1B42869D002864D1 /* Build configuration list for PBXNativeTarget "KitappApplicationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9177010C1B42869D002864D1 /* Debug */,
+				9177010D1B42869D002864D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 917700DD1B42869D002864D1 /* Project object */;
+}
