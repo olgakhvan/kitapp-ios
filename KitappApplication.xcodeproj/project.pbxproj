@@ -79,7 +79,7 @@
 		91CB157B1B590AEB00C352B0 /* logoutIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CB157A1B590AEB00C352B0 /* logoutIcon.png */; };
 		91D2045E1B4DAD950095A2E9 /* backIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D2045D1B4DAD950095A2E9 /* backIcon.png */; };
 		91D204601B4DAF0D0095A2E9 /* doneIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D2045F1B4DAF0D0095A2E9 /* doneIcon.png */; };
-		91D9BA7C1B96D1A30027397F /* kitappLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D9BA7B1B96D1A30027397F /* kitappLogo.png */; };
+		91D9BA7E1B96FBC10027397F /* kitappLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D9BA7D1B96FBC10027397F /* kitappLogo.png */; };
 		91DD90191B4AA0270068B7DB /* MainViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DD90181B4AA0270068B7DB /* MainViewController1.m */; };
 		91DD901C1B4AA4590068B7DB /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DD901B1B4AA4590068B7DB /* ContainerViewController.m */; };
 		91F49C8F1B65128E006D62F5 /* deleteIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F49C8E1B65128E006D62F5 /* deleteIcon.png */; };
@@ -190,7 +190,7 @@
 		91CB157A1B590AEB00C352B0 /* logoutIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoutIcon.png; path = Images.xcassets/logoutIcon.png; sourceTree = "<group>"; };
 		91D2045D1B4DAD950095A2E9 /* backIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backIcon.png; path = Images.xcassets/backIcon.png; sourceTree = "<group>"; };
 		91D2045F1B4DAF0D0095A2E9 /* doneIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = doneIcon.png; path = Images.xcassets/doneIcon.png; sourceTree = "<group>"; };
-		91D9BA7B1B96D1A30027397F /* kitappLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kitappLogo.png; path = ../../../../Desktop/kitappLogo.png; sourceTree = "<group>"; };
+		91D9BA7D1B96FBC10027397F /* kitappLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kitappLogo.png; sourceTree = "<group>"; };
 		91DD90171B4AA0270068B7DB /* MainViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController1.h; sourceTree = "<group>"; };
 		91DD90181B4AA0270068B7DB /* MainViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController1.m; sourceTree = "<group>"; };
 		91DD901A1B4AA4590068B7DB /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
@@ -419,7 +419,7 @@
 		917701691B42B786002864D1 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				91D9BA7B1B96D1A30027397F /* kitappLogo.png */,
+				91D9BA7D1B96FBC10027397F /* kitappLogo.png */,
 				91C61F151B66594100550E44 /* bookmarkPageIconFilled.png */,
 				91F49C8E1B65128E006D62F5 /* deleteIcon.png */,
 				91CB157A1B590AEB00C352B0 /* logoutIcon.png */,
@@ -618,7 +618,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				917701651B42B53C002864D1 /* bg3_5s.jpg in Resources */,
-				91D9BA7C1B96D1A30027397F /* kitappLogo.png in Resources */,
+				91D9BA7E1B96FBC10027397F /* kitappLogo.png in Resources */,
 				9177018C1B43E7A2002864D1 /* searchBarBg.png in Resources */,
 				91296B0A1B4D9FA700693E8D /* noavatar.png in Resources */,
 				91C7F6D91B45802800D70C0D /* favoritesIcon.png in Resources */,
