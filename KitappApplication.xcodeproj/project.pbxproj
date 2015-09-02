@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C65A8114C3DC7DC39C9D16D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 275CD577A95A2B6AD80141DB /* libPods.a */; };
+		912696041B79B7E600825912 /* UIDeviceHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 912696031B79B7E600825912 /* UIDeviceHardware.m */; };
+		91296AD01B4BF05000693E8D /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91296ACF1B4BF05000693E8D /* MyProfileViewController.m */; };
+		91296AD31B4CF68E00693E8D /* AddNewBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91296AD21B4CF68E00693E8D /* AddNewBookViewController.m */; };
+		91296B081B4D41A000693E8D /* MyBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91296B071B4D41A000693E8D /* MyBooksViewController.m */; };
+		91296B0A1B4D9FA700693E8D /* noavatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 91296B091B4D9FA700693E8D /* noavatar.png */; };
+		91296B0F1B4DA15000693E8D /* Mantika Book W1G Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91296B0B1B4DA15000693E8D /* Mantika Book W1G Bold Italic.otf */; };
+		91296B101B4DA15000693E8D /* Mantika Book W1G Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91296B0C1B4DA15000693E8D /* Mantika Book W1G Bold.otf */; };
+		91296B111B4DA15000693E8D /* Mantika Book W1G Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91296B0D1B4DA15000693E8D /* Mantika Book W1G Italic.otf */; };
+		91296B121B4DA15000693E8D /* Mantika Book W1G.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91296B0E1B4DA15000693E8D /* Mantika Book W1G.otf */; };
+		91607D0E1B4E30E600B30049 /* deleteIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91607D0D1B4E30E600B30049 /* deleteIcon.png */; };
+		91607D101B4E410400B30049 /* bookmarkPageIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91607D0F1B4E410400B30049 /* bookmarkPageIcon.png */; };
+		91607D131B4E667900B30049 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91607D121B4E667900B30049 /* TabBarController.m */; };
+		91607D151B4F819F00B30049 /* addIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91607D141B4F819F00B30049 /* addIcon.png */; };
+		91607D181B4FC60200B30049 /* photoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91607D161B4FC60200B30049 /* photoIcon.png */; };
+		91607D191B4FC60200B30049 /* uploadIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91607D171B4FC60200B30049 /* uploadIcon.png */; };
+		91607D1B1B4FCCB800B30049 /* noCover.png in Resources */ = {isa = PBXBuildFile; fileRef = 91607D1A1B4FCCB800B30049 /* noCover.png */; };
+		91607D1D1B4FCCEB00B30049 /* noCover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91607D1C1B4FCCEB00B30049 /* noCover.jpg */; };
+		91607D291B53D63F00B30049 /* heartIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91607D281B53D63F00B30049 /* heartIcon.png */; };
+		91607D2B1B53D7DB00B30049 /* myProfileIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91607D2A1B53D7DB00B30049 /* myProfileIcon.png */; };
+		91607D2D1B54D24600B30049 /* trashBinIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91607D2C1B54D24600B30049 /* trashBinIcon.png */; };
 		917700EB1B42869D002864D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 917700EA1B42869D002864D1 /* main.m */; };
 		917700EE1B42869D002864D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 917700ED1B42869D002864D1 /* AppDelegate.m */; };
 		917700F11B42869D002864D1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 917700F01B42869D002864D1 /* ViewController.m */; };
@@ -14,6 +35,54 @@
 		917700F61B42869D002864D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 917700F51B42869D002864D1 /* Images.xcassets */; };
 		917700F91B42869D002864D1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 917700F71B42869D002864D1 /* LaunchScreen.xib */; };
 		917701051B42869D002864D1 /* KitappApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 917701041B42869D002864D1 /* KitappApplicationTests.m */; };
+		917701331B42ABD3002864D1 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 917701321B42ABD3002864D1 /* SignupViewController.m */; };
+		917701361B42ABE2002864D1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 917701351B42ABE2002864D1 /* LoginViewController.m */; };
+		9177015C1B42B53C002864D1 /* bg1_4s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9177014F1B42B53C002864D1 /* bg1_4s.jpg */; };
+		9177015D1B42B53C002864D1 /* bg1_5s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 917701501B42B53C002864D1 /* bg1_5s.jpg */; };
+		9177015E1B42B53C002864D1 /* bg1_6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 917701511B42B53C002864D1 /* bg1_6.jpg */; };
+		9177015F1B42B53C002864D1 /* bg1_6plus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 917701521B42B53C002864D1 /* bg1_6plus.jpg */; };
+		917701601B42B53C002864D1 /* bg2_4s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 917701531B42B53C002864D1 /* bg2_4s.jpg */; };
+		917701611B42B53C002864D1 /* bg2_5s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 917701541B42B53C002864D1 /* bg2_5s.jpg */; };
+		917701621B42B53C002864D1 /* bg2_6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 917701551B42B53C002864D1 /* bg2_6.jpg */; };
+		917701631B42B53C002864D1 /* bg2_6plus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 917701561B42B53C002864D1 /* bg2_6plus.jpg */; };
+		917701641B42B53C002864D1 /* bg3_4s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 917701571B42B53C002864D1 /* bg3_4s.jpg */; };
+		917701651B42B53C002864D1 /* bg3_5s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 917701581B42B53C002864D1 /* bg3_5s.jpg */; };
+		917701661B42B53C002864D1 /* bg3_6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 917701591B42B53C002864D1 /* bg3_6.jpg */; };
+		917701671B42B53C002864D1 /* bg3_6plus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9177015A1B42B53C002864D1 /* bg3_6plus.jpg */; };
+		917701681B42B53C002864D1 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9177015B1B42B53C002864D1 /* logo.png */; };
+		9177016F1B43B478002864D1 /* PopularBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9177016E1B43B478002864D1 /* PopularBooksViewController.m */; };
+		917701721B43B951002864D1 /* tableViewDarkIcon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 917701701B43B951002864D1 /* tableViewDarkIcon.svg */; };
+		917701731B43B951002864D1 /* tableViewLightIcon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 917701711B43B951002864D1 /* tableViewLightIcon.svg */; };
+		9177017A1B43C7B2002864D1 /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 917701791B43C7B2002864D1 /* UIImage+Scale.m */; };
+		917701871B43DF36002864D1 /* collectionViewDarkIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 917701831B43DF36002864D1 /* collectionViewDarkIcon.png */; };
+		917701881B43DF36002864D1 /* collectionViewLightIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 917701841B43DF36002864D1 /* collectionViewLightIcon.png */; };
+		917701891B43DF36002864D1 /* tableViewDarkIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 917701851B43DF36002864D1 /* tableViewDarkIcon.png */; };
+		9177018A1B43DF36002864D1 /* tableViewLightIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 917701861B43DF36002864D1 /* tableViewLightIcon.png */; };
+		9177018C1B43E7A2002864D1 /* searchBarBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9177018B1B43E7A2002864D1 /* searchBarBg.png */; };
+		9177018F1B43EA89002864D1 /* CollectionViewCellClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9177018E1B43EA89002864D1 /* CollectionViewCellClass.m */; };
+		917701931B44025E002864D1 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 917701921B44025E002864D1 /* Book.m */; };
+		91C61F161B66594100550E44 /* bookmarkPageIconFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C61F151B66594100550E44 /* bookmarkPageIconFilled.png */; };
+		91C61F1A1B68EFDF00550E44 /* plist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91C61F191B68EFDF00550E44 /* plist.plist */; };
+		91C61F1E1B6A3E3100550E44 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C61F1C1B6A3E3100550E44 /* Fabric.framework */; };
+		91C61F1F1B6A3E3100550E44 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C61F1D1B6A3E3100550E44 /* Crashlytics.framework */; };
+		91C7F6CA1B4511A100D70C0D /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C7F6C91B4511A100D70C0D /* TableViewCell.m */; };
+		91C7F6CE1B4561E200D70C0D /* eyeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7F6CC1B4561E200D70C0D /* eyeIcon.png */; };
+		91C7F6D71B45802800D70C0D /* bkmrkIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7F6D31B45802800D70C0D /* bkmrkIcon.png */; };
+		91C7F6D81B45802800D70C0D /* bookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7F6D41B45802800D70C0D /* bookIcon.png */; };
+		91C7F6D91B45802800D70C0D /* favoritesIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7F6D51B45802800D70C0D /* favoritesIcon.png */; };
+		91C7F6DA1B45802800D70C0D /* profileIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7F6D61B45802800D70C0D /* profileIcon.png */; };
+		91C7F6E01B46420D00D70C0D /* ReviewBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C7F6DF1B46420D00D70C0D /* ReviewBookViewController.m */; };
+		91CB15711B5662D000C352B0 /* backArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CB15701B5662D000C352B0 /* backArrow.png */; };
+		91CB15751B566C1200C352B0 /* homeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CB15741B566C1200C352B0 /* homeIcon.png */; };
+		91CB15771B566CCA00C352B0 /* heartItemIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CB15761B566CCA00C352B0 /* heartItemIcon.png */; };
+		91CB15791B566DAC00C352B0 /* newIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CB15781B566DAC00C352B0 /* newIcon.png */; };
+		91CB157B1B590AEB00C352B0 /* logoutIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CB157A1B590AEB00C352B0 /* logoutIcon.png */; };
+		91D2045E1B4DAD950095A2E9 /* backIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D2045D1B4DAD950095A2E9 /* backIcon.png */; };
+		91D204601B4DAF0D0095A2E9 /* doneIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D2045F1B4DAF0D0095A2E9 /* doneIcon.png */; };
+		91D9BA7C1B96D1A30027397F /* kitappLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D9BA7B1B96D1A30027397F /* kitappLogo.png */; };
+		91DD90191B4AA0270068B7DB /* MainViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DD90181B4AA0270068B7DB /* MainViewController1.m */; };
+		91DD901C1B4AA4590068B7DB /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DD901B1B4AA4590068B7DB /* ContainerViewController.m */; };
+		91F49C8F1B65128E006D62F5 /* deleteIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F49C8E1B65128E006D62F5 /* deleteIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +96,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		021D2E78299435F5B4DAB645 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		275CD577A95A2B6AD80141DB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		68031C8FD573F01B247A6229 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		912696021B79B7E600825912 /* UIDeviceHardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDeviceHardware.h; sourceTree = "<group>"; };
+		912696031B79B7E600825912 /* UIDeviceHardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDeviceHardware.m; sourceTree = "<group>"; };
+		91296ACE1B4BF05000693E8D /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
+		91296ACF1B4BF05000693E8D /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
+		91296AD11B4CF68E00693E8D /* AddNewBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewBookViewController.h; sourceTree = "<group>"; };
+		91296AD21B4CF68E00693E8D /* AddNewBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewBookViewController.m; sourceTree = "<group>"; };
+		91296B061B4D41A000693E8D /* MyBooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBooksViewController.h; sourceTree = "<group>"; };
+		91296B071B4D41A000693E8D /* MyBooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBooksViewController.m; sourceTree = "<group>"; };
+		91296B091B4D9FA700693E8D /* noavatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noavatar.png; path = Images.xcassets/noavatar.png; sourceTree = "<group>"; };
+		91296B0B1B4DA15000693E8D /* Mantika Book W1G Bold Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mantika Book W1G Bold Italic.otf"; sourceTree = "<group>"; };
+		91296B0C1B4DA15000693E8D /* Mantika Book W1G Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mantika Book W1G Bold.otf"; sourceTree = "<group>"; };
+		91296B0D1B4DA15000693E8D /* Mantika Book W1G Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mantika Book W1G Italic.otf"; sourceTree = "<group>"; };
+		91296B0E1B4DA15000693E8D /* Mantika Book W1G.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mantika Book W1G.otf"; sourceTree = "<group>"; };
+		91607D0D1B4E30E600B30049 /* deleteIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = deleteIcon.png; path = Images.xcassets/deleteIcon.png; sourceTree = "<group>"; };
+		91607D0F1B4E410400B30049 /* bookmarkPageIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bookmarkPageIcon.png; path = Images.xcassets/bookmarkPageIcon.png; sourceTree = "<group>"; };
+		91607D111B4E667900B30049 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		91607D121B4E667900B30049 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		91607D141B4F819F00B30049 /* addIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addIcon.png; path = Images.xcassets/addIcon.png; sourceTree = "<group>"; };
+		91607D161B4FC60200B30049 /* photoIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photoIcon.png; path = Images.xcassets/photoIcon.png; sourceTree = "<group>"; };
+		91607D171B4FC60200B30049 /* uploadIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = uploadIcon.png; path = Images.xcassets/uploadIcon.png; sourceTree = "<group>"; };
+		91607D1A1B4FCCB800B30049 /* noCover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noCover.png; path = Images.xcassets/noCover.png; sourceTree = "<group>"; };
+		91607D1C1B4FCCEB00B30049 /* noCover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = noCover.jpg; path = Images.xcassets/noCover.jpg; sourceTree = "<group>"; };
+		91607D281B53D63F00B30049 /* heartIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heartIcon.png; path = Images.xcassets/heartIcon.png; sourceTree = "<group>"; };
+		91607D2A1B53D7DB00B30049 /* myProfileIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = myProfileIcon.png; path = Images.xcassets/myProfileIcon.png; sourceTree = "<group>"; };
+		91607D2C1B54D24600B30049 /* trashBinIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trashBinIcon.png; path = Images.xcassets/trashBinIcon.png; sourceTree = "<group>"; };
 		917700E51B42869D002864D1 /* KitappApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KitappApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		917700E91B42869D002864D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		917700EA1B42869D002864D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +137,65 @@
 		917700FE1B42869D002864D1 /* KitappApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KitappApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		917701031B42869D002864D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		917701041B42869D002864D1 /* KitappApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KitappApplicationTests.m; sourceTree = "<group>"; };
+		9177010E1B4286B1002864D1 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		917701311B42ABD3002864D1 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		917701321B42ABD3002864D1 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		917701341B42ABE2002864D1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		917701351B42ABE2002864D1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		9177014F1B42B53C002864D1 /* bg1_4s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg1_4s.jpg; path = Images.xcassets/bg1_4s.jpg; sourceTree = "<group>"; };
+		917701501B42B53C002864D1 /* bg1_5s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg1_5s.jpg; path = Images.xcassets/bg1_5s.jpg; sourceTree = "<group>"; };
+		917701511B42B53C002864D1 /* bg1_6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg1_6.jpg; path = Images.xcassets/bg1_6.jpg; sourceTree = "<group>"; };
+		917701521B42B53C002864D1 /* bg1_6plus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg1_6plus.jpg; path = Images.xcassets/bg1_6plus.jpg; sourceTree = "<group>"; };
+		917701531B42B53C002864D1 /* bg2_4s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg2_4s.jpg; path = Images.xcassets/bg2_4s.jpg; sourceTree = "<group>"; };
+		917701541B42B53C002864D1 /* bg2_5s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg2_5s.jpg; path = Images.xcassets/bg2_5s.jpg; sourceTree = "<group>"; };
+		917701551B42B53C002864D1 /* bg2_6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg2_6.jpg; path = Images.xcassets/bg2_6.jpg; sourceTree = "<group>"; };
+		917701561B42B53C002864D1 /* bg2_6plus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg2_6plus.jpg; path = Images.xcassets/bg2_6plus.jpg; sourceTree = "<group>"; };
+		917701571B42B53C002864D1 /* bg3_4s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg3_4s.jpg; path = Images.xcassets/bg3_4s.jpg; sourceTree = "<group>"; };
+		917701581B42B53C002864D1 /* bg3_5s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg3_5s.jpg; path = Images.xcassets/bg3_5s.jpg; sourceTree = "<group>"; };
+		917701591B42B53C002864D1 /* bg3_6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg3_6.jpg; path = Images.xcassets/bg3_6.jpg; sourceTree = "<group>"; };
+		9177015A1B42B53C002864D1 /* bg3_6plus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg3_6plus.jpg; path = Images.xcassets/bg3_6plus.jpg; sourceTree = "<group>"; };
+		9177015B1B42B53C002864D1 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Images.xcassets/logo.png; sourceTree = "<group>"; };
+		9177016D1B43B478002864D1 /* PopularBooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularBooksViewController.h; sourceTree = "<group>"; };
+		9177016E1B43B478002864D1 /* PopularBooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularBooksViewController.m; sourceTree = "<group>"; };
+		917701701B43B951002864D1 /* tableViewDarkIcon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tableViewDarkIcon.svg; path = Images.xcassets/tableViewDarkIcon.svg; sourceTree = "<group>"; };
+		917701711B43B951002864D1 /* tableViewLightIcon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tableViewLightIcon.svg; path = Images.xcassets/tableViewLightIcon.svg; sourceTree = "<group>"; };
+		917701781B43C7B2002864D1 /* UIImage+Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scale.h"; sourceTree = "<group>"; };
+		917701791B43C7B2002864D1 /* UIImage+Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scale.m"; sourceTree = "<group>"; };
+		917701831B43DF36002864D1 /* collectionViewDarkIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = collectionViewDarkIcon.png; path = Images.xcassets/collectionViewDarkIcon.png; sourceTree = "<group>"; };
+		917701841B43DF36002864D1 /* collectionViewLightIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = collectionViewLightIcon.png; path = Images.xcassets/collectionViewLightIcon.png; sourceTree = "<group>"; };
+		917701851B43DF36002864D1 /* tableViewDarkIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tableViewDarkIcon.png; path = Images.xcassets/tableViewDarkIcon.png; sourceTree = "<group>"; };
+		917701861B43DF36002864D1 /* tableViewLightIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tableViewLightIcon.png; path = Images.xcassets/tableViewLightIcon.png; sourceTree = "<group>"; };
+		9177018B1B43E7A2002864D1 /* searchBarBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = searchBarBg.png; path = Images.xcassets/searchBarBg.png; sourceTree = "<group>"; };
+		9177018D1B43EA89002864D1 /* CollectionViewCellClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCellClass.h; sourceTree = "<group>"; };
+		9177018E1B43EA89002864D1 /* CollectionViewCellClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCellClass.m; sourceTree = "<group>"; };
+		917701911B44025E002864D1 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		917701921B44025E002864D1 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		91C61F151B66594100550E44 /* bookmarkPageIconFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bookmarkPageIconFilled.png; path = Images.xcassets/bookmarkPageIconFilled.png; sourceTree = "<group>"; };
+		91C61F191B68EFDF00550E44 /* plist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plist.plist; sourceTree = "<group>"; };
+		91C61F1C1B6A3E3100550E44 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		91C61F1D1B6A3E3100550E44 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		91C7F6C81B4511A100D70C0D /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		91C7F6C91B4511A100D70C0D /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		91C7F6CC1B4561E200D70C0D /* eyeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eyeIcon.png; path = Images.xcassets/eyeIcon.png; sourceTree = "<group>"; };
+		91C7F6D31B45802800D70C0D /* bkmrkIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkmrkIcon.png; path = Images.xcassets/bkmrkIcon.png; sourceTree = "<group>"; };
+		91C7F6D41B45802800D70C0D /* bookIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bookIcon.png; path = Images.xcassets/bookIcon.png; sourceTree = "<group>"; };
+		91C7F6D51B45802800D70C0D /* favoritesIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = favoritesIcon.png; path = Images.xcassets/favoritesIcon.png; sourceTree = "<group>"; };
+		91C7F6D61B45802800D70C0D /* profileIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profileIcon.png; path = Images.xcassets/profileIcon.png; sourceTree = "<group>"; };
+		91C7F6DE1B46420D00D70C0D /* ReviewBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewBookViewController.h; sourceTree = "<group>"; };
+		91C7F6DF1B46420D00D70C0D /* ReviewBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewBookViewController.m; sourceTree = "<group>"; };
+		91CB15701B5662D000C352B0 /* backArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backArrow.png; path = Images.xcassets/backArrow.png; sourceTree = "<group>"; };
+		91CB15741B566C1200C352B0 /* homeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = homeIcon.png; path = Images.xcassets/homeIcon.png; sourceTree = "<group>"; };
+		91CB15761B566CCA00C352B0 /* heartItemIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heartItemIcon.png; path = Images.xcassets/heartItemIcon.png; sourceTree = "<group>"; };
+		91CB15781B566DAC00C352B0 /* newIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = newIcon.png; path = Images.xcassets/newIcon.png; sourceTree = "<group>"; };
+		91CB157A1B590AEB00C352B0 /* logoutIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoutIcon.png; path = Images.xcassets/logoutIcon.png; sourceTree = "<group>"; };
+		91D2045D1B4DAD950095A2E9 /* backIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backIcon.png; path = Images.xcassets/backIcon.png; sourceTree = "<group>"; };
+		91D2045F1B4DAF0D0095A2E9 /* doneIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = doneIcon.png; path = Images.xcassets/doneIcon.png; sourceTree = "<group>"; };
+		91D9BA7B1B96D1A30027397F /* kitappLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kitappLogo.png; path = ../../../../Desktop/kitappLogo.png; sourceTree = "<group>"; };
+		91DD90171B4AA0270068B7DB /* MainViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController1.h; sourceTree = "<group>"; };
+		91DD90181B4AA0270068B7DB /* MainViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController1.m; sourceTree = "<group>"; };
+		91DD901A1B4AA4590068B7DB /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		91DD901B1B4AA4590068B7DB /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		91F49C8E1B65128E006D62F5 /* deleteIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = deleteIcon.png; path = Images.xcassets/deleteIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +203,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C65A8114C3DC7DC39C9D16D /* libPods.a in Frameworks */,
+				91C61F1F1B6A3E3100550E44 /* Crashlytics.framework in Frameworks */,
+				91C61F1E1B6A3E3100550E44 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +219,141 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6BFD5DB3237DE6B90A2E7B98 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				021D2E78299435F5B4DAB645 /* Pods.debug.xcconfig */,
+				68031C8FD573F01B247A6229 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		912696051B79BA5200825912 /* UIDeviceHardware */ = {
+			isa = PBXGroup;
+			children = (
+				912696031B79B7E600825912 /* UIDeviceHardware.m */,
+				912696021B79B7E600825912 /* UIDeviceHardware.h */,
+			);
+			name = UIDeviceHardware;
+			sourceTree = "<group>";
+		};
+		91296B131B4DA15C00693E8D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				91296B0B1B4DA15000693E8D /* Mantika Book W1G Bold Italic.otf */,
+				91296B0C1B4DA15000693E8D /* Mantika Book W1G Bold.otf */,
+				91296B0D1B4DA15000693E8D /* Mantika Book W1G Italic.otf */,
+				91296B0E1B4DA15000693E8D /* Mantika Book W1G.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		91607D1E1B4FD9FD00B30049 /* Book class */ = {
+			isa = PBXGroup;
+			children = (
+				917701911B44025E002864D1 /* Book.h */,
+				917701921B44025E002864D1 /* Book.m */,
+			);
+			name = "Book class";
+			sourceTree = "<group>";
+		};
+		91607D1F1B4FDA0B00B30049 /* ContainerViewController for page VC */ = {
+			isa = PBXGroup;
+			children = (
+				91DD901A1B4AA4590068B7DB /* ContainerViewController.h */,
+				91DD901B1B4AA4590068B7DB /* ContainerViewController.m */,
+			);
+			name = "ContainerViewController for page VC";
+			sourceTree = "<group>";
+		};
+		91607D201B4FDA1D00B30049 /* Main VC (content for page VC) */ = {
+			isa = PBXGroup;
+			children = (
+				91DD90171B4AA0270068B7DB /* MainViewController1.h */,
+				91DD90181B4AA0270068B7DB /* MainViewController1.m */,
+			);
+			name = "Main VC (content for page VC)";
+			sourceTree = "<group>";
+		};
+		91607D211B4FDA2F00B30049 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				91C7F6C81B4511A100D70C0D /* TableViewCell.h */,
+				91C7F6C91B4511A100D70C0D /* TableViewCell.m */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		91607D221B4FDA5500B30049 /* MyProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				91296ACE1B4BF05000693E8D /* MyProfileViewController.h */,
+				91296ACF1B4BF05000693E8D /* MyProfileViewController.m */,
+			);
+			name = MyProfileVC;
+			sourceTree = "<group>";
+		};
+		91607D231B4FDA7900B30049 /* AddNewBookVC */ = {
+			isa = PBXGroup;
+			children = (
+				91296AD11B4CF68E00693E8D /* AddNewBookViewController.h */,
+				91296AD21B4CF68E00693E8D /* AddNewBookViewController.m */,
+			);
+			name = AddNewBookVC;
+			sourceTree = "<group>";
+		};
+		91607D241B4FDA8500B30049 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				91607D111B4E667900B30049 /* TabBarController.h */,
+				91607D121B4E667900B30049 /* TabBarController.m */,
+			);
+			name = TabBarController;
+			sourceTree = "<group>";
+		};
+		91607D251B4FDAA100B30049 /* MyBooksVC */ = {
+			isa = PBXGroup;
+			children = (
+				91296B061B4D41A000693E8D /* MyBooksViewController.h */,
+				91296B071B4D41A000693E8D /* MyBooksViewController.m */,
+			);
+			name = MyBooksVC;
+			sourceTree = "<group>";
+		};
+		91607D261B4FDAAB00B30049 /* View controllers */ = {
+			isa = PBXGroup;
+			children = (
+				91607D201B4FDA1D00B30049 /* Main VC (content for page VC) */,
+				91607D221B4FDA5500B30049 /* MyProfileVC */,
+				91607D231B4FDA7900B30049 /* AddNewBookVC */,
+				917701761B43BDB5002864D1 /* PopularBooksViewController */,
+				91C7F6E11B46456200D70C0D /* ReviewBookViewController */,
+				91607D1F1B4FDA0B00B30049 /* ContainerViewController for page VC */,
+				9177016C1B42B829002864D1 /* signupScreen */,
+				9177016B1B42B80F002864D1 /* loginScreen */,
+				91607D251B4FDAA100B30049 /* MyBooksVC */,
+			);
+			name = "View controllers";
+			sourceTree = "<group>";
+		};
+		91607D271B4FDAF000B30049 /* Design for cells */ = {
+			isa = PBXGroup;
+			children = (
+				91607D211B4FDA2F00B30049 /* TableViewCell */,
+				917701901B43EA99002864D1 /* CollectionViewCellClass */,
+			);
+			name = "Design for cells";
+			sourceTree = "<group>";
+		};
 		917700DC1B42869D002864D1 = {
 			isa = PBXGroup;
 			children = (
+				9177010E1B4286B1002864D1 /* Podfile */,
 				917700E71B42869D002864D1 /* KitappApplication */,
 				917701011B42869D002864D1 /* KitappApplicationTests */,
 				917700E61B42869D002864D1 /* Products */,
+				6BFD5DB3237DE6B90A2E7B98 /* Pods */,
+				D335CF9ED792F68457F27EA2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,7 +376,12 @@
 				917700F21B42869D002864D1 /* Main.storyboard */,
 				917700F51B42869D002864D1 /* Images.xcassets */,
 				917700F71B42869D002864D1 /* LaunchScreen.xib */,
+				917701771B43C794002864D1 /* UIImage + Scale */,
+				91607D271B4FDAF000B30049 /* Design for cells */,
+				91607D241B4FDA8500B30049 /* TabBarController */,
+				91607D261B4FDAAB00B30049 /* View controllers */,
 				917700E81B42869D002864D1 /* Supporting Files */,
+				91C61F191B68EFDF00550E44 /* plist.plist */,
 			);
 			path = KitappApplication;
 			sourceTree = "<group>";
@@ -96,8 +389,12 @@
 		917700E81B42869D002864D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				91296B131B4DA15C00693E8D /* Fonts */,
+				91607D1E1B4FD9FD00B30049 /* Book class */,
+				917701691B42B786002864D1 /* images */,
 				917700E91B42869D002864D1 /* Info.plist */,
 				917700EA1B42869D002864D1 /* main.m */,
+				912696051B79BA5200825912 /* UIDeviceHardware */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -119,6 +416,123 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		917701691B42B786002864D1 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				91D9BA7B1B96D1A30027397F /* kitappLogo.png */,
+				91C61F151B66594100550E44 /* bookmarkPageIconFilled.png */,
+				91F49C8E1B65128E006D62F5 /* deleteIcon.png */,
+				91CB157A1B590AEB00C352B0 /* logoutIcon.png */,
+				91CB15781B566DAC00C352B0 /* newIcon.png */,
+				91CB15761B566CCA00C352B0 /* heartItemIcon.png */,
+				91CB15741B566C1200C352B0 /* homeIcon.png */,
+				91CB15701B5662D000C352B0 /* backArrow.png */,
+				91607D2C1B54D24600B30049 /* trashBinIcon.png */,
+				91607D2A1B53D7DB00B30049 /* myProfileIcon.png */,
+				91607D281B53D63F00B30049 /* heartIcon.png */,
+				91607D141B4F819F00B30049 /* addIcon.png */,
+				91607D0F1B4E410400B30049 /* bookmarkPageIcon.png */,
+				91607D0D1B4E30E600B30049 /* deleteIcon.png */,
+				91D2045F1B4DAF0D0095A2E9 /* doneIcon.png */,
+				91D2045D1B4DAD950095A2E9 /* backIcon.png */,
+				91296B091B4D9FA700693E8D /* noavatar.png */,
+				91C7F6D31B45802800D70C0D /* bkmrkIcon.png */,
+				91C7F6D41B45802800D70C0D /* bookIcon.png */,
+				91C7F6D51B45802800D70C0D /* favoritesIcon.png */,
+				91C7F6D61B45802800D70C0D /* profileIcon.png */,
+				91C7F6CC1B4561E200D70C0D /* eyeIcon.png */,
+				9177018B1B43E7A2002864D1 /* searchBarBg.png */,
+				917701701B43B951002864D1 /* tableViewDarkIcon.svg */,
+				917701831B43DF36002864D1 /* collectionViewDarkIcon.png */,
+				917701841B43DF36002864D1 /* collectionViewLightIcon.png */,
+				917701851B43DF36002864D1 /* tableViewDarkIcon.png */,
+				917701861B43DF36002864D1 /* tableViewLightIcon.png */,
+				917701711B43B951002864D1 /* tableViewLightIcon.svg */,
+				9177014F1B42B53C002864D1 /* bg1_4s.jpg */,
+				917701501B42B53C002864D1 /* bg1_5s.jpg */,
+				917701511B42B53C002864D1 /* bg1_6.jpg */,
+				917701521B42B53C002864D1 /* bg1_6plus.jpg */,
+				917701531B42B53C002864D1 /* bg2_4s.jpg */,
+				917701541B42B53C002864D1 /* bg2_5s.jpg */,
+				917701551B42B53C002864D1 /* bg2_6.jpg */,
+				917701561B42B53C002864D1 /* bg2_6plus.jpg */,
+				91607D1A1B4FCCB800B30049 /* noCover.png */,
+				917701571B42B53C002864D1 /* bg3_4s.jpg */,
+				917701581B42B53C002864D1 /* bg3_5s.jpg */,
+				917701591B42B53C002864D1 /* bg3_6.jpg */,
+				9177015A1B42B53C002864D1 /* bg3_6plus.jpg */,
+				91607D161B4FC60200B30049 /* photoIcon.png */,
+				91607D171B4FC60200B30049 /* uploadIcon.png */,
+				91607D1C1B4FCCEB00B30049 /* noCover.jpg */,
+				9177015B1B42B53C002864D1 /* logo.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		9177016B1B42B80F002864D1 /* loginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				917701341B42ABE2002864D1 /* LoginViewController.h */,
+				917701351B42ABE2002864D1 /* LoginViewController.m */,
+			);
+			name = loginScreen;
+			sourceTree = "<group>";
+		};
+		9177016C1B42B829002864D1 /* signupScreen */ = {
+			isa = PBXGroup;
+			children = (
+				917701311B42ABD3002864D1 /* SignupViewController.h */,
+				917701321B42ABD3002864D1 /* SignupViewController.m */,
+			);
+			name = signupScreen;
+			sourceTree = "<group>";
+		};
+		917701761B43BDB5002864D1 /* PopularBooksViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9177016D1B43B478002864D1 /* PopularBooksViewController.h */,
+				9177016E1B43B478002864D1 /* PopularBooksViewController.m */,
+			);
+			name = PopularBooksViewController;
+			sourceTree = "<group>";
+		};
+		917701771B43C794002864D1 /* UIImage + Scale */ = {
+			isa = PBXGroup;
+			children = (
+				917701781B43C7B2002864D1 /* UIImage+Scale.h */,
+				917701791B43C7B2002864D1 /* UIImage+Scale.m */,
+			);
+			name = "UIImage + Scale";
+			sourceTree = "<group>";
+		};
+		917701901B43EA99002864D1 /* CollectionViewCellClass */ = {
+			isa = PBXGroup;
+			children = (
+				9177018D1B43EA89002864D1 /* CollectionViewCellClass.h */,
+				9177018E1B43EA89002864D1 /* CollectionViewCellClass.m */,
+			);
+			name = CollectionViewCellClass;
+			sourceTree = "<group>";
+		};
+		91C7F6E11B46456200D70C0D /* ReviewBookViewController */ = {
+			isa = PBXGroup;
+			children = (
+				91C7F6DE1B46420D00D70C0D /* ReviewBookViewController.h */,
+				91C7F6DF1B46420D00D70C0D /* ReviewBookViewController.m */,
+			);
+			name = ReviewBookViewController;
+			sourceTree = "<group>";
+		};
+		D335CF9ED792F68457F27EA2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91C61F1C1B6A3E3100550E44 /* Fabric.framework */,
+				91C61F1D1B6A3E3100550E44 /* Crashlytics.framework */,
+				275CD577A95A2B6AD80141DB /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +540,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 917701081B42869D002864D1 /* Build configuration list for PBXNativeTarget "KitappApplication" */;
 			buildPhases = (
+				52D1EE87FAED1ED19B446CAE /* Check Pods Manifest.lock */,
 				917700E11B42869D002864D1 /* Sources */,
 				917700E21B42869D002864D1 /* Frameworks */,
 				917700E31B42869D002864D1 /* Resources */,
+				E9DA723BCC14EBDE1D9E8EEE /* Copy Pods Resources */,
+				91C61F1B1B6A3DFC00550E44 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -168,6 +585,7 @@
 				TargetAttributes = {
 					917700E41B42869D002864D1 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = FY4K8ZFLRQ;
 					};
 					917700FD1B42869D002864D1 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -199,9 +617,60 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				917701651B42B53C002864D1 /* bg3_5s.jpg in Resources */,
+				91D9BA7C1B96D1A30027397F /* kitappLogo.png in Resources */,
+				9177018C1B43E7A2002864D1 /* searchBarBg.png in Resources */,
+				91296B0A1B4D9FA700693E8D /* noavatar.png in Resources */,
+				91C7F6D91B45802800D70C0D /* favoritesIcon.png in Resources */,
+				91607D1B1B4FCCB800B30049 /* noCover.png in Resources */,
+				91CB15791B566DAC00C352B0 /* newIcon.png in Resources */,
+				917701891B43DF36002864D1 /* tableViewDarkIcon.png in Resources */,
+				91296B121B4DA15000693E8D /* Mantika Book W1G.otf in Resources */,
+				91C7F6D71B45802800D70C0D /* bkmrkIcon.png in Resources */,
 				917700F41B42869D002864D1 /* Main.storyboard in Resources */,
+				91296B111B4DA15000693E8D /* Mantika Book W1G Italic.otf in Resources */,
+				917701731B43B951002864D1 /* tableViewLightIcon.svg in Resources */,
+				91607D181B4FC60200B30049 /* photoIcon.png in Resources */,
+				917701721B43B951002864D1 /* tableViewDarkIcon.svg in Resources */,
+				91607D2D1B54D24600B30049 /* trashBinIcon.png in Resources */,
+				9177015C1B42B53C002864D1 /* bg1_4s.jpg in Resources */,
+				917701631B42B53C002864D1 /* bg2_6plus.jpg in Resources */,
+				91CB15771B566CCA00C352B0 /* heartItemIcon.png in Resources */,
+				917701611B42B53C002864D1 /* bg2_5s.jpg in Resources */,
+				917701601B42B53C002864D1 /* bg2_4s.jpg in Resources */,
+				9177018A1B43DF36002864D1 /* tableViewLightIcon.png in Resources */,
+				91C61F161B66594100550E44 /* bookmarkPageIconFilled.png in Resources */,
+				91296B101B4DA15000693E8D /* Mantika Book W1G Bold.otf in Resources */,
+				91607D101B4E410400B30049 /* bookmarkPageIcon.png in Resources */,
+				91C61F1A1B68EFDF00550E44 /* plist.plist in Resources */,
+				91607D0E1B4E30E600B30049 /* deleteIcon.png in Resources */,
+				917701871B43DF36002864D1 /* collectionViewDarkIcon.png in Resources */,
+				91CB15751B566C1200C352B0 /* homeIcon.png in Resources */,
+				917701671B42B53C002864D1 /* bg3_6plus.jpg in Resources */,
 				917700F91B42869D002864D1 /* LaunchScreen.xib in Resources */,
+				9177015E1B42B53C002864D1 /* bg1_6.jpg in Resources */,
+				917701641B42B53C002864D1 /* bg3_4s.jpg in Resources */,
+				91C7F6D81B45802800D70C0D /* bookIcon.png in Resources */,
+				91C7F6CE1B4561E200D70C0D /* eyeIcon.png in Resources */,
+				91D204601B4DAF0D0095A2E9 /* doneIcon.png in Resources */,
+				917701621B42B53C002864D1 /* bg2_6.jpg in Resources */,
+				91607D151B4F819F00B30049 /* addIcon.png in Resources */,
+				9177015F1B42B53C002864D1 /* bg1_6plus.jpg in Resources */,
+				91607D1D1B4FCCEB00B30049 /* noCover.jpg in Resources */,
+				91607D191B4FC60200B30049 /* uploadIcon.png in Resources */,
+				917701681B42B53C002864D1 /* logo.png in Resources */,
+				91D2045E1B4DAD950095A2E9 /* backIcon.png in Resources */,
+				91CB15711B5662D000C352B0 /* backArrow.png in Resources */,
+				91F49C8F1B65128E006D62F5 /* deleteIcon.png in Resources */,
+				91607D2B1B53D7DB00B30049 /* myProfileIcon.png in Resources */,
+				91CB157B1B590AEB00C352B0 /* logoutIcon.png in Resources */,
+				91296B0F1B4DA15000693E8D /* Mantika Book W1G Bold Italic.otf in Resources */,
 				917700F61B42869D002864D1 /* Images.xcassets in Resources */,
+				91C7F6DA1B45802800D70C0D /* profileIcon.png in Resources */,
+				9177015D1B42B53C002864D1 /* bg1_5s.jpg in Resources */,
+				917701881B43DF36002864D1 /* collectionViewLightIcon.png in Resources */,
+				917701661B42B53C002864D1 /* bg3_6.jpg in Resources */,
+				91607D291B53D63F00B30049 /* heartIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,14 +683,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		52D1EE87FAED1ED19B446CAE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		91C61F1B1B6A3DFC00550E44 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 8e2371d4a9e691c1135cd1a552dbcd96664fe3ab 9fc2f8d595dc0346cfb2accba83c75790a2f571ce674e9e85b558aa80073fea5";
+		};
+		E9DA723BCC14EBDE1D9E8EEE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		917700E11B42869D002864D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9177017A1B43C7B2002864D1 /* UIImage+Scale.m in Sources */,
+				91C7F6E01B46420D00D70C0D /* ReviewBookViewController.m in Sources */,
+				9177018F1B43EA89002864D1 /* CollectionViewCellClass.m in Sources */,
+				912696041B79B7E600825912 /* UIDeviceHardware.m in Sources */,
+				91296AD31B4CF68E00693E8D /* AddNewBookViewController.m in Sources */,
 				917700F11B42869D002864D1 /* ViewController.m in Sources */,
+				91296B081B4D41A000693E8D /* MyBooksViewController.m in Sources */,
+				91296AD01B4BF05000693E8D /* MyProfileViewController.m in Sources */,
+				91DD90191B4AA0270068B7DB /* MainViewController1.m in Sources */,
+				91C7F6CA1B4511A100D70C0D /* TableViewCell.m in Sources */,
 				917700EE1B42869D002864D1 /* AppDelegate.m in Sources */,
+				917701331B42ABD3002864D1 /* SignupViewController.m in Sources */,
 				917700EB1B42869D002864D1 /* main.m in Sources */,
+				917701931B44025E002864D1 /* Book.m in Sources */,
+				917701361B42ABE2002864D1 /* LoginViewController.m in Sources */,
+				91607D131B4E667900B30049 /* TabBarController.m in Sources */,
+				9177016F1B43B478002864D1 /* PopularBooksViewController.m in Sources */,
+				91DD901C1B4AA4590068B7DB /* ContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +810,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Olga Khvan (FY4K8ZFLRQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Olga Khvan (FY4K8ZFLRQ)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -302,66 +833,28 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "1194eb26-0c6e-4b9b-80da-2569b530dce4";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
-		};
-		917701071B42869D002864D1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
 		};
 		917701091B42869D002864D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 021D2E78299435F5B4DAB645 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Olga Khvan (FY4K8ZFLRQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Olga Khvan (FY4K8ZFLRQ)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = KitappApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1194eb26-0c6e-4b9b-80da-2569b530dce4";
 			};
 			name = Debug;
-		};
-		9177010A1B42869D002864D1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = KitappApplication/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
 		};
 		9177010C1B42869D002864D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -382,12 +875,79 @@
 			};
 			name = Debug;
 		};
-		9177010D1B42869D002864D1 /* Release */ = {
+		91C9FE0F1B954D650075A074 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Olga Khvan (FY4K8ZFLRQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Olga Khvan (FY4K8ZFLRQ)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "1194eb26-0c6e-4b9b-80da-2569b530dce4";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		91C9FE101B954D650075A074 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 021D2E78299435F5B4DAB645 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Olga Khvan (FY4K8ZFLRQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Olga Khvan (FY4K8ZFLRQ)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = KitappApplication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1194eb26-0c6e-4b9b-80da-2569b530dce4";
+			};
+			name = Release;
+		};
+		91C9FE111B954D650075A074 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = KitappApplicationTests/Info.plist;
@@ -397,6 +957,88 @@
 			};
 			name = Release;
 		};
+		91C9FE121B9553660075A074 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Olga Khvan (FY4K8ZFLRQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Olga Khvan (FY4K8ZFLRQ)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "1194eb26-0c6e-4b9b-80da-2569b530dce4";
+				SDKROOT = iphoneos;
+			};
+			name = Distribution;
+		};
+		91C9FE131B9553660075A074 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 021D2E78299435F5B4DAB645 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Olga Khvan (FY4K8ZFLRQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Olga Khvan (FY4K8ZFLRQ)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = KitappApplication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1194eb26-0c6e-4b9b-80da-2569b530dce4";
+			};
+			name = Distribution;
+		};
+		91C9FE141B9553660075A074 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KitappApplicationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KitappApplication.app/KitappApplication";
+			};
+			name = Distribution;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -404,26 +1046,31 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				917701061B42869D002864D1 /* Debug */,
-				917701071B42869D002864D1 /* Release */,
+				91C9FE0F1B954D650075A074 /* Release */,
+				91C9FE121B9553660075A074 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		917701081B42869D002864D1 /* Build configuration list for PBXNativeTarget "KitappApplication" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				917701091B42869D002864D1 /* Debug */,
-				9177010A1B42869D002864D1 /* Release */,
+				91C9FE101B954D650075A074 /* Release */,
+				91C9FE131B9553660075A074 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 		9177010B1B42869D002864D1 /* Build configuration list for PBXNativeTarget "KitappApplicationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9177010C1B42869D002864D1 /* Debug */,
-				9177010D1B42869D002864D1 /* Release */,
+				91C9FE111B954D650075A074 /* Release */,
+				91C9FE141B9553660075A074 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

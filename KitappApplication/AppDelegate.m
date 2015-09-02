@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate ()
 
@@ -16,7 +19,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [Parse setApplicationId:@"iHjG6o4ubNKSQ5Umu3UjS91U0IQbYeNJTzLHS82m"
+                  clientKey:@"TS6Lm4nyntT3vt3rtCUxtWx64NjYC7r4UizSoR0d"];
+    [Fabric with:@[CrashlyticsKit]];
+    
     return YES;
 }
 
