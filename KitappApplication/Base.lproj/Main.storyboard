@@ -21,11 +21,13 @@
                     <navigationItem key="navigationItem" id="PGs-jw-dtH"/>
                     <connections>
                         <segue destination="BlA-w3-wkN" kind="modal" identifier="viewControllerToPopularBooks" id="2OG-fd-GA5"/>
+                        <segue destination="TWB-MR-7lr" kind="modal" identifier="VCToSignUpVC" id="7UV-fS-JV4"/>
+                        <segue destination="tsC-sS-UGh" kind="modal" identifier="VCToLoginVC" id="Cza-AS-itj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-826" y="108"/>
+            <point key="canvasLocation" x="-1295" y="89"/>
         </scene>
         <!--Main View Controller1-->
         <scene sceneID="5jn-OZ-i1R">
@@ -40,14 +42,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <segue destination="tsC-sS-UGh" kind="modal" identifier="MVC1ToLoginVC" id="cuU-D6-5A0"/>
-                        <segue destination="TWB-MR-7lr" kind="modal" identifier="MVC1ToSignupVC" id="TZO-UN-YtP"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bw3-b2-WdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-249" y="726"/>
+            <point key="canvasLocation" x="-463" y="-334"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="MHa-sI-SYt">
@@ -60,7 +58,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uaC-mk-I1i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-328" y="-222"/>
+            <point key="canvasLocation" x="-842" y="-334"/>
         </scene>
         <!--Popular Books View Controller-->
         <scene sceneID="IaK-Ae-ZSG">
@@ -126,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oDU-eK-heK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1427" y="89"/>
+            <point key="canvasLocation" x="609" y="-167"/>
         </scene>
         <!--Review Book View Controller-->
         <scene sceneID="bK2-3U-Q2G">
@@ -145,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uoN-5t-zGJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1913" y="203"/>
+            <point key="canvasLocation" x="1271" y="245"/>
         </scene>
         <!--My Profile View Controller-->
         <scene sceneID="HEK-A0-IHj">
@@ -167,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hek-bQ-6Zu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="792" y="861"/>
+            <point key="canvasLocation" x="22" y="637"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="aGf-nP-k4i">
@@ -189,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cNv-bJ-Qid" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="175" y="1095"/>
+            <point key="canvasLocation" x="-1288" y="861"/>
         </scene>
         <!--Add New Book View Controller-->
         <scene sceneID="Zz3-Dg-Jod">
@@ -207,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PKZ-Vg-1xa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="819" y="2007"/>
+            <point key="canvasLocation" x="1271" y="957"/>
         </scene>
         <!--My Books View Controller-->
         <scene sceneID="sE9-YP-mN8">
@@ -314,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acL-xS-3Dj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1176" y="867"/>
+            <point key="canvasLocation" x="676" y="711"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Qx4-0T-2y0">
@@ -336,22 +334,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R9u-IY-8r1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="42"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="xmF-9b-I5J">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WiU-T3-x2q" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UNv-Y7-1Pc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zci-Cm-EvM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1369" y="174"/>
+            <point key="canvasLocation" x="-769" y="834"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sMH-Dz-C7E">
@@ -371,7 +354,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lkx-zo-F8N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966" y="156"/>
+            <point key="canvasLocation" x="86" y="-162"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -381,7 +364,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="2OG-fd-GA5"/>
-        <segue reference="Ysd-a9-10P"/>
+        <segue reference="lQh-vm-stm"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.3843137254901961" green="0.26666666666666666" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

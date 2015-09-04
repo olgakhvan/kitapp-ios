@@ -8,12 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+
+
+@protocol MainViewController1Delegate <NSObject>
+
+-(void) viewIsShown: (NSUInteger) pageIndex;
+
+@end
+
 @interface MainViewController1 : UIViewController
-@property (nonatomic) UIButton *signupButton;
-@property (nonatomic) UIButton *loginButton;
-@property (nonatomic) UIImageView *logoImage;
-@property (nonatomic) UILabel *bg1Label;
-@property (nonatomic) UIImageView *bg1;
+
+
+@property (weak, nonatomic) id<MainViewController1Delegate> delegate; 
 @property NSUInteger pageIndex;
 @property (nonatomic) NSString *imageFile;
+@property (nonatomic) NSString *pageText;
+
 @end

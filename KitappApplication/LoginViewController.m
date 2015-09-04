@@ -9,15 +9,14 @@
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
 #import <AFViewShaker.h>
-
+#import <MBProgressHUD/MBProgressHUD.h>
 @interface LoginViewController ()
 
 @property (nonatomic) UITextField *usernameTextField;
 @property (nonatomic) UITextField *passwordTextField;
 @property (nonatomic) UIButton *loginButton;
-@property (nonatomic) UIButton *forgotPassword;
 @property (nonatomic) UIImageView *bgImage;
-@property (nonatomic) UIButton *seperator;
+@property (nonatomic) UIButton *separator;
 @property (nonatomic) UIButton *cancelButton;
 @property (nonatomic) UILabel *errorLabel;
 @property (nonatomic) AFViewShaker *shakeView;
@@ -25,22 +24,14 @@
 
 @implementation LoginViewController
 
-@synthesize  usernameTextField = _usernameTextField;
-@synthesize  passwordTextField = _passwordTextField;
-@synthesize loginButton = _loginButton;
-@synthesize  forgotPassword = _forgotPassword;
-@synthesize bgImage = _bgImage;
-@synthesize seperator = _seperator;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     //initialization
     _usernameTextField = [UITextField new];
     _passwordTextField = [UITextField new];
     _loginButton = [UIButton new];
-    _forgotPassword = [UIButton new];
     _bgImage = [UIImageView new];
-    _seperator = [UIButton new];
+    _separator = [UIButton new];
     _cancelButton = [UIButton new];
     
     //bgImage
@@ -58,30 +49,20 @@
                                                                         views:NSDictionaryOfVariableBindings(_bgImage)]];
     
     //text fields
-    UIButton *signupBackground = [UIButton new];
-    signupBackground.backgroundColor = [UIColor whiteColor];
-    signupBackground.layer.masksToBounds = YES;
-    signupBackground.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:signupBackground];
-    
     _usernameTextField.textAlignment = NSTextAlignmentCenter;
     _usernameTextField.textColor = [UIColor colorWithRed:82/255.0 green:82/255.0 blue:82/255.0 alpha:1.0];
     _usernameTextField.font = [UIFont fontWithName:@"Helvetica-Light" size:16];
-    _usernameTextField.placeholder = @"имя";
+    _usernameTextField.placeholder = @"Телефон";
+    _usernameTextField.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_usernameTextField];
     _usernameTextField.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    UIButton *passwordBackground = [UIButton new];
-    passwordBackground.backgroundColor = [UIColor whiteColor];
-    passwordBackground.layer.masksToBounds = YES;
-    passwordBackground.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:passwordBackground];
     
     _passwordTextField.textAlignment = NSTextAlignmentCenter;
     _passwordTextField.textColor = [UIColor colorWithRed:82/255.0 green:82/255.0 blue:82/255.0 alpha:1.0];
     _passwordTextField.font = [UIFont fontWithName:@"Helvetica-Light" size:16];
-    _passwordTextField.placeholder = @"пароль";
+    _passwordTextField.placeholder = @"Пароль";
     _passwordTextField.secureTextEntry = YES;
+    _passwordTextField.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_passwordTextField];
     _passwordTextField.translatesAutoresizingMaskIntoConstraints = NO;
     
@@ -115,45 +96,49 @@
     _errorLabel.textAlignment = NSTextAlignmentCenter;
     _errorLabel.textColor = [UIColor redColor];
     _errorLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    _separator.layer.masksToBounds = YES;
+    _separator.layer.borderColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.3].CGColor;
+    _separator.layer.borderWidth = 1.0;
+    [self.view addSubview:_separator];
+    _separator.translatesAutoresizingMaskIntoConstraints = NO;
+
+    
+    
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_errorLabel]-20-|"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(_errorLabel)]];
+    
 
     
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-70-[_cancelButton(45)]"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(_cancelButton)]];
+    
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-178-[_cancelButton(45)]"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(_cancelButton)]];
+    
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-178-[_loginButton(45)]"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(_loginButton)]];
     
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-60-[_usernameTextField]-80-|"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-60-[_separator]-60-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(_separator)]];
+    
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-60-[_usernameTextField]-60-|"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(_usernameTextField)]];
     
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-30-[signupBackground]-30-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(signupBackground)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-30-[passwordBackground]-30-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(passwordBackground)]];
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-55-[signupBackground]-25-[passwordBackground]"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(signupBackground, passwordBackground)]];
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-80-[_passwordTextField]-80-|"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-60-[_passwordTextField]-60-|"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(_passwordTextField)]];
@@ -164,29 +149,16 @@
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(_loginButton)]];
     
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-60-[_usernameTextField]-40-[_passwordTextField]-20-[_errorLabel]"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-60-[_usernameTextField(40)]-3-[_separator(2)]-3-[_passwordTextField(40)]-10-[_errorLabel]"
                                                                       options:0
                                                                       metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_usernameTextField, _passwordTextField, _errorLabel)]];
+                                                                        views:NSDictionaryOfVariableBindings(_usernameTextField, _separator, _passwordTextField, _errorLabel)]];
     
 
     
     
 
-    _seperator.layer.masksToBounds = YES;
-    _seperator.layer.borderColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.3].CGColor;
-    _seperator.layer.borderWidth = 1.0;
-    [self.view addSubview:_seperator];
-    _seperator.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-60-[_seperator]-60-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_seperator)]];
     
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-98-[_seperator(1)]"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_seperator)]];
     
     NSArray *allFields = @[_usernameTextField, _passwordTextField];
     _shakeView = [[AFViewShaker alloc] initWithViewsArray:allFields];
@@ -204,14 +176,20 @@
 
 
 -(void)loginButtonPressed{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Проверка данных";
+    
     [PFUser logInWithUsernameInBackground:self.usernameTextField.text password:self.passwordTextField.text
                                     block:^(PFUser *user, NSError *error) {
+                                        
                                         if (user) {
                                             [self performSegueWithIdentifier:@"loginMoveToPopularBooks" sender:self];
                                             NSLog(@"Logged in");
+                                            [hud hide:YES];
                                         } else {
                                             [_shakeView shake];
                                             [_errorLabel setText:@"данные введены неправильно"];
+                                            [hud hide:YES];
                                             //NSString *errorString = [error userInfo][@"error"];
                                             //NSLog(@"There is an error", errorString);
                                         }

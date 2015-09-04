@@ -52,8 +52,9 @@
     
     //[self getDataFromParse];
     UIButton *bgButton = [UIButton new];
-    bgButton.backgroundColor = [UIColor colorWithRed:255/255.0 green:249/255.0 blue:243/255.0 alpha:1.0];
+    //bgButton.backgroundColor = [UIColor colorWithRed:255/255.0 green:249/255.0 blue:243/255.0 alpha:1.0];
    // bgButton.layer.shadowColor = [UIColor brownColor].CGColor;
+    bgButton.backgroundColor = [UIColor colorWithRed:116/255.0 green:92/255.0 blue:78/255.0 alpha:1.0];
     UIBezierPath *bgShadowPath = [UIBezierPath bezierPathWithRect:bgButton.bounds];
     bgButton.layer.masksToBounds = NO;
     bgButton.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -67,7 +68,7 @@
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(bgButton)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bgButton(120)]"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bgButton(70)]"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(bgButton)]];
@@ -130,17 +131,18 @@
     
     
     //title label
-    _windowTitle.textAlignment = NSTextAlignmentLeft;
-    _windowTitle.textColor = [UIColor colorWithRed:83/255.0 green:48/255.0 blue:29/255.0 alpha:1];
-    _windowTitle.font = [UIFont fontWithName:@"IowanOldStyle-Bold" size:25];
+    _windowTitle.textAlignment = NSTextAlignmentCenter;
+    //_windowTitle.textColor = [UIColor colorWithRed:83/255.0 green:48/255.0 blue:29/255.0 alpha:1];
+    _windowTitle.textColor = [UIColor whiteColor];
+    _windowTitle.font = [UIFont fontWithName:@"Helvetica-Light" size:22];
     _windowTitle.text = @"Все книги";
     [self.view addSubview:_windowTitle];
     _windowTitle.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_windowTitle]-10-|"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-40-[_windowTitle]-40-|"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(_windowTitle)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-50-[_windowTitle]"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-30-[_windowTitle]"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(_windowTitle)]];
