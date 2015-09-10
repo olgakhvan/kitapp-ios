@@ -49,7 +49,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
                                                        NSForegroundColorAttributeName,
                                                        nil]
                                              forState:UIControlStateSelected];
-    UIImage *item0Image = [UIImage imageNamed:@"newIcon.png"];
+    UIImage *item0Image = [UIImage imageNamed:@"allBooksIcon.png"];
     item0Image = [item0Image scaledToSize:CGSizeMake(27, 27)];
     item0.image = item0Image;
     
@@ -57,7 +57,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
     item2Image = [item2Image scaledToSize:CGSizeMake(27, 27)];
     item2.image = item2Image;
     
-    UIImage *item1Image = [UIImage imageNamed:@"homeIcon.png"];
+    UIImage *item1Image = [UIImage imageNamed:@"addBookIcon.png"];
     item1Image = [item1Image scaledToSize:CGSizeMake(27, 27)];
     item1.image = item1Image;
     
@@ -66,7 +66,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
     item3.image = item3Image;*/
     
     item0.title = @"Все книги";
-    item1.title = @"Мои книги";
+    item1.title = @"Добавить книгу";
     item2.title = @"Профиль";
    // item3.title = @"Мои книги";
     
@@ -74,6 +74,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 
     
     self.tabBar.backgroundColor = [UIColor brownColor];
+    //UIImage *tabBarBackgroundImage = [UIImage imageNamed:@"tabBarBackgroundImage.png"];
+    //self.tabBar.backgroundImage = tabBarBackgroundImage;
 }
 
 - (void)didReceiveMemoryWarning {

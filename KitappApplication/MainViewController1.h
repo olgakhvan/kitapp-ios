@@ -22,6 +22,7 @@
 @property (weak, nonatomic) id<MainViewController1Delegate> delegate; 
 @property NSUInteger pageIndex;
 @property (nonatomic) NSString *imageFile;
-@property (nonatomic) NSString *pageText;
+@property (nonatomic) NSString *pageTitle;
+@property (nonatomic) NSString *pageDescription;
 
 @end

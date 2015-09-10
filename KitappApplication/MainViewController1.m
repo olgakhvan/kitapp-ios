@@ -13,9 +13,9 @@
 
 
 @property (nonatomic) UIImageView *logoImage;
-@property (nonatomic) UILabel *bg1Label;
-@property (nonatomic) UIImageView *bg1;
-
+@property (nonatomic) UILabel *titleLabel;
+@property (nonatomic) UIImageView *tutorialImage;
+@property (nonatomic) UILabel *descriptionLabel;
 @end
 
 @implementation MainViewController1
@@ -27,47 +27,80 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _bg1 = [UIImageView new];
-    _logoImage = [UIImageView new];
-    _bg1Label = [UILabel new];
+    
     
     //Colors
-    UIColor *redColor = [UIColor colorWithRed:221/255.0 green:66/255.0 blue:66/255.0 alpha:1.0];
+    UIColor *beigeLightColor = [UIColor colorWithRed:1.0 green:249/255.0 blue:243/255.0 alpha:1.0];
+    UIColor *beigeDarkColor = [UIColor colorWithRed:238/255.0 green:225/255.0 blue:208/255.0 alpha:1.0];
+    UIColor *darkBrownColor = [UIColor colorWithRed:117/255.0 green:91/255.0 blue:78/255.0 alpha:1];
+    self.view.backgroundColor = beigeLightColor;
     
     
     //bg1
-    _bg1.image = [UIImage imageNamed:self.imageFile];
-    [self.view addSubview:_bg1];
-    _bg1.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_bg1]-0-|"
+    _tutorialImage = [UIImageView new];
+    _tutorialImage.image = [UIImage imageNamed:self.imageFile];
+    _tutorialImage.backgroundColor = beigeLightColor;
+    [self.view addSubview:_tutorialImage];
+    NSString *platform = [UIDevice currentDevice].model;
+    if ([platform isEqualToString:@"iPhone3,1"] || [platform isEqualToString:@"iPhone3,3"] || [platform isEqualToString:@"iPhone4,1"]){
+            _tutorialImage.frame = CGRectMake(self.view.frame.size.width*0.2, self.view.frame.size.width*0.05, self.view.frame.size.width-2*self.view.frame.size.width*0.2, self.view.frame.size.width-2*self.view.frame.size.width*0.2);
+    }
+    else{
+            _tutorialImage.frame = CGRectMake(self.view.frame.size.width*0.1, self.view.frame.size.width*0.2, self.view.frame.size.width-2*self.view.frame.size.width*0.1, self.view.frame.size.width-2*self.view.frame.size.width*0.1);
+        NSLog(@"here");
+    }
+
+    
+    
+    //_tutorialImage.translatesAutoresizingMaskIntoConstraints = NO;
+    /*[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_tutorialImage]-20-|"
                                                                       options:0
                                                                       metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_bg1)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_bg1]-0-|"
+                                                                        views:NSDictionaryOfVariableBindings(_tutorialImage)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[_tutorialImage(230)]"
                                                                       options:0
                                                                       metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_bg1)]];
-    // main text
-    self.bg1Label.text = self.pageText;
-    self.bg1Label.textColor = redColor;
-    _bg1Label.font = [UIFont fontWithName:@"Helvetica-Light" size:15];
-    _bg1Label.textAlignment = NSTextAlignmentCenter;
-    _bg1Label.translatesAutoresizingMaskIntoConstraints = NO;
-    self.bg1Label.numberOfLines = 0;
-    [self.view addSubview:_bg1Label];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-30-[_bg1Label]-30-|"
+                                                                        views:NSDictionaryOfVariableBindings(_tutorialImage)]];*/
+    // title text
+    _titleLabel = [UILabel new];
+    self.titleLabel.text = self.pageTitle;
+    self.titleLabel.textColor = darkBrownColor;
+    _titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
+    _titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    self.titleLabel.numberOfLines = 3;
+    [self.view addSubview:_titleLabel];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_titleLabel]-20-|"
                                                                       options:0
                                                                       metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_bg1Label)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_bg1Label(50)]-100-|"
+                                                                        views:NSDictionaryOfVariableBindings(_titleLabel)]];
+
+    // description label
+    _descriptionLabel = [UILabel new];
+    self.descriptionLabel.text = self.pageDescription;
+    self.descriptionLabel.textColor = darkBrownColor;
+    _descriptionLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:16];
+    _descriptionLabel.textAlignment = NSTextAlignmentCenter;
+    _descriptionLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.descriptionLabel setLineBreakMode:NSLineBreakByWordWrapping];
+    _descriptionLabel.numberOfLines = 4;
+    [self.view addSubview:_descriptionLabel];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_descriptionLabel]-20-|"
                                                                       options:0
                                                                       metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_bg1Label)]];
+                                                                        views:NSDictionaryOfVariableBindings(_descriptionLabel)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_titleLabel]-5-[_descriptionLabel]-110-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(_titleLabel, _descriptionLabel)]];
+
+    
     
     //kitapp logo
+    _logoImage = [UIImageView new];
     _logoImage.image = [UIImage imageNamed:@"logo.png"];
     _logoImage.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:_logoImage];
+    /*[self.view addSubview:_logoImage];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-117-[_logoImage(110)]"
                                                                       options:0
                                                                       metrics:nil
@@ -75,7 +108,7 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-180-[_logoImage(102)]"
                                                                       options:0
                                                                       metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_logoImage)]];
+                                                                        views:NSDictionaryOfVariableBindings(_logoImage)]];*/
     
     
     

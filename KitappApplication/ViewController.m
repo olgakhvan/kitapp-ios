@@ -31,31 +31,15 @@
     _signupButton = [UIButton new];
     _loginButton = [UIButton new];
     _nextButton = [UIButton new];
-    
+    UIColor *beigeLightColor = [UIColor colorWithRed:1.0 green:249/255.0 blue:243/255.0 alpha:1.0];
+    UIColor *beigeDarkColor = [UIColor colorWithRed:238/255.0 green:225/255.0 blue:208/255.0 alpha:1.0];
+    UIColor *darkBrownColor = [UIColor colorWithRed:117/255.0 green:91/255.0 blue:78/255.0 alpha:1];
+    self.view.backgroundColor = beigeLightColor;
 
-    NSString *platform = [UIDevice currentDevice].model;
-    if ([platform isEqualToString:@"iPhone3,1"] || [platform isEqualToString:@"iPhone3,3"] || [platform isEqualToString:@"iPhone4,1"]){
-        self.backgrounds = @[@"bg1_4s", @"bg2_4s", @"bg3_4s"];
-    }
-    else{
-        if ([platform isEqualToString:@"iPhone5,1"] || [platform isEqualToString:@"iPhone5,2"] || [platform isEqualToString:@"iPhone5,3"] || [platform isEqualToString:@"iPhone5,4"] || [platform isEqualToString:@"iPhone6,1"] || [platform isEqualToString:@"iPhone6,2"]){
-                self.backgrounds = @[@"bg1_5s.jpg", @"bg2_5s.jpg", @"bg3_5s.jpg"];
-        }
-        else{
-            if ([platform isEqualToString:@"iPhone7,1"]){
-                self.backgrounds = @[@"bg1_6plus.jpg", @"bg2_6plus.jpg", @"bg3_6plus.jpg"];
-            }
-            else{
-                if ([platform isEqualToString:@"iPhone7,2"]){
-                    self.backgrounds = @[@"bg1_6.jpg", @"bg2_6.jpg", @"bg3_6.jpg"];
-                }
-                else{
-                    self.backgrounds = @[@"bg1_5s.jpg", @"bg2_5s.jpg", @"bg3_5s.jpg"];
-                }
-            }
-        }
-    }
-    self.pageTitles = @[@"Подари своим старым книгам вторую жизнь", @"Продавай свои старые книги", @"Находи книги, которые давно искал"];
+    self.backgrounds = @[@"1screen.png", @"2screen.png", @"3screen.png"];
+    self.pageTitles = @[@"Продавай старые книги", @"Покупай книги по доступным ценам", @"Знакомься с новыми людьми"];
+    self.pageDescription = @[@"Выстави на продажу книгу всего за несколько касаний, и она моментально появится на главной странице", @"Теперь букинист помещается в твоем мобильном телефоне! Находи то, что давно искал и покупай книги без посредников.", @"Договаривайся о встречах и находи новых друзей!"];
+    
 
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageVC"];
     self.pageViewController.dataSource = self;
@@ -71,60 +55,63 @@
 
     //signup button
     _signupButton.layer.masksToBounds = YES;
-    //_signupButton.layer.cornerRadius = 5.f;
-    _signupButton.layer.borderWidth = 1.f;
-    [_signupButton setTitle:@"Регистрация" forState:UIControlStateNormal];
-    _signupButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:14];
-    _signupButton.layer.borderColor = [UIColor colorWithRed:221/255.0 green:66/255.0 blue:66/255.0 alpha:1.0].CGColor;
-    [self.view addSubview:_signupButton];
+    _signupButton.layer.cornerRadius = 10.f;
+    //_signupButton.layer.borderWidth = 1.f;
     
+    [_signupButton setTitle:@"Регистрация" forState:UIControlStateNormal];
+    _signupButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:16];
+    //_signupButton.layer.borderColor = [UIColor colorWithRed:221/255.0 green:66/255.0 blue:66/255.0 alpha:1.0].CGColor;
+    
+    _signupButton.backgroundColor = darkBrownColor;
+    [_signupButton setTitleColor:beigeLightColor forState:UIControlStateNormal];
+    [self.view addSubview:_signupButton];
+    [_signupButton addTarget:self action:@selector(signupButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     _signupButton.translatesAutoresizingMaskIntoConstraints = NO;
     
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_signupButton(130)]"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-70-[_signupButton]-70-|"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(_signupButton)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_signupButton(45)]-15-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_signupButton)]];
-    [_signupButton addTarget:self action:@selector(signupButtonPressed:) forControlEvents:UIControlEventTouchDown];
     
     
     //login button
     _loginButton.layer.masksToBounds = YES;
-    [_loginButton setTitle:@"Войти" forState:UIControlStateNormal];
-    _loginButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:14];
-    _loginButton.layer.backgroundColor = [UIColor colorWithRed:221/255.0 green:66/255.0 blue:66/255.0 alpha:1.0].CGColor;
+    [_loginButton setTitle:@"Уже зарегистрированы? Вход" forState:UIControlStateNormal];
+    _loginButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
+    //_loginButton.layer.backgroundColor = [UIColor colorWithRed:221/255.0 green:66/255.0 blue:66/255.0 alpha:1.0].CGColor;
     [_loginButton addTarget:self action:@selector(loginButtonPressed:) forControlEvents:UIControlEventTouchDown];
+    [_loginButton setTitleColor:darkBrownColor forState:UIControlStateNormal];
     [self.view addSubview:_loginButton];
     
     _loginButton.translatesAutoresizingMaskIntoConstraints = NO;
     
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[_loginButton(130)]-20-|"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_loginButton]-20-|"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(_loginButton)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_loginButton(45)]-15-|"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_signupButton(35)]-[_loginButton(30)]-15-|"
                                                                       options:0
                                                                       metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_loginButton)]];
+                                                                        views:NSDictionaryOfVariableBindings(_signupButton,_loginButton)]];
     
     //next button
     _nextButton.layer.masksToBounds = YES;
-    [_nextButton setTitle:@"Дальше" forState:UIControlStateNormal];
+    [_nextButton setTitle:@"дальше" forState:UIControlStateNormal];
     _nextButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:14];
-    _nextButton.layer.backgroundColor = [UIColor colorWithRed:221/255.0 green:66/255.0 blue:66/255.0 alpha:1.0].CGColor;
+    [_nextButton setTitleColor:darkBrownColor forState:UIControlStateNormal];
+    _nextButton.layer.cornerRadius = 10.0;
+    _nextButton.layer.borderColor = darkBrownColor.CGColor;
+    _nextButton.layer.borderWidth = 1.0;
     [_nextButton addTarget:self action:@selector(nextButtonPressed:) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:_nextButton];
     
     _nextButton.translatesAutoresizingMaskIntoConstraints = NO;
     
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[_nextButton(130)]-20-|"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-80-[_nextButton]-80-|"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(_nextButton)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_nextButton(45)]-15-|"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_nextButton(35)]-15-|"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(_nextButton)]];
@@ -186,7 +173,8 @@
     // Create a new view controller and pass suitable data.
     MainViewController1 *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainVC1"];
     pageContentViewController.imageFile = self.backgrounds[index];
-    pageContentViewController.pageText = self.pageTitles[index];;
+    pageContentViewController.pageTitle = self.pageTitles[index];;
+    pageContentViewController.pageDescription = self.pageDescription[index];
     pageContentViewController.pageIndex = index;
     pageContentViewController.delegate = self;
     

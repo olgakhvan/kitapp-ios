@@ -10,163 +10,118 @@
 #import <Parse/Parse.h>
 #import <AFViewShaker.h>
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "UIImage+Scale.h"
 @interface LoginViewController ()
 
 @property (nonatomic) UITextField *usernameTextField;
 @property (nonatomic) UITextField *passwordTextField;
 @property (nonatomic) UIButton *loginButton;
 @property (nonatomic) UIImageView *bgImage;
-@property (nonatomic) UIButton *separator;
+@property (nonatomic) UIView *usernameTextFieldSeperator;
+@property (nonatomic) UIView *passwordTextFieldSeperator;
 @property (nonatomic) UIButton *cancelButton;
 @property (nonatomic) UILabel *errorLabel;
 @property (nonatomic) AFViewShaker *shakeView;
+@property (nonatomic) UIView *barBackgroundView;
+@property (nonatomic) UILabel *windowTitle;
+@property (nonatomic) UIScrollView *scrollView;
 @end
 
 @implementation LoginViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    //initialization
-    _usernameTextField = [UITextField new];
-    _passwordTextField = [UITextField new];
-    _loginButton = [UIButton new];
-    _bgImage = [UIImageView new];
-    _separator = [UIButton new];
-    _cancelButton = [UIButton new];
+    //colors
+    UIColor *beigeLightColor = [UIColor colorWithRed:1.0 green:249/255.0 blue:243/255.0 alpha:1.0];
+    UIColor *beigeDarkColor = [UIColor colorWithRed:215/255.0 green:201/255.0 blue:191/255.0 alpha:1.0];
+    UIColor *darkBrownColor = [UIColor colorWithRed:117/255.0 green:91/255.0 blue:78/255.0 alpha:1];
     
-    //bgImage
-    //if ()
-    _bgImage.image = [UIImage imageNamed:@"bg1_5s.jpg"];
-    [self.view addSubview:_bgImage];
-    _bgImage.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_bgImage]-0-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_bgImage)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_bgImage]-0-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_bgImage)]];
+    
+    NSDictionary *placeholderAttributes = @{
+                                            NSForegroundColorAttributeName : [UIColor colorWithRed:117/255.0 green:91/255.0 blue:78/255.0 alpha:0.5]
+                                            };
+    [super viewDidLoad];
+    _scrollView = [UIScrollView new];
+    _scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height-100);
+    _scrollView.frame = self.view.bounds;
+    [self.view addSubview:_scrollView];
+    
+    self.view.backgroundColor = beigeLightColor;
+    _barBackgroundView = [UIView new];
+    _barBackgroundView.backgroundColor = beigeDarkColor;
+    _barBackgroundView.frame = CGRectMake(0, 0, self.view.frame.size.width, 70);
+    [self.view addSubview:_barBackgroundView];
+    
+    //cancel button
+    _cancelButton = [UIButton new];
+    UIImage *cancelButtonImage = [UIImage imageNamed:@"closeIcon.png"];
+    cancelButtonImage = [cancelButtonImage scaledToSize:CGSizeMake(25, 25)];
+    [_cancelButton setImage:cancelButtonImage forState:UIControlStateNormal];
+    _cancelButton.layer.masksToBounds = YES;
+    _cancelButton.frame = CGRectMake(20, 30, 25, 25);
+    [self.view addSubview:_cancelButton];
+    [_cancelButton addTarget:self action:@selector(cancelButtonPressed) forControlEvents:UIControlEventTouchDown];
     
     //text fields
+    _usernameTextField = [UITextField new];
     _usernameTextField.textAlignment = NSTextAlignmentCenter;
-    _usernameTextField.textColor = [UIColor colorWithRed:82/255.0 green:82/255.0 blue:82/255.0 alpha:1.0];
-    _usernameTextField.font = [UIFont fontWithName:@"Helvetica-Light" size:16];
-    _usernameTextField.placeholder = @"Телефон";
-    _usernameTextField.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:_usernameTextField];
-    _usernameTextField.translatesAutoresizingMaskIntoConstraints = NO;
+    _usernameTextField.textColor = darkBrownColor;
+    [_usernameTextField setFont:[UIFont fontWithName:@"Helvetica-Light" size:18]];
+    NSAttributedString *placeholderString = [[NSAttributedString alloc] initWithString:@"Номер телефона" attributes:placeholderAttributes];
+    _usernameTextField.attributedPlaceholder = placeholderString;
+    _usernameTextField.keyboardType = UIKeyboardTypePhonePad;
+    _usernameTextField.frame = CGRectMake(20, 200, self.view.frame.size.width-40, 40);
+    [_scrollView addSubview:_usernameTextField];
+    _usernameTextFieldSeperator = [UIView new];
+    _usernameTextFieldSeperator.backgroundColor = darkBrownColor;
+    _usernameTextFieldSeperator.alpha = 0.3;
+    _usernameTextFieldSeperator.frame = CGRectMake(20, CGRectGetMaxY(_usernameTextField.frame)-5, self.view.frame.size.width-40, 1);
+    [_scrollView addSubview:_usernameTextFieldSeperator];
     
+    _passwordTextField = [UITextField new];
     _passwordTextField.textAlignment = NSTextAlignmentCenter;
-    _passwordTextField.textColor = [UIColor colorWithRed:82/255.0 green:82/255.0 blue:82/255.0 alpha:1.0];
-    _passwordTextField.font = [UIFont fontWithName:@"Helvetica-Light" size:16];
-    _passwordTextField.placeholder = @"Пароль";
+    _passwordTextField.textColor = darkBrownColor;
+    [_passwordTextField setFont:[UIFont fontWithName:@"Helvetica-Light" size:18]];
+    NSAttributedString *passwordString = [[NSAttributedString alloc] initWithString:@"Пароль" attributes:placeholderAttributes];
+    _passwordTextField.attributedPlaceholder = passwordString;
     _passwordTextField.secureTextEntry = YES;
-    _passwordTextField.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:_passwordTextField];
-    _passwordTextField.translatesAutoresizingMaskIntoConstraints = NO;
+    _passwordTextField.frame = CGRectMake(20, CGRectGetMaxY(_usernameTextField.frame), self.view.frame.size.width-40, 40);
+    [_scrollView addSubview:_passwordTextField];
+    _passwordTextFieldSeperator = [UIView new];
+    _passwordTextFieldSeperator.backgroundColor = darkBrownColor;
+    _passwordTextFieldSeperator.alpha = 0.3;
+    _passwordTextFieldSeperator.frame = CGRectMake(20, CGRectGetMaxY(_passwordTextField.frame)-5, self.view.frame.size.width-40, 1);
+    [_scrollView addSubview:_passwordTextFieldSeperator];
     
-    
-    _loginButton.layer.masksToBounds = YES;
-    _loginButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-    _loginButton.titleLabel.textColor = [UIColor whiteColor];
-    _loginButton.layer.backgroundColor =[UIColor colorWithRed:221/255.0 green:66/255.0 blue:66/255.0 alpha:1.0].CGColor;
-    _loginButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:13];
-    [_loginButton setTitle:@"Войти" forState:UIControlStateNormal];
-    [self.view addSubview:_loginButton];
-    
-    [_loginButton addTarget:self action:@selector(loginButtonPressed) forControlEvents:UIControlEventTouchDown];
-    _loginButton.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    _cancelButton.layer.masksToBounds = YES;
-    _cancelButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-    _cancelButton.titleLabel.textColor = [UIColor whiteColor];
-    _cancelButton.layer.borderColor = [UIColor colorWithRed:221/255.0 green:66/255.0 blue:66/255.0 alpha:1.0].CGColor;
-    _cancelButton.layer.borderWidth = 1.0;
-    //_cancelButton.layer.backgroundColor =[UIColor colorWithRed:221/255.0 green:66/255.0 blue:66/255.0 alpha:1.0].CGColor;
-    _cancelButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:13];
-    [_cancelButton setImage:[UIImage imageNamed:@"backArrow.png"] forState:UIControlStateNormal];
-    [self.view addSubview:_cancelButton];
-    
-    [_cancelButton addTarget:self action:@selector(cancelButtonPressed) forControlEvents:UIControlEventTouchDown];
-    _cancelButton.translatesAutoresizingMaskIntoConstraints = NO;
     _errorLabel = [UILabel new];
     [self.view addSubview:_errorLabel];
-    _errorLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
+    _errorLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:14];
     _errorLabel.textAlignment = NSTextAlignmentCenter;
     _errorLabel.textColor = [UIColor redColor];
-    _errorLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    _errorLabel.frame = CGRectMake(20, CGRectGetMaxY(_passwordTextField.frame), self.view.frame.size.width-40, 25);
+    [_scrollView addSubview:_errorLabel];
     
-    _separator.layer.masksToBounds = YES;
-    _separator.layer.borderColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.3].CGColor;
-    _separator.layer.borderWidth = 1.0;
-    [self.view addSubview:_separator];
-    _separator.translatesAutoresizingMaskIntoConstraints = NO;
+    _loginButton = [UIButton new];
+    _loginButton.layer.masksToBounds = YES;
+    _loginButton.layer.cornerRadius = 10.f;
+    _loginButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+    _loginButton.titleLabel.textColor = beigeLightColor;
+    _loginButton.layer.backgroundColor =darkBrownColor.CGColor;
+    _loginButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:16];
+    [_loginButton setTitle:@"Войти" forState:UIControlStateNormal];
+    _loginButton.frame = CGRectMake(85, CGRectGetMaxY(_errorLabel.frame)+10, self.view.frame.size.width-170, 42);
+    [_scrollView addSubview:_loginButton];
+    [_loginButton addTarget:self action:@selector(loginButtonPressed) forControlEvents:UIControlEventTouchDown];
+    
+    _windowTitle = [UILabel new];
+    [_windowTitle setTextColor:beigeLightColor];
+    _windowTitle.textAlignment = NSTextAlignmentCenter;
+    [_windowTitle setFont:[UIFont fontWithName:@"Helvetica-Regular" size:25]];
+    [_windowTitle setText:@"ВХОД"];
+    _windowTitle.frame = CGRectMake(80, 25, self.view.frame.size.width-160, 40);
+    [self.view addSubview:_windowTitle];
 
-    
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_errorLabel]-20-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_errorLabel)]];
-    
-
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-70-[_cancelButton(45)]"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_cancelButton)]];
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-178-[_cancelButton(45)]"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_cancelButton)]];
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-178-[_loginButton(45)]"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_loginButton)]];
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-60-[_separator]-60-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_separator)]];
-    
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-60-[_usernameTextField]-60-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_usernameTextField)]];
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-60-[_passwordTextField]-60-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_passwordTextField)]];
-    
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-125-[_loginButton]-80-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_loginButton)]];
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-60-[_usernameTextField(40)]-3-[_separator(2)]-3-[_passwordTextField(40)]-10-[_errorLabel]"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_usernameTextField, _separator, _passwordTextField, _errorLabel)]];
-    
-
-    
-    
-
-    
-    
     NSArray *allFields = @[_usernameTextField, _passwordTextField];
     _shakeView = [[AFViewShaker alloc] initWithViewsArray:allFields];
-    
-    
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -175,6 +130,7 @@
 }
 
 
+#pragma mark - IBOutlet Actions
 -(void)loginButtonPressed{
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"Проверка данных";
@@ -205,6 +161,32 @@
             [txt resignFirstResponder];
         }
     }
+}
+
+#pragma mark - Keyboard actions
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
+#pragma mark - scrollView insets
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+    _scrollView.contentInset = UIEdgeInsetsMake(0, 0, 400, 0);
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification
+{
+    _scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
 @end

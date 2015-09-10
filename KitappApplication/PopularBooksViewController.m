@@ -49,12 +49,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //colors
+    UIColor *brownColor = [UIColor colorWithRed:116/255.0 green:92/255.0 blue:78/255.0 alpha:1.0];
     
     //[self getDataFromParse];
     UIButton *bgButton = [UIButton new];
     //bgButton.backgroundColor = [UIColor colorWithRed:255/255.0 green:249/255.0 blue:243/255.0 alpha:1.0];
    // bgButton.layer.shadowColor = [UIColor brownColor].CGColor;
-    bgButton.backgroundColor = [UIColor colorWithRed:116/255.0 green:92/255.0 blue:78/255.0 alpha:1.0];
+    bgButton.backgroundColor = [UIColor colorWithRed:235/255.0 green:217/255.0 blue:198/255.0 alpha:1.0];
     UIBezierPath *bgShadowPath = [UIBezierPath bezierPathWithRect:bgButton.bounds];
     bgButton.layer.masksToBounds = NO;
     bgButton.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -133,8 +135,8 @@
     //title label
     _windowTitle.textAlignment = NSTextAlignmentCenter;
     //_windowTitle.textColor = [UIColor colorWithRed:83/255.0 green:48/255.0 blue:29/255.0 alpha:1];
-    _windowTitle.textColor = [UIColor whiteColor];
-    _windowTitle.font = [UIFont fontWithName:@"Helvetica-Light" size:22];
+    _windowTitle.textColor = brownColor;
+    _windowTitle.font = [UIFont fontWithName:@"Helvetica-Regular" size:25];
     _windowTitle.text = @"Все книги";
     [self.view addSubview:_windowTitle];
     _windowTitle.translatesAutoresizingMaskIntoConstraints = NO;

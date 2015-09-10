@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import <AFViewShaker.h>
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "UIImage+Scale.h"
 
 @interface SignupViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -24,6 +25,7 @@
 @property (nonatomic) AFViewShaker *userViewShake;
 @property (nonatomic) UILabel *errorLabel;
 @property (nonatomic) AFViewShaker *emptyViewShake;
+@property (nonatomic) UIScrollView *scrollView;
 
 @end
 
@@ -33,192 +35,129 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //initialization
-    _bgImage = [UIImageView new];
-    _signupButton = [UIButton new];
-    _nameTextField = [UITextField new];
-    _passwordTextField = [UITextField new];
-    _phoneNumberTextField = [UITextField new];
-    _avatarView = [UIImageView new];
-    _avatarButton = [UIButton new];
-    _cancelButton = [UIButton new];
-
-    //bgImage
-    _bgImage.image = [UIImage imageNamed:@"bg1_5s.jpg"];
-    [self.view addSubview:_bgImage];
     
-    _bgImage.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_bgImage]-0-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_bgImage)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_bgImage]-0-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_bgImage)]];
+    //colors
+    UIColor *beigeLightColor = [UIColor colorWithRed:1.0 green:249/255.0 blue:243/255.0 alpha:1.0];
+    UIColor *beigeDarkColor = [UIColor colorWithRed:215/255.0 green:201/255.0 blue:191/255.0 alpha:1.0];
+    UIColor *darkBrownColor = [UIColor colorWithRed:117/255.0 green:91/255.0 blue:78/255.0 alpha:1];
+    UIColor *brownColor = [UIColor colorWithRed:83/255.0 green:48/255.0 blue:29/255.0 alpha:1];
 
-    
+    _scrollView = [UIScrollView new];
+    _scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height-100);
+    _scrollView.frame = self.view.bounds;
+    [self.view addSubview:_scrollView];
+    self.view.backgroundColor = beigeLightColor;
     NSDictionary *attributes = @{
-                                 NSForegroundColorAttributeName : [UIColor colorWithRed:18/255.0 green:18/255.0 blue:18/255.0 alpha:0.2]
+                                 NSForegroundColorAttributeName : [UIColor colorWithRed:117/255.0 green:91/255.0 blue:78/255.0 alpha:0.5]
                                  };
-
-    
-    _nameTextField.textColor = [UIColor colorWithRed:82/255.0 green:82/255.0 blue:82/255.0 alpha:1.0];
-    _nameTextField.font = [UIFont fontWithName:@"Helvetica-Light" size:13];
-    _nameTextField.textAlignment = NSTextAlignmentLeft;
-    _nameTextField.backgroundColor = [UIColor whiteColor];
-    
-    NSAttributedString *attributedString1 = [[NSAttributedString alloc] initWithString:@"Введите имя пользователя" attributes:attributes];
-    _nameTextField.attributedPlaceholder = attributedString1;
-    [self.view addSubview:_nameTextField];
-    _nameTextField.translatesAutoresizingMaskIntoConstraints = NO;
-    [self setLeftMargin:_nameTextField];
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-120-[_nameTextField]-10-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_nameTextField)]];
-    
-    _passwordTextField.textColor = [UIColor colorWithRed:82/255.0 green:82/255.0 blue:82/255.0 alpha:1.0];
-    _passwordTextField.font = [UIFont fontWithName:@"Helvetica-Light" size:13];
-    _passwordTextField.textAlignment = NSTextAlignmentLeft;
-    NSAttributedString *attributedString3 = [[NSAttributedString alloc] initWithString:@"Пароль" attributes:attributes];
-    _passwordTextField.attributedPlaceholder = attributedString3;
-    _passwordTextField.backgroundColor = [UIColor whiteColor];
-    _passwordTextField.secureTextEntry = YES;
-    
-    [self setLeftMargin:_passwordTextField];
-    
-    [self.view addSubview:_passwordTextField];
-    
-    _passwordTextField.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-120-[_passwordTextField]-10-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_passwordTextField)]];
-    
-    _phoneNumberTextField.textColor = [UIColor colorWithRed:82/255.0 green:82/255.0 blue:82/255.0 alpha:1.0];
-    _phoneNumberTextField.font = [UIFont fontWithName:@"Helvetica-Light" size:13];
-    _passwordTextField.textAlignment = NSTextAlignmentLeft;
-    _passwordTextField.backgroundColor = [UIColor whiteColor];
-    NSAttributedString *attributedString4 = [[NSAttributedString alloc] initWithString:@"+7 xxx xxx xx xx" attributes:attributes];
-    _phoneNumberTextField.attributedPlaceholder = attributedString4;
-    _phoneNumberTextField.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:_phoneNumberTextField];
-    
-    _phoneNumberTextField.keyboardType = UIKeyboardTypePhonePad;
-    _phoneNumberTextField.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [self setLeftMargin:_phoneNumberTextField];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-120-[_phoneNumberTextField]-10-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_phoneNumberTextField)]];
     
     //avatar image
+    _avatarButton = [UIButton new];
     _avatarButton.clipsToBounds = YES;
     _avatarButton.clipsToBounds = YES;
-    _avatarButton.layer.cornerRadius = 45.f;
+    _avatarButton.layer.cornerRadius = 55.f;
+    _avatarButton.backgroundColor = [UIColor brownColor];
     [_avatarButton setImage:[UIImage imageNamed:@"noavatar.png"] forState:UIControlStateNormal];
-    [self.view addSubview:_avatarButton];
-    _avatarButton.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[_avatarButton(90)]"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_avatarButton)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-60-[_avatarButton(90)]"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_avatarButton)]];
-        [_avatarButton addTarget:self action:@selector(avatarUpload) forControlEvents:UIControlEventTouchDown];
+    _avatarButton.frame = CGRectMake(self.view.frame.size.width*0.5-55, 100, 110, 110);
+    [self.scrollView addSubview:_avatarButton];
+    [_avatarButton addTarget:self action:@selector(avatarUpload) forControlEvents:UIControlEventTouchDown];
     
-    
-    //signupButton
-    _signupButton.layer.masksToBounds = YES;
-    //_signupButton.layer.borderWidth = 1.f;
-    //_signupButton.layer.cornerRadius = 5.f;
-    _signupButton.backgroundColor = [UIColor colorWithRed:221/255.0 green:66/255.0 blue:66/255.0 alpha:1.0]
-    ;
-    _signupButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-    _signupButton.titleLabel.textColor = [UIColor whiteColor];
-    _signupButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:13];
-    [_signupButton setTitle:@"Готово" forState:UIControlStateNormal];
-    [self.view addSubview:_signupButton];
-    
-    [_signupButton addTarget:self action:@selector(signupButtonPressed) forControlEvents:UIControlEventTouchDown];
 
+    _nameTextField = [UITextField new];
+    _nameTextField.textColor = darkBrownColor;
+    [_nameTextField setFont:[UIFont fontWithName:@"Helvetica-Light" size:18]];
+    _nameTextField.textAlignment = NSTextAlignmentCenter;
+    NSAttributedString *attributedString1 = [[NSAttributedString alloc] initWithString:@"Введите имя пользователя" attributes:attributes];
+    _nameTextField.attributedPlaceholder = attributedString1;
+    [self setLeftMargin:_nameTextField];
+    _nameTextField.frame = CGRectMake(30, CGRectGetMaxY(_avatarButton.frame) + 30, self.view.frame.size.width - 60, 40);
+    [_scrollView addSubview:_nameTextField];
+    UIView *nameTextFieldSeperator = [UIView new];
+    nameTextFieldSeperator.backgroundColor = darkBrownColor;
+    nameTextFieldSeperator.alpha = 0.3;
+    nameTextFieldSeperator.frame = CGRectMake(30, CGRectGetMaxY(_nameTextField.frame)-5, self.view.frame.size.width-60, 1);
+    [_scrollView addSubview:nameTextFieldSeperator];
     
-    _signupButton.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-130-[_signupButton]-90-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_signupButton)]];
-
     
-    _cancelButton.layer.masksToBounds = YES;
-    _cancelButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-    _cancelButton.titleLabel.textColor = [UIColor whiteColor];
-    _cancelButton.layer.borderColor = [UIColor colorWithRed:221/255.0 green:66/255.0 blue:66/255.0 alpha:1.0].CGColor;
-    _cancelButton.layer.borderWidth = 1.0;
-    //_cancelButton.layer.backgroundColor =[UIColor colorWithRed:221/255.0 green:66/255.0 blue:66/255.0 alpha:1.0].CGColor;
-    _cancelButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:13];
-    [_cancelButton setImage:[UIImage imageNamed:@"backArrow.png"] forState:UIControlStateNormal];
-    [self.view addSubview:_cancelButton];
+    _phoneNumberTextField = [UITextField new];
+    _phoneNumberTextField.textColor = darkBrownColor;
+    [_phoneNumberTextField setFont:[UIFont fontWithName:@"Helvetica-Light" size:18]];
+    _phoneNumberTextField.textAlignment = NSTextAlignmentCenter;
+    NSAttributedString *attributedString4 = [[NSAttributedString alloc] initWithString:@"+7 xxx xxx xx xx" attributes:attributes];
+    _phoneNumberTextField.attributedPlaceholder = attributedString4;
+    _phoneNumberTextField.frame = CGRectMake(30, CGRectGetMaxY(_nameTextField.frame)+10, self.view.frame.size.width-60, 40);
+    [_scrollView addSubview:_phoneNumberTextField];
+    _phoneNumberTextField.keyboardType = UIKeyboardTypePhonePad;
+    UIView *phoneNumberTextFieldSeperator = [UIView new];
+    phoneNumberTextFieldSeperator.backgroundColor = darkBrownColor;
+    phoneNumberTextFieldSeperator.alpha = 0.3;
+    phoneNumberTextFieldSeperator.frame = CGRectMake(30, CGRectGetMaxY(_phoneNumberTextField.frame) - 5, self.view.frame.size.width-60, 1);
+    [_scrollView addSubview:phoneNumberTextFieldSeperator];
     
-    [_cancelButton addTarget:self action:@selector(cancelButtonPressed) forControlEvents:UIControlEventTouchDown];
-    _cancelButton.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-90-[_cancelButton(35)]"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_cancelButton)]];
+    _passwordTextField = [UITextField new];
+    _passwordTextField.textColor = [UIColor colorWithRed:82/255.0 green:82/255.0 blue:82/255.0 alpha:1.0];
+    [_passwordTextField setFont:[UIFont fontWithName:@"Helvetica-Light" size:18]];
+    _passwordTextField.textAlignment = NSTextAlignmentCenter;
+    NSAttributedString *attributedString3 = [[NSAttributedString alloc] initWithString:@"Пароль" attributes:attributes];
+    _passwordTextField.attributedPlaceholder = attributedString3;
+    _passwordTextField.secureTextEntry = YES;
+    [self setLeftMargin:_passwordTextField];
+    _passwordTextField.frame = CGRectMake(30, CGRectGetMaxY(_phoneNumberTextField.frame)+10, self.view.frame.size.width-60, 40);
+    [_scrollView addSubview:_passwordTextField];
+    UIView *passwordTextFieldSeperator = [UIView new];
+    passwordTextFieldSeperator.backgroundColor = darkBrownColor;
+    passwordTextFieldSeperator.alpha = 0.3;
+    passwordTextFieldSeperator.frame = CGRectMake(30, CGRectGetMaxY(_passwordTextField.frame) - 5, self.view.frame.size.width-60, 1);
+    [_scrollView addSubview:passwordTextFieldSeperator];
     
     _userViewShake = [[AFViewShaker alloc] initWithView:_nameTextField];
     NSArray *allFields = @[_nameTextField, _passwordTextField, _phoneNumberTextField];
     _emptyViewShake = [[AFViewShaker alloc] initWithViewsArray:allFields];
     _errorLabel = [UILabel new];
     _errorLabel.textAlignment = NSTextAlignmentCenter;
-    _errorLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
+    _errorLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:14];
     _errorLabel.textColor = [UIColor redColor];
-    [self.view addSubview:_errorLabel];
-    _errorLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[_errorLabel]-10-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_errorLabel)]];
+    _errorLabel.frame = CGRectMake(40, CGRectGetMaxY(_passwordTextField.frame)+10, self.view.frame.size.width-80, 25);
+    [_scrollView addSubview:_errorLabel];
+
+    //signupButton
+    _signupButton = [UIButton new];
+    _signupButton.layer.masksToBounds = YES;
+    _signupButton.layer.cornerRadius = 12.f;
+    _signupButton.backgroundColor = darkBrownColor;
+    _signupButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+    _signupButton.titleLabel.textColor = beigeLightColor;
+    _signupButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:16];
+    [_signupButton setTitle:@"Готово" forState:UIControlStateNormal];
+    [_signupButton addTarget:self action:@selector(signupButtonPressed) forControlEvents:UIControlEventTouchDown];
+    _signupButton.frame = CGRectMake(85, CGRectGetMaxY(_errorLabel.frame)+10, self.view.frame.size.width-170, 42);
+    [_scrollView addSubview:_signupButton];
+
+
+    UIView *upperBarBackground = [UIView new];
+    upperBarBackground.backgroundColor = beigeDarkColor;
+    //upperBarBackground.alpha = 0.2;
+    upperBarBackground.frame = CGRectMake(0, 0, self.view.frame.size.width, 70);
+    [self.view addSubview:upperBarBackground];
     
+    _cancelButton = [UIButton new];
+    _cancelButton.layer.masksToBounds = YES;
+    UIImage *cancelButtonImage = [UIImage imageNamed:@"closeIcon.png"];
+    cancelButtonImage = [cancelButtonImage scaledToSize:CGSizeMake(25, 25)];
+    [_cancelButton setImage:[UIImage imageNamed:@"closeIcon.png"] forState:UIControlStateNormal];
+    _cancelButton.frame = CGRectMake(20, 30, 25, 25);
+    [self.view addSubview:_cancelButton];
+    [_cancelButton addTarget:self action:@selector(cancelButtonPressed) forControlEvents:UIControlEventTouchDown];
     
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-60-[_nameTextField(30)]-5-[_phoneNumberTextField(30)]-5-[_passwordTextField(30)]-10-[_errorLabel]"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_nameTextField,_phoneNumberTextField, _passwordTextField,_errorLabel)]];
-    
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-190-[_signupButton(35)]"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_signupButton)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-190-[_cancelButton(35)]"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_cancelButton)]];
     //title
     UILabel *label = [UILabel new];
-    label.textColor = [UIColor whiteColor];
+    label.textColor = beigeLightColor;
     label.text = @"НОВЫЙ ПОЛЬЗОВАТЕЛЬ";
-    label.font = [UIFont fontWithName:@"Helvetica-Regular" size:15];
-    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont fontWithName:@"Helvetica-Regular" size:22];
+    label.textAlignment = NSTextAlignmentLeft;
     label.alpha = 0.8f;
+    label.frame = CGRectMake(80, 25, self.view.frame.size.width-20, 40);
     [self.view addSubview:label];
-    label.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[label]-10-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(label)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[label]"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(label)]];
 }
 
 
@@ -234,6 +173,31 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
+
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+    _scrollView.contentInset = UIEdgeInsetsMake(0, 0, 400, 0);
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification
+{
+    _scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+}
+
 -(void) signupButtonPressed{
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"Регистрация";
@@ -247,6 +211,7 @@
     PFFile *imageFile = [PFFile fileWithName:@"avatar.jpeg" data:imageData];
     if (([_nameTextField.text isEqualToString:@""]) || ([_passwordTextField.text isEqualToString:@""] || [_phoneNumberTextField.text isEqualToString:@""])){
         [_errorLabel setText:@"Пожалуйста, введите все данные"];
+        [hud hide:YES];
         [_emptyViewShake shake];
     }
     else{
@@ -256,15 +221,16 @@
                 user[@"name"] = _nameTextField.text;
                 
                 [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                    [hud hide:YES];
                     if (!error) {
+                        [hud hide:YES];
                         [self enterApp];
                         NSLog(@"Registered");
                     } else {
-                        
+                        [hud hide:YES];
                         //NSLog(@"%s, %@", __FUNCTION__, error.localizedDescription);
                         
                         if (error.code == 202){
+                            [hud hide:YES];
                             [_userViewShake shake];
                             [_errorLabel setText:@"Такой телефон уже зарегистрирован."];
                         }
@@ -307,11 +273,7 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    for (UIView * txt in self.view.subviews){
-        if ([txt isKindOfClass:[UITextField class]] && [txt isFirstResponder]) {
-            [txt resignFirstResponder];
-        }
-    }
+    [_scrollView endEditing:YES];
 }
 
 @end
