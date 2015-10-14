@@ -68,22 +68,20 @@
     _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     _titleLabel.numberOfLines = 3;
     [_scrollView addSubview:_titleLabel];
-   // CGSize expectedTitleLabelSize = [_titleLabel.text boundingRectWithSize:CGSizeMake(self.view.frame.size.width-120, 0) options:NSStringDrawingUsesLineFragmentOrigin: attributes: @{_titleLabel.font} context:nil].size;
-    
-    _titleLabel.frame = CGRectMake(30, _imageView.frame.size.height+60, self.view.frame.size.width-60, 100);
+    _titleLabel.frame = CGRectMake(30, _imageView.frame.size.height+60, _scrollView.frame.size.width-60, 100);
+    //NSLog(@"title label frame %f %f", (_imageView.frame.size.height+60), (_scrollView.frame.size.width-60));
     
     //author label
     _authorLabel = [UILabel new];
     _authorLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:18];
     _authorLabel.textColor = [UIColor colorWithRed:131/255.0 green:81/255.0 blue:54/255.0 alpha:1];
     _authorLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    _authorLabel.numberOfLines = 3;
     _authorLabel.text = [NSString stringWithFormat:@"Автор: %@", self.book.author ];
     _authorLabel.textAlignment = NSTextAlignmentCenter;
+    _authorLabel.numberOfLines = 3;
     [_scrollView addSubview:_authorLabel];
-    CGSize expectedAuthorLabelSize = [_authorLabel.text boundingRectWithSize:CGSizeMake(self.view.frame.size.width-120, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ @"font" : _authorLabel.font} context:nil].size;
-    
-   _authorLabel.frame = CGRectMake(25, CGRectGetMaxY(_titleLabel.frame), self.view.frame.size.width-50, 40);
+   _authorLabel.frame = CGRectMake(25, CGRectGetMaxY(_titleLabel.frame), self.view.frame.size.width-50, 50);
+    //[_authorLabel sizeToFit];
 
     //seperator1
     UIButton *seperator1 = [UIButton new];
@@ -107,23 +105,25 @@
     //call button
     _callButton = [UIButton new];
     [_callButton setTitle:@"позвонить" forState:UIControlStateNormal];
-    [_callButton setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
-    _callButton.layer.borderColor = [UIColor brownColor].CGColor;
-    _callButton.layer.borderWidth = 1.0;
-    _callButton.titleLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:14];
-    _callButton.frame = CGRectMake(80, CGRectGetMaxY(_sellerLabel.frame)+5, self.view.frame.size.width-160, 30);
+    [_callButton setTitleColor:[UIColor colorWithRed:255/255.0 green:247/255.0 blue:240/255.0 alpha:1.0] forState:UIControlStateNormal];
+    //_callButton.layer.borderColor = [UIColor brownColor].CGColor;
+    //_callButton.layer.borderWidth = 1.0;
+    _callButton.layer.cornerRadius = 7.0;
+    _callButton.backgroundColor = [UIColor brownColor];
+    _callButton.titleLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:16];
+    _callButton.frame = CGRectMake(100, CGRectGetMaxY(_sellerLabel.frame)+5, self.view.frame.size.width-200, 32);
     [_scrollView addSubview:_callButton];
     [_callButton addTarget:self action:@selector(callButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     
     //genre label
     _genreLabel = [UILabel new];
-    _genreLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:14];
+    _genreLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:18];
     _genreLabel.textColor = [UIColor colorWithRed:131/255.0 green:81/255.0 blue:54/255.0 alpha:1];
     _genreLabel.adjustsFontSizeToFitWidth = YES;
-    _genreLabel.text = [NSString stringWithFormat:@"Жанр: %@", self.book.genre ];
+    _genreLabel.text = [NSString stringWithFormat:@"Жанр: %@", self.book.genre[@"title"]];
     _genreLabel.textAlignment = NSTextAlignmentLeft;
     [_scrollView addSubview:_genreLabel];
-    _genreLabel.frame = CGRectMake(30, CGRectGetMaxY(_callButton.frame)+20, self.imageView.frame.size.width, 40);
+    _genreLabel.frame = CGRectMake(30, CGRectGetMaxY(_callButton.frame)+20, 200, 40);
     
     //price label
     _priceLabel = [UILabel new];
@@ -140,15 +140,16 @@
 
     //description
     _descriptionLabel = [UILabel new];
-    _descriptionLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:16];
+    _descriptionLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:18];
     _descriptionLabel.textColor = [UIColor colorWithRed:131/255.0 green:81/255.0 blue:54/255.0 alpha:1];
     _descriptionLabel.lineBreakMode = NSLineBreakByWordWrapping;
     _descriptionLabel.numberOfLines = 0;
     _descriptionLabel.text = _book.descr;
-    _descriptionLabel.textAlignment = NSTextAlignmentLeft;
+    _descriptionLabel.textAlignment = NSTextAlignmentJustified;
     [_scrollView addSubview:_descriptionLabel];
-    _descriptionLabel.frame = CGRectMake(30, CGRectGetMaxY(_genreLabel.frame)+10, self.view.frame.size.width-60, 250);
-    _scrollView.contentSize = CGSizeMake(CGRectGetWidth(_scrollView.frame), CGRectGetMaxY(_descriptionLabel.frame));
+    _descriptionLabel.frame = CGRectMake(30, CGRectGetMaxY(_genreLabel.frame)+10, self.view.frame.size.width-60, 100);
+    [_descriptionLabel sizeToFit];
+    _scrollView.contentSize = CGSizeMake(CGRectGetWidth(_scrollView.frame), CGRectGetMaxY(_descriptionLabel.frame)+20);
     
     //back button
     _backButton = [UIButton new];
@@ -197,6 +198,10 @@
         }
     }];
     NSLog(@"telephone number %@ ", user[@"telephone"]);
+    
+
+    //[self.titleLabel sizeToFit];
+    //[self.descriptionLabel sizeToFit];
     
 
 

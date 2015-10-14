@@ -6,6 +6,5 @@ pod 'SVProgressHUD', :head
 pod 'AASpringRefresh'
 pod 'AFViewShaker', '~> 0.0.2'
 pod 'MBProgressHUD', '~> 0.9.1'
-pod 'JTProgressHUD’
-
-
+pod 'TOCropViewController'
+pod 'MBTwitterScroll'

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5C65A8114C3DC7DC39C9D16D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 275CD577A95A2B6AD80141DB /* libPods.a */; };
+		91032BC51BA9356D00E3997B /* buttonNormalStateImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 91032BC31BA9356D00E3997B /* buttonNormalStateImage.png */; };
+		91032BC61BA9356D00E3997B /* buttonTouchDownStateImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 91032BC41BA9356D00E3997B /* buttonTouchDownStateImage.png */; };
 		912696041B79B7E600825912 /* UIDeviceHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 912696031B79B7E600825912 /* UIDeviceHardware.m */; };
 		91296AD01B4BF05000693E8D /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91296ACF1B4BF05000693E8D /* MyProfileViewController.m */; };
 		91296AD31B4CF68E00693E8D /* AddNewBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91296AD21B4CF68E00693E8D /* AddNewBookViewController.m */; };
@@ -24,6 +26,7 @@
 		9153CE4B1B9D507C00574534 /* heartCircleIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9153CE461B9D507C00574534 /* heartCircleIcon.png */; };
 		9153CE4C1B9D507C00574534 /* trashBinCircleIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9153CE471B9D507C00574534 /* trashBinCircleIcon.png */; };
 		9153CE4E1B9D51D500574534 /* tabBarBackgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 9153CE4D1B9D51D500574534 /* tabBarBackgroundImage.png */; };
+		9158DDB51BB915D50051467E /* doneTextButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9158DDB41BB915D50051467E /* doneTextButton.png */; };
 		91607D131B4E667900B30049 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91607D121B4E667900B30049 /* TabBarController.m */; };
 		91607D291B53D63F00B30049 /* heartIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91607D281B53D63F00B30049 /* heartIcon.png */; };
 		91607D2B1B53D7DB00B30049 /* myProfileIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91607D2A1B53D7DB00B30049 /* myProfileIcon.png */; };
@@ -58,6 +61,7 @@
 		918957331B9EF77E007AF359 /* 3screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 918957301B9EF77E007AF359 /* 3screen.png */; };
 		918957361BA05F2E007AF359 /* 1screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 918957341BA05F2E007AF359 /* 1screen.png */; };
 		918957371BA05F2E007AF359 /* 2screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 918957351BA05F2E007AF359 /* 2screen.png */; };
+		91A59C0C1BA9887C00EC659D /* doneButtonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 91A59C0B1BA9887C00EC659D /* doneButtonImage.png */; };
 		91C61F1A1B68EFDF00550E44 /* plist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91C61F191B68EFDF00550E44 /* plist.plist */; };
 		91C61F1E1B6A3E3100550E44 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C61F1C1B6A3E3100550E44 /* Fabric.framework */; };
 		91C61F1F1B6A3E3100550E44 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C61F1D1B6A3E3100550E44 /* Crashlytics.framework */; };
@@ -83,6 +87,8 @@
 		021D2E78299435F5B4DAB645 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		275CD577A95A2B6AD80141DB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		68031C8FD573F01B247A6229 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		91032BC31BA9356D00E3997B /* buttonNormalStateImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonNormalStateImage.png; path = Images.xcassets/buttonNormalStateImage.png; sourceTree = "<group>"; };
+		91032BC41BA9356D00E3997B /* buttonTouchDownStateImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonTouchDownStateImage.png; path = Images.xcassets/buttonTouchDownStateImage.png; sourceTree = "<group>"; };
 		912696021B79B7E600825912 /* UIDeviceHardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDeviceHardware.h; sourceTree = "<group>"; };
 		912696031B79B7E600825912 /* UIDeviceHardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDeviceHardware.m; sourceTree = "<group>"; };
 		91296ACE1B4BF05000693E8D /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
@@ -103,6 +109,7 @@
 		9153CE461B9D507C00574534 /* heartCircleIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heartCircleIcon.png; path = Images.xcassets/heartCircleIcon.png; sourceTree = "<group>"; };
 		9153CE471B9D507C00574534 /* trashBinCircleIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trashBinCircleIcon.png; path = Images.xcassets/trashBinCircleIcon.png; sourceTree = "<group>"; };
 		9153CE4D1B9D51D500574534 /* tabBarBackgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabBarBackgroundImage.png; path = Images.xcassets/tabBarBackgroundImage.png; sourceTree = "<group>"; };
+		9158DDB41BB915D50051467E /* doneTextButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = doneTextButton.png; path = Images.xcassets/doneTextButton.png; sourceTree = "<group>"; };
 		91607D111B4E667900B30049 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		91607D121B4E667900B30049 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		91607D281B53D63F00B30049 /* heartIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heartIcon.png; path = Images.xcassets/heartIcon.png; sourceTree = "<group>"; };
@@ -151,6 +158,7 @@
 		918957301B9EF77E007AF359 /* 3screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3screen.png; path = Images.xcassets/3screen.png; sourceTree = "<group>"; };
 		918957341BA05F2E007AF359 /* 1screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1screen.png; path = Images.xcassets/1screen.png; sourceTree = "<group>"; };
 		918957351BA05F2E007AF359 /* 2screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2screen.png; path = Images.xcassets/2screen.png; sourceTree = "<group>"; };
+		91A59C0B1BA9887C00EC659D /* doneButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = doneButtonImage.png; path = Images.xcassets/doneButtonImage.png; sourceTree = "<group>"; };
 		91C61F191B68EFDF00550E44 /* plist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plist.plist; sourceTree = "<group>"; };
 		91C61F1C1B6A3E3100550E44 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		91C61F1D1B6A3E3100550E44 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -363,6 +371,10 @@
 		917701691B42B786002864D1 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9158DDB41BB915D50051467E /* doneTextButton.png */,
+				91A59C0B1BA9887C00EC659D /* doneButtonImage.png */,
+				91032BC31BA9356D00E3997B /* buttonNormalStateImage.png */,
+				91032BC41BA9356D00E3997B /* buttonTouchDownStateImage.png */,
 				918957341BA05F2E007AF359 /* 1screen.png */,
 				918957351BA05F2E007AF359 /* 2screen.png */,
 				918957301B9EF77E007AF359 /* 3screen.png */,
@@ -549,6 +561,7 @@
 				9177018C1B43E7A2002864D1 /* searchBarBg.png in Resources */,
 				91296B0A1B4D9FA700693E8D /* noavatar.png in Resources */,
 				91296B121B4DA15000693E8D /* Mantika Book W1G.otf in Resources */,
+				91032BC61BA9356D00E3997B /* buttonTouchDownStateImage.png in Resources */,
 				917700F41B42869D002864D1 /* Main.storyboard in Resources */,
 				91296B111B4DA15000693E8D /* Mantika Book W1G Italic.otf in Resources */,
 				91607D2D1B54D24600B30049 /* trashBinIcon.png in Resources */,
@@ -571,9 +584,12 @@
 				917701641B42B53C002864D1 /* bg3_4s.jpg in Resources */,
 				9153CE4E1B9D51D500574534 /* tabBarBackgroundImage.png in Resources */,
 				917701621B42B53C002864D1 /* bg2_6.jpg in Resources */,
+				9158DDB51BB915D50051467E /* doneTextButton.png in Resources */,
 				9177015F1B42B53C002864D1 /* bg1_6plus.jpg in Resources */,
 				917701681B42B53C002864D1 /* logo.png in Resources */,
 				91D2045E1B4DAD950095A2E9 /* backIcon.png in Resources */,
+				91A59C0C1BA9887C00EC659D /* doneButtonImage.png in Resources */,
+				91032BC51BA9356D00E3997B /* buttonNormalStateImage.png in Resources */,
 				91607D2B1B53D7DB00B30049 /* myProfileIcon.png in Resources */,
 				91CB157B1B590AEB00C352B0 /* logoutIcon.png in Resources */,
 				918957361BA05F2E007AF359 /* 1screen.png in Resources */,

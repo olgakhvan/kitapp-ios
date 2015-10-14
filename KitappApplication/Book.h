@@ -16,7 +16,7 @@
 @property (nonatomic) NSString *descr;
 @property (nonatomic) NSNumber *price;
 @property (nonatomic) PFFile *image;
-@property (nonatomic) NSString *genre;
+@property (nonatomic) PFObject *genre;
 @property (nonatomic) NSString *location;
 
 + (NSString *)parseClassName;

@@ -124,7 +124,8 @@
     _signupButton = [UIButton new];
     _signupButton.layer.masksToBounds = YES;
     _signupButton.layer.cornerRadius = 12.f;
-    _signupButton.backgroundColor = darkBrownColor;
+    [_signupButton setBackgroundImage:[UIImage imageNamed:@"buttonNormalStateImage.png"] forState:UIControlStateNormal];
+    [_signupButton setBackgroundImage:[UIImage imageNamed:@"buttonTouchDownStateImage.png"] forState:UIControlStateHighlighted];
     _signupButton.titleLabel.textAlignment = NSTextAlignmentCenter;
     _signupButton.titleLabel.textColor = beigeLightColor;
     _signupButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:16];

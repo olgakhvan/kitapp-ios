@@ -10,16 +10,119 @@
 
 @implementation TableViewCell
 
--(instancetype) initWithStyle:(UITableViewCellStyle)style title:(NSString *)title andAuthor:(NSString *)author
-{
-    self = [super init];
-    if (self)
-    {
-        self.title = title;
-        self.author = author;
+-(instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
+    if (self){
+        NSLog(@"I am in the init with frame");
+        [self customInit];
     }
-   // self.backgroundColor = [UIColor colorWithRed:255/255.0 green:247/255.0 blue:240/255.0 alpha:1.0];
     return self;
 }
 
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+      //  NSLog(@"I am in the init with coder");
+        [self customInit];
+    }
+    return self;
+}
+
+-(void) customInit
+{
+    //colors
+    
+    //NSLog(@"I am in the init for cell");
+    UIColor *brownRedColor = [UIColor colorWithRed:83/255.0 green:48/255.0 blue:29/255.0 alpha:1];
+    UIColor *beigeLightColor = [UIColor colorWithRed:255/255.0 green:249/255.0 blue:243/255.0 alpha:1];
+    UIColor *beigeColor = [UIColor colorWithRed:238/255.0 green:225/255.0 blue:208/255.0 alpha:1];
+    
+    //book image
+    _bookImage = [UIImageView new];
+    _bookImage.contentMode = UIViewContentModeScaleAspectFill;
+    _bookImage.frame = CGRectMake(10, 10,150,210);
+    [self.contentView addSubview:_bookImage];
+    
+    //title and author labels
+    _titleLabel = [UILabel new];
+    _titleLabel.numberOfLines = 2;
+    _titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
+    [_titleLabel setTextColor:brownRedColor];
+    _titleLabel.frame = CGRectMake(CGRectGetMaxX(_bookImage.frame), 10, self.contentView.frame.size.width - _bookImage.frame.size.width - 5, 50);
+    [self.contentView addSubview:_titleLabel];
+    
+    
+    self.authorLabel = [UILabel new];
+    //self.authorLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    self.authorLabel.numberOfLines = 2;
+    self.authorLabel.adjustsFontSizeToFitWidth = YES;
+    self.authorLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:14];
+    self.authorLabel.textColor = [UIColor colorWithRed:83/255.0 green:48/255.0 blue:29/255.0 alpha:1];
+    [_authorLabel sizeToFit];
+    _authorLabel.frame = CGRectMake(CGRectGetMaxX(_bookImage.frame), CGRectGetMaxY(_titleLabel.frame), self.contentView.frame.size.width - _bookImage.frame.size.width - 5, 50);
+    [self.contentView addSubview:_authorLabel];
+    
+    
+    //price label
+    _priceLabel = [UILabel new];
+    // self.priceLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    self.priceLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.priceLabel.numberOfLines = 1;
+    self.priceLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:14];
+    self.priceLabel.textColor = [UIColor brownColor];
+    [_priceLabel sizeToFit];
+    _priceLabel.frame = CGRectMake(CGRectGetMaxX(_bookImage.frame), CGRectGetMaxY(_authorLabel.frame), 80, 30);
+    [self.contentView addSubview:_priceLabel];
+    
+    //delete button
+    _deleteButton = [UIButton new];
+    _deleteButton.frame = CGRectMake(self.contentView.frame.size.width-40, self.contentView.frame.size.height-40, 30, 30);
+    _deleteButton.layer.cornerRadius = 15.f;
+    [_deleteButton setImage:[UIImage imageNamed:@"trashBinCircleIcon.png"] forState:UIControlStateNormal];
+    [_deleteButton addTarget:self action:@selector(deleteButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    
+    //like button
+    _likeButton = [UIButton new];
+    _likeButton.frame = CGRectMake(self.contentView.frame.size.width-40, self.contentView.frame.size.height-40, 30, 30);
+    _likeButton.layer.cornerRadius = 15.f;
+    [_likeButton setImage:[UIImage imageNamed:@"heartCircleIcon.png"] forState:UIControlStateNormal];
+    [_likeButton addTarget:self action:@selector(likeButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    _likeButton.hidden = YES;
+}
+
+-(void)layoutSubviews{
+    [super layoutSubviews];
+}
+
+-(void) deleteButtonPressed: (UIButton *) button
+{
+    if (self.delegate)
+    {
+        if ([self.delegate respondsToSelector:@selector(cell:deleteButtonPressed:)])
+        {
+            [self.delegate cell:self deleteButtonPressed:button];
+        }
+    }
+}
+
+-(void) likeButtonPressed: (UIButton *)button
+{
+    if (self.delegate)
+    {
+        if ([self.delegate respondsToSelector:@selector(cell:likeButtonPressed:)])
+        {
+            [self.delegate cell:self likeButtonPressed:button];
+        }
+    }
+}
+
+
 @end
+
+
+
+
+
+
+

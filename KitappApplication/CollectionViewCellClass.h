@@ -22,13 +22,11 @@
 @interface CollectionViewCellClass : UICollectionViewCell
 @property (nonatomic) UIImageView *imageView;
 
-//@property (nonatomic) UIButton *reviewButton;
-
 @property (nonatomic) UILabel *titleLabel;
 
 @property (nonatomic) UIButton *deleteButton;
 
-@property (nonatomic) UIButton *bookmarkButton;
+@property (nonatomic) UIButton *likeButton;
 @property (nonatomic) UILabel *priceLabel;
 @property (nonatomic) UILabel *authorLabel;
 @property (nonatomic) BOOL chosen;

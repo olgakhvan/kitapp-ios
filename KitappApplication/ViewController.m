@@ -34,6 +34,8 @@
     UIColor *beigeLightColor = [UIColor colorWithRed:1.0 green:249/255.0 blue:243/255.0 alpha:1.0];
     UIColor *beigeDarkColor = [UIColor colorWithRed:238/255.0 green:225/255.0 blue:208/255.0 alpha:1.0];
     UIColor *darkBrownColor = [UIColor colorWithRed:117/255.0 green:91/255.0 blue:78/255.0 alpha:1];
+    UIColor *brownReddishColor = [UIColor colorWithRed:138/255.0 green:82/255.0 blue:51/255.0 alpha:1];
+    
     self.view.backgroundColor = beigeLightColor;
 
     self.backgrounds = @[@"1screen.png", @"2screen.png", @"3screen.png"];
@@ -56,13 +58,13 @@
     //signup button
     _signupButton.layer.masksToBounds = YES;
     _signupButton.layer.cornerRadius = 10.f;
-    //_signupButton.layer.borderWidth = 1.f;
     
-    [_signupButton setTitle:@"Регистрация" forState:UIControlStateNormal];
     _signupButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:16];
-    //_signupButton.layer.borderColor = [UIColor colorWithRed:221/255.0 green:66/255.0 blue:66/255.0 alpha:1.0].CGColor;
+    //[_signupButton setBackgroundColor:darkBrownColor];
     
-    _signupButton.backgroundColor = darkBrownColor;
+    [_signupButton setBackgroundImage:[UIImage imageNamed:@"buttonNormalStateImage.png"] forState:UIControlStateNormal];
+    [_signupButton setBackgroundImage:[UIImage imageNamed:@"buttonTouchDownStateImage.png"] forState:UIControlStateHighlighted];
+    [_signupButton setTitle:@"Регистрация" forState:UIControlStateNormal];
     [_signupButton setTitleColor:beigeLightColor forState:UIControlStateNormal];
     [self.view addSubview:_signupButton];
     [_signupButton addTarget:self action:@selector(signupButtonPressed:) forControlEvents:UIControlEventTouchUpInside];

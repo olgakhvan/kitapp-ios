@@ -105,7 +105,8 @@
     _loginButton.layer.cornerRadius = 10.f;
     _loginButton.titleLabel.textAlignment = NSTextAlignmentCenter;
     _loginButton.titleLabel.textColor = beigeLightColor;
-    _loginButton.layer.backgroundColor =darkBrownColor.CGColor;
+    [_loginButton setBackgroundImage:[UIImage imageNamed:@"buttonNormalStateImage.png"] forState:UIControlStateNormal];
+    [_loginButton setBackgroundImage:[UIImage imageNamed:@"buttonTouchDownStateImage.png"] forState:UIControlStateHighlighted];
     _loginButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:16];
     [_loginButton setTitle:@"Войти" forState:UIControlStateNormal];
     _loginButton.frame = CGRectMake(85, CGRectGetMaxY(_errorLabel.frame)+10, self.view.frame.size.width-170, 42);

@@ -28,18 +28,22 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIColor *beigeLightColor = [UIColor colorWithRed:1.0 green:249/255.0 blue:243/255.0 alpha:1.0];
+    UIColor *beigeDarkColor = [UIColor colorWithRed:215/255.0 green:201/255.0 blue:191/255.0 alpha:1.0];
+    UIColor *darkBrownColor = [UIColor colorWithRed:117/255.0 green:91/255.0 blue:78/255.0 alpha:1];
+    UIColor *brownColor = [UIColor colorWithRed:83/255.0 green:48/255.0 blue:29/255.0 alpha:1];
+    
     UITabBar *tabBar = self.tabBar;
     UITabBarItem *item0 = [tabBar.items objectAtIndex:0];
     UITabBarItem *item1 = [tabBar.items objectAtIndex:1];
     UITabBarItem *item2 = [tabBar.items objectAtIndex:2];
-  //  UITabBarItem *item3 = [tabBar.items objectAtIndex:3];
-
     tabBar.tintColor = [UIColor brownColor];
     
-    tabBar.backgroundColor = UIColorFromRGB(0xABABAB);
+    //tabBar.backgroundImage = [UIImage imageNamed:@"tabBarBackgroundImage.png"];
+    //tabBar.alpha = 1.0;
     
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                       [UIColor whiteColor], NSForegroundColorAttributeName,
+                                                       [UIColor grayColor], NSForegroundColorAttributeName,
                                                        nil] forState:UIControlStateNormal];
     
     UIColor *titleHighlightedColor = [UIColor brownColor];
@@ -53,29 +57,19 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
     item0Image = [item0Image scaledToSize:CGSizeMake(27, 27)];
     item0.image = item0Image;
     
-    UIImage *item2Image = [UIImage imageNamed:@"myProfileIcon.png"];
-    item2Image = [item2Image scaledToSize:CGSizeMake(27, 27)];
-    item2.image = item2Image;
-    
     UIImage *item1Image = [UIImage imageNamed:@"addBookIcon.png"];
     item1Image = [item1Image scaledToSize:CGSizeMake(27, 27)];
     item1.image = item1Image;
     
-    /*UIImage *item3Image = [UIImage imageNamed:@"homeIcon.png"];
-    item3Image = [item3Image scaledToSize:CGSizeMake(27, 27)];
-    item3.image = item3Image;*/
-    
+    UIImage *item2Image = [UIImage imageNamed:@"myProfileIcon.png"];
+    item2Image = [item2Image scaledToSize:CGSizeMake(27, 27)];
+    item2.image = item2Image;
+
     item0.title = @"Все книги";
     item1.title = @"Добавить книгу";
     item2.title = @"Профиль";
-   // item3.title = @"Мои книги";
-    
-    
+    tabBar.tintColor =  [UIColor brownColor];
 
-    
-    self.tabBar.backgroundColor = [UIColor brownColor];
-    //UIImage *tabBarBackgroundImage = [UIImage imageNamed:@"tabBarBackgroundImage.png"];
-    //self.tabBar.backgroundImage = tabBarBackgroundImage;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -84,14 +78,6 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Assign tab bar item with titles
-
-    
-    /*[tabBarItem1 setFinishedSelectedImage:[UIImage imageNamed:@"home_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"home.png"]];
-    [tabBarItem2 setFinishedSelectedImage:[UIImage imageNamed:@"maps_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"maps.png"]];
-    [tabBarItem3 setFinishedSelectedImage:[UIImage imageNamed:@"myplan_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"myplan.png"]];
-    [tabBarItem4 setFinishedSelectedImage:[UIImage imageNamed:@"settings_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"settings.png"]];*/
-    
     return YES;
 }
 

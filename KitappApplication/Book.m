@@ -29,6 +29,6 @@
 }
 
 + (NSString *)parseClassName{
-    return @"Books";
+    return @"Book";
 }
 @end
