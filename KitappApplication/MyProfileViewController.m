@@ -27,11 +27,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_tableView initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    //COLORS
+    UIColor *brownColor = [UIColor colorWithRed:116/255.0 green:92/255.0 blue:78/255.0 alpha:1.0];
+    UIColor *beigeLightColor = [UIColor colorWithRed:1.0 green:249/255.0 blue:243/255.0 alpha:1.0];
+    UIColor *beigeDarkColor = [UIColor colorWithRed:238/255.0 green:225/255.0 blue:208/255.0 alpha:1.0];
+    UIColor *darkBrownColor = [UIColor colorWithRed:117/255.0 green:91/255.0 blue:78/255.0 alpha:1];
+    UIColor *brownReddishColor = [UIColor colorWithRed:138/255.0 green:82/255.0 blue:51/255.0 alpha:1];
+    self.view.backgroundColor = beigeLightColor;
+    //[_tableView initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.backgroundColor = beigeLightColor;
     _booksArray = [NSMutableArray new];
-   // [_tableView registerClass:[TableViewCell class] forCellReuseIdentifier:@"tableCell"];
+    //_tableView.translatesAutoresizingMaskIntoConstraints = NO;
+
 
 
 }
@@ -46,27 +55,28 @@
 
 -(void)getDataFromParse
 {
-    _booksArray = [NSMutableArray new];
-    PFQuery *query = [PFQuery queryWithClassName:@"Books"];
+    self.booksArray = [NSMutableArray new];
+    PFQuery *query = [PFQuery queryWithClassName:@"Book"];
     [query includeKey:@"owner"];
-    [query orderByAscending:@"createdAt"];
-    _tableView.scrollEnabled = NO;
+    [query includeKey:@"genre"];
+    [query orderByDescending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-    {
-        if (!error)
-        {
-            for (Book *object in objects)
-            {
-                [_booksArray addObject:object];
-            }
-            [_tableView reloadData];
-            _tableView.scrollEnabled = YES;
-        }
-        else
-        {
-            NSLog(@"Error %@ %@", error, [error userInfo]);
-        }
-    }];
+     {
+         if (!error){
+             for (Book *object in objects){
+                 [self.booksArray addObject:object];
+                 // NSLog(@"Title of book: %@", object.title);
+             }
+             [_tableView reloadData];
+             //[self.tableView reloadData];
+             //[_refreshControl endRefreshing];
+         }
+         else {
+             // Log details of the failure
+             NSLog(@"Error: %@ %@", error, [error userInfo]);
+         }
+         
+     }];
 }
 
 #pragma mark - Buttons methods
@@ -90,20 +100,26 @@
 {
     static NSString *cellIdentifier = @"tableCell";
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor colorWithRed:1.0 green:249/255.0 blue:243/255.0 alpha:1.0];
     Book *object = [_booksArray objectAtIndex:indexPath.row];
-    PFFile *imageFile = object.image;
-    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error){
-        UIImage *image = [UIImage imageWithData:data];
-        image = [image scaledToSize:CGSizeMake(150, 210)];
-        cell.imageView.image = image;
+    NSLog(@"object is %@", object);
+    
+    [object fetchIfNeededInBackgroundWithBlock:^(PFObject * object, NSError * _Nullable error) {
+        PFFile *imageFile = [object objectForKey:@"image"];
+        [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error){
+            UIImage *image = [UIImage imageWithData:data];
+            image = [image scaledToSize:CGSizeMake(150, 210)];
+            [cell.bookImage setImage:image];
+        }];
+        cell.titleLabel.text = object[@"title"];
+        NSLog(@"title label:   %@", cell.titleLabel);
+        //cell.imageView.image = [[UIImage imageNamed:@"bg2_4s.jpg"] scaledToSize:CGSizeMake(150/2, 200/2)];
+        cell.authorLabel.text = object[@"author"];
+        cell.priceLabel.text = [NSString stringWithFormat:@"KZT %@", object[@"price"]];
+        [cell layoutIfNeeded];
+        cell.delegate = self;
     }];
     
-    cell.titleLabel.text = object.title;
-    NSLog(@"title label:   %@", cell.titleLabel);
-    cell.imageView.image = [UIImage imageNamed:@"bg2_4s.jpg"]; 
-    cell.authorLabel.text = object[@"author"];
-    cell.priceLabel.text = [NSString stringWithFormat:@"KZT %@", object[@"price"]];
-    cell.delegate = self;
     return cell;
 }
 
@@ -113,8 +129,19 @@
     [self performSegueWithIdentifier:@"toReviewBookVC" sender:self];
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 230.f;
+}
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ReviewBookViewController *nextVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ReviewBookViewController"];
+    nextVC.book = self.booksArray[indexPath.row];
+    
+    [self presentViewController:nextVC animated:YES completion:nil];
+}
 
+#pragma mark - Segue methods
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
@@ -125,10 +152,7 @@
     
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 220.0;
-}
+
 
 @end
 

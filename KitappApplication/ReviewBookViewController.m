@@ -27,6 +27,8 @@
 @property (nonatomic) UILabel *genreLabel;
 @property (nonatomic) UILabel *telephoneLabel;
 
+@property (nonatomic) BOOL isLiked;
+
 @end
 
 @implementation ReviewBookViewController
@@ -44,6 +46,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //colors
+    UIColor *brownColor = [UIColor colorWithRed:118/255.0 green:92/255.0 blue:79/255.0 alpha:1.0];
     self.view.backgroundColor = [UIColor colorWithRed:255/255.0 green:247/255.0 blue:240/255.0 alpha:1.0];
     _scrollView = [UIScrollView new];
     _scrollView.frame = self.view.bounds;
@@ -58,12 +62,12 @@
         self.imageView.image = image;
     }];
     [_scrollView addSubview:_imageView];
-    _imageView.frame = CGRectMake(80, 60, self.view.frame.size.width-160, self.view.frame.size.height*0.45);
+    _imageView.frame = CGRectMake(70, 60, self.view.frame.size.width-140, self.view.frame.size.height*0.45);
     //initialization
     _titleLabel = [UILabel new];
     _titleLabel.font = [UIFont fontWithName:@"IowanOldStyle-Bold" size:23];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
-    _titleLabel.textColor = [UIColor colorWithRed:131/255.0 green:81/255.0 blue:54/255.0 alpha:1];
+    _titleLabel.textColor = brownColor;
     _titleLabel.text = self.book.title;
     _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     _titleLabel.numberOfLines = 3;
@@ -74,7 +78,7 @@
     //author label
     _authorLabel = [UILabel new];
     _authorLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:18];
-    _authorLabel.textColor = [UIColor colorWithRed:131/255.0 green:81/255.0 blue:54/255.0 alpha:1];
+    _authorLabel.textColor = brownColor;
     _authorLabel.lineBreakMode = NSLineBreakByWordWrapping;
     _authorLabel.text = [NSString stringWithFormat:@"Автор: %@", self.book.author ];
     _authorLabel.textAlignment = NSTextAlignmentCenter;
@@ -85,7 +89,7 @@
 
     //seperator1
     UIButton *seperator1 = [UIButton new];
-    [seperator1 setBackgroundColor:[UIColor brownColor]];
+    [seperator1 setBackgroundColor:brownColor];
     [_scrollView addSubview:seperator1];
     seperator1.alpha = 0.5;
     seperator1.frame = CGRectMake(100, CGRectGetMaxY(_authorLabel.frame)+15, self.view.frame.size.width-200, 1);
@@ -93,7 +97,7 @@
     //seller label
     _sellerLabel = [UILabel new];
     _sellerLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:14];
-    _sellerLabel.textColor = [UIColor colorWithRed:131/255.0 green:81/255.0 blue:54/255.0 alpha:1];
+    _sellerLabel.textColor = brownColor;
     _sellerLabel.adjustsFontSizeToFitWidth = YES;
     PFUser *user = _book[@"owner"];
     _sellerLabel.text = [NSString stringWithFormat:@"Продавец: %@", user.username];
@@ -109,7 +113,7 @@
     //_callButton.layer.borderColor = [UIColor brownColor].CGColor;
     //_callButton.layer.borderWidth = 1.0;
     _callButton.layer.cornerRadius = 7.0;
-    _callButton.backgroundColor = [UIColor brownColor];
+    _callButton.backgroundColor = brownColor;
     _callButton.titleLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:16];
     _callButton.frame = CGRectMake(100, CGRectGetMaxY(_sellerLabel.frame)+5, self.view.frame.size.width-200, 32);
     [_scrollView addSubview:_callButton];
@@ -118,7 +122,7 @@
     //genre label
     _genreLabel = [UILabel new];
     _genreLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:18];
-    _genreLabel.textColor = [UIColor colorWithRed:131/255.0 green:81/255.0 blue:54/255.0 alpha:1];
+    _genreLabel.textColor = brownColor;
     _genreLabel.adjustsFontSizeToFitWidth = YES;
     _genreLabel.text = [NSString stringWithFormat:@"Жанр: %@", self.book.genre[@"title"]];
     _genreLabel.textAlignment = NSTextAlignmentLeft;
@@ -128,7 +132,7 @@
     //price label
     _priceLabel = [UILabel new];
     _priceLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:16];
-    _priceLabel.textColor = [UIColor colorWithRed:131/255.0 green:81/255.0 blue:54/255.0 alpha:1];
+    _priceLabel.textColor = brownColor;
     _priceLabel.lineBreakMode = NSLineBreakByWordWrapping;
     _priceLabel.numberOfLines = 2;
     _priceLabel.backgroundColor = [UIColor whiteColor];
@@ -136,12 +140,12 @@
     _priceLabel.text = [NSString stringWithFormat:@"KZT: %@", self.book.price ];
     _priceLabel.textAlignment = NSTextAlignmentCenter;
     [_scrollView addSubview:_priceLabel];
-    _priceLabel.frame = CGRectMake(80, _imageView.frame.size.height+40, _imageView.frame.size.width, 20);
+    _priceLabel.frame = CGRectMake(70, _imageView.frame.size.height+40, _imageView.frame.size.width, 20);
 
     //description
     _descriptionLabel = [UILabel new];
     _descriptionLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:18];
-    _descriptionLabel.textColor = [UIColor colorWithRed:131/255.0 green:81/255.0 blue:54/255.0 alpha:1];
+    _descriptionLabel.textColor = brownColor;
     _descriptionLabel.lineBreakMode = NSLineBreakByWordWrapping;
     _descriptionLabel.numberOfLines = 0;
     _descriptionLabel.text = _book.descr;
@@ -178,7 +182,7 @@
     _bkmrkButton = [UIButton new];
     _bkmrkButton.layer.masksToBounds = YES;
     UIImage *bkmrkImage = [UIImage new];
-    bkmrkImage = [UIImage imageNamed:@"bookmarkPageIcon.png"];
+    [self getBookmarkState];
     bkmrkImage = [bkmrkImage scaledToSize:CGSizeMake(30, 30)];
     [_bkmrkButton setImage:bkmrkImage forState:UIControlStateNormal];
     [_bkmrkButton addTarget:self action:@selector(bookmarkButtonPressed) forControlEvents:UIControlEventTouchUpInside];
@@ -190,7 +194,7 @@
    
     [user fetchIfNeededInBackgroundWithBlock:^(PFObject *object,  NSError *error){
         if(!error){
-            _sellerLabel.text = [NSString stringWithFormat:@"Владелец: %@", object[@"username"]];
+            _sellerLabel.text = [NSString stringWithFormat:@"Владелец: %@", object[@"name"]];
             _telephoneLabel.text = [NSString stringWithFormat:@"Телефон: %@", user[@"telephone"]];
         }
         else{
@@ -202,7 +206,7 @@
 
     //[self.titleLabel sizeToFit];
     //[self.descriptionLabel sizeToFit];
-    
+
 
 
 }
@@ -217,19 +221,75 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)bookmarkButtonPressed{
-    PFObject *object = [PFObject objectWithClassName:@"Bookmarks"];
+-(void) getBookmarkState
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Bookmark"];
     PFUser *user = [PFUser currentUser];
-    object[@"user"] = user;
-    object[@"book"] = self.book;
-    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
-        if (succeeded){
-            NSLog(@"Bookmarked!");
-        }
-        else{
-            NSLog(@"Some error");
+    [query whereKey:@"user" equalTo:user];
+    [query whereKey:@"book" equalTo:self.book];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (!error) {
+            if ([objects count] == 0) {
+                // not liked
+                _isLiked = NO;
+                UIImage *image = [UIImage imageNamed:@"heartIcon.png"];
+                [_bkmrkButton setImage:image forState:UIControlStateNormal];
+            } else {
+                // liked
+                _isLiked = YES;
+                NSLog(@"the book is liked");
+                UIImage *image = [UIImage imageNamed:@"heartIconFilled.png"];
+                [_bkmrkButton setImage:image forState:UIControlStateNormal];
+            }
         }
     }];
+    
+}
+
+-(void)bookmarkButtonPressed{
+    
+    if (!_isLiked){
+        PFObject *object = [PFObject objectWithClassName:@"Bookmark"];
+        PFUser *user = [PFUser currentUser];
+        object[@"user"] = user;
+        object[@"book"] = self.book;
+        [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+            if (succeeded){
+                NSLog(@"Bookmarked!");
+                [self getBookmarkState];
+            }
+            else{
+                NSLog(@"Some error");
+            }
+        }];
+    }
+    else{
+        PFQuery *query = [PFQuery queryWithClassName:@"Bookmark"];
+        PFUser *user = [PFUser currentUser];
+        [query whereKey:@"user" equalTo:user];
+        [query whereKey:@"book" equalTo:self.book];
+        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+            if (!error){
+                for (PFObject *object in objects){
+                    [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                        if (!error)
+                        {
+                            NSLog(@"object was deleted!");
+                            [self getBookmarkState];
+                        }
+                        else{
+                            NSLog(@"Error in object delete");
+                        }
+                    }];
+                }
+            }
+            else{
+                NSLog(@"Error in finding an object");
+            }
+        }];
+    }
+
 }
 
 -(void)deleteButtonPressed{
