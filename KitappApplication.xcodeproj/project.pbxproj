@@ -45,6 +45,8 @@
 		918957331B9EF77E007AF359 /* 3screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 918957301B9EF77E007AF359 /* 3screen.png */; };
 		918957361BA05F2E007AF359 /* 1screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 918957341BA05F2E007AF359 /* 1screen.png */; };
 		918957371BA05F2E007AF359 /* 2screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 918957351BA05F2E007AF359 /* 2screen.png */; };
+		919BB5FC1BDE139D00312F46 /* bookPlaceHolder.png in Resources */ = {isa = PBXBuildFile; fileRef = 919BB5FB1BDE139D00312F46 /* bookPlaceHolder.png */; settings = {ASSET_TAGS = (); }; };
+		91B4910B1BDE2B930080F17C /* Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B4910A1BDE2B930080F17C /* Colors.m */; settings = {ASSET_TAGS = (); }; };
 		91C61F1A1B68EFDF00550E44 /* plist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91C61F191B68EFDF00550E44 /* plist.plist */; };
 		91C7F6CA1B4511A100D70C0D /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C7F6C91B4511A100D70C0D /* TableViewCell.m */; };
 		91C7F6E01B46420D00D70C0D /* ReviewBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C7F6DF1B46420D00D70C0D /* ReviewBookViewController.m */; };
@@ -123,6 +125,9 @@
 		918957301B9EF77E007AF359 /* 3screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3screen.png; path = Images.xcassets/3screen.png; sourceTree = "<group>"; };
 		918957341BA05F2E007AF359 /* 1screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1screen.png; path = Images.xcassets/1screen.png; sourceTree = "<group>"; };
 		918957351BA05F2E007AF359 /* 2screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2screen.png; path = Images.xcassets/2screen.png; sourceTree = "<group>"; };
+		919BB5FB1BDE139D00312F46 /* bookPlaceHolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bookPlaceHolder.png; path = Images.xcassets/bookPlaceHolder.png; sourceTree = "<group>"; };
+		91B491091BDE2B930080F17C /* Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
+		91B4910A1BDE2B930080F17C /* Colors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colors.m; sourceTree = "<group>"; };
 		91C61F191B68EFDF00550E44 /* plist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plist.plist; sourceTree = "<group>"; };
 		91C7F6C81B4511A100D70C0D /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		91C7F6C91B4511A100D70C0D /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
@@ -283,6 +288,7 @@
 		917700E71B42869D002864D1 /* KitappApplication */ = {
 			isa = PBXGroup;
 			children = (
+				91B491081BDE2B790080F17C /* Utils */,
 				917700EC1B42869D002864D1 /* AppDelegate.h */,
 				917700ED1B42869D002864D1 /* AppDelegate.m */,
 				917700F21B42869D002864D1 /* Main.storyboard */,
@@ -331,6 +337,7 @@
 		917701691B42B786002864D1 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				919BB5FB1BDE139D00312F46 /* bookPlaceHolder.png */,
 				91032BC31BA9356D00E3997B /* buttonNormalStateImage.png */,
 				91032BC41BA9356D00E3997B /* buttonTouchDownStateImage.png */,
 				918957341BA05F2E007AF359 /* 1screen.png */,
@@ -378,6 +385,15 @@
 				9177018E1B43EA89002864D1 /* CollectionViewCellClass.m */,
 			);
 			name = CollectionViewCellClass;
+			sourceTree = "<group>";
+		};
+		91B491081BDE2B790080F17C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				91B491091BDE2B930080F17C /* Colors.h */,
+				91B4910A1BDE2B930080F17C /* Colors.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		91C7F6E11B46456200D70C0D /* ReviewBookViewController */ = {
@@ -500,6 +516,7 @@
 				91D9BA7E1B96FBC10027397F /* kitappLogo.png in Resources */,
 				91296B0A1B4D9FA700693E8D /* noavatar.png in Resources */,
 				91296B121B4DA15000693E8D /* Mantika Book W1G.otf in Resources */,
+				919BB5FC1BDE139D00312F46 /* bookPlaceHolder.png in Resources */,
 				91032BC61BA9356D00E3997B /* buttonTouchDownStateImage.png in Resources */,
 				917700F41B42869D002864D1 /* Main.storyboard in Resources */,
 				91296B111B4DA15000693E8D /* Mantika Book W1G Italic.otf in Resources */,
@@ -600,6 +617,7 @@
 				917700EE1B42869D002864D1 /* AppDelegate.m in Sources */,
 				917701331B42ABD3002864D1 /* SignupViewController.m in Sources */,
 				917700EB1B42869D002864D1 /* main.m in Sources */,
+				91B4910B1BDE2B930080F17C /* Colors.m in Sources */,
 				917701931B44025E002864D1 /* Book.m in Sources */,
 				917701361B42ABE2002864D1 /* LoginViewController.m in Sources */,
 				91607D131B4E667900B30049 /* TabBarController.m in Sources */,

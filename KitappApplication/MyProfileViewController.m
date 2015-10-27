@@ -33,16 +33,24 @@
     UIColor *beigeDarkColor = [UIColor colorWithRed:238/255.0 green:225/255.0 blue:208/255.0 alpha:1.0];
     UIColor *darkBrownColor = [UIColor colorWithRed:117/255.0 green:91/255.0 blue:78/255.0 alpha:1];
     UIColor *brownReddishColor = [UIColor colorWithRed:138/255.0 green:82/255.0 blue:51/255.0 alpha:1];
+    
     self.view.backgroundColor = beigeLightColor;
-    //[_tableView initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    _booksArray = [NSMutableArray new];
+    
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.backgroundColor = beigeLightColor;
-    _booksArray = [NSMutableArray new];
-    //_tableView.translatesAutoresizingMaskIntoConstraints = NO;
-
-
-
+    _tableView.translatesAutoresizingMaskIntoConstraints = NO;
+    _tableView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_tableView]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(_tableView)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-60-[_tableView]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(_tableView)]];
+    _tableView.backgroundColor = beigeLightColor;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,6 +85,7 @@
          }
          
      }];
+    
 }
 
 #pragma mark - Buttons methods
@@ -117,6 +126,7 @@
         cell.authorLabel.text = object[@"author"];
         cell.priceLabel.text = [NSString stringWithFormat:@"KZT %@", object[@"price"]];
         [cell layoutIfNeeded];
+       cell.titleLabel.frame = CGRectMake(cell.bookImage.frame.size.width+15, 10, self.view.frame.size.width-cell.bookImage.frame.size.width-25, 50);
         cell.delegate = self;
     }];
     

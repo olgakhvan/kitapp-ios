@@ -32,12 +32,10 @@
 -(void) customInit
 {
     //colors
-    
     //NSLog(@"I am in the init for cell");
     UIColor *brownRedColor = [UIColor colorWithRed:83/255.0 green:48/255.0 blue:29/255.0 alpha:1];
     UIColor *beigeLightColor = [UIColor colorWithRed:255/255.0 green:249/255.0 blue:243/255.0 alpha:1];
     UIColor *beigeColor = [UIColor colorWithRed:238/255.0 green:225/255.0 blue:208/255.0 alpha:1];
-    
     //book image
     _bookImage = [UIImageView new];
     _bookImage.contentMode = UIViewContentModeScaleAspectFill;
@@ -50,7 +48,7 @@
     _titleLabel.numberOfLines = 2;
     _titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
     [_titleLabel setTextColor:brownRedColor];
-    _titleLabel.frame = CGRectMake(CGRectGetMaxX(_bookImage.frame)+15, 10, 120, 50);
+    //_titleLabel.frame = CGRectMake(CGRectGetMaxX(_bookImage.frame)+15, 10, 300, 50);
     //NSLog(@"content view frame width is %f", self.contentView.frame.size.width);
     [self.contentView addSubview:_titleLabel];
     
@@ -62,7 +60,7 @@
     self.authorLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:14];
     self.authorLabel.textColor = [UIColor colorWithRed:83/255.0 green:48/255.0 blue:29/255.0 alpha:1];
     [_authorLabel sizeToFit];
-    _authorLabel.frame = CGRectMake(CGRectGetMaxX(_bookImage.frame) +15, CGRectGetMaxY(_titleLabel.frame), 100, 50);
+    _authorLabel.frame = CGRectMake(CGRectGetMaxX(_bookImage.frame) +15, 60, 100, 50);
     [self.contentView addSubview:_authorLabel];
     
     
@@ -93,6 +91,7 @@
     [_likeButton addTarget:self action:@selector(likeButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     _likeButton.hidden = YES;
     
+    //[_titleLabel sizeToFit];
 }
 
 -(void)layoutSubviews{
