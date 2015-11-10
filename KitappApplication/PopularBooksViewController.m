@@ -38,9 +38,7 @@
 @implementation PopularBooksViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.view.backgroundColor = [Colors beigeLightColor];
-
     UIView *barView = [UIView new];
     barView.backgroundColor = [Colors beigeLightColor];
     UIBezierPath *barShadowPath = [UIBezierPath bezierPathWithRect:barView.bounds];
@@ -173,7 +171,6 @@
             [cell.bookImage setImage:image];
         }];
         cell.titleLabel.text = object[@"title"];
-        NSLog(@"title label:   %@", cell.titleLabel);
         cell.authorLabel.text = object[@"author"];
         cell.priceLabel.text = [NSString stringWithFormat:@"KZT %@", object[@"price"]];
         cell.titleLabel.frame = CGRectMake(cell.bookImage.frame.size.width+15, 10, self.view.frame.size.width-cell.bookImage.frame.size.width-25, 50);
@@ -214,6 +211,7 @@
     }
     
 }
+
 @end
 
 

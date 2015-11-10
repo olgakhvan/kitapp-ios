@@ -19,8 +19,9 @@
 		91296B101B4DA15000693E8D /* Mantika Book W1G Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91296B0C1B4DA15000693E8D /* Mantika Book W1G Bold.otf */; };
 		91296B111B4DA15000693E8D /* Mantika Book W1G Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91296B0D1B4DA15000693E8D /* Mantika Book W1G Italic.otf */; };
 		91296B121B4DA15000693E8D /* Mantika Book W1G.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91296B0E1B4DA15000693E8D /* Mantika Book W1G.otf */; };
+		91296BDB1BF1C5DF00EC1372 /* logoutIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91296BDA1BF1C5DF00EC1372 /* logoutIcon.png */; };
 		9137A5591B9E9BB400582973 /* closeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9137A5581B9E9BB400582973 /* closeIcon.png */; };
-		913F809A1BD5F26A007A86BF /* heartIconFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = 913F80991BD5F26A007A86BF /* heartIconFilled.png */; settings = {ASSET_TAGS = (); }; };
+		913F809A1BD5F26A007A86BF /* heartIconFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = 913F80991BD5F26A007A86BF /* heartIconFilled.png */; };
 		9153CE481B9D507C00574534 /* addBookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9153CE431B9D507C00574534 /* addBookIcon.png */; };
 		9153CE491B9D507C00574534 /* allBooksIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9153CE441B9D507C00574534 /* allBooksIcon.png */; };
 		9153CE4C1B9D507C00574534 /* trashBinCircleIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9153CE471B9D507C00574534 /* trashBinCircleIcon.png */; };
@@ -45,12 +46,11 @@
 		918957331B9EF77E007AF359 /* 3screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 918957301B9EF77E007AF359 /* 3screen.png */; };
 		918957361BA05F2E007AF359 /* 1screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 918957341BA05F2E007AF359 /* 1screen.png */; };
 		918957371BA05F2E007AF359 /* 2screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 918957351BA05F2E007AF359 /* 2screen.png */; };
-		919BB5FC1BDE139D00312F46 /* bookPlaceHolder.png in Resources */ = {isa = PBXBuildFile; fileRef = 919BB5FB1BDE139D00312F46 /* bookPlaceHolder.png */; settings = {ASSET_TAGS = (); }; };
-		91B4910B1BDE2B930080F17C /* Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B4910A1BDE2B930080F17C /* Colors.m */; settings = {ASSET_TAGS = (); }; };
+		919BB5FC1BDE139D00312F46 /* bookPlaceHolder.png in Resources */ = {isa = PBXBuildFile; fileRef = 919BB5FB1BDE139D00312F46 /* bookPlaceHolder.png */; };
+		91B4910B1BDE2B930080F17C /* Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B4910A1BDE2B930080F17C /* Colors.m */; };
 		91C61F1A1B68EFDF00550E44 /* plist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91C61F191B68EFDF00550E44 /* plist.plist */; };
 		91C7F6CA1B4511A100D70C0D /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C7F6C91B4511A100D70C0D /* TableViewCell.m */; };
 		91C7F6E01B46420D00D70C0D /* ReviewBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C7F6DF1B46420D00D70C0D /* ReviewBookViewController.m */; };
-		91CB157B1B590AEB00C352B0 /* logoutIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CB157A1B590AEB00C352B0 /* logoutIcon.png */; };
 		91D2045E1B4DAD950095A2E9 /* backIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D2045D1B4DAD950095A2E9 /* backIcon.png */; };
 		91D9BA7E1B96FBC10027397F /* kitappLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D9BA7D1B96FBC10027397F /* kitappLogo.png */; };
 		91DD90191B4AA0270068B7DB /* MainViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DD90181B4AA0270068B7DB /* MainViewController1.m */; };
@@ -85,6 +85,7 @@
 		91296B0C1B4DA15000693E8D /* Mantika Book W1G Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mantika Book W1G Bold.otf"; sourceTree = "<group>"; };
 		91296B0D1B4DA15000693E8D /* Mantika Book W1G Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mantika Book W1G Italic.otf"; sourceTree = "<group>"; };
 		91296B0E1B4DA15000693E8D /* Mantika Book W1G.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mantika Book W1G.otf"; sourceTree = "<group>"; };
+		91296BDA1BF1C5DF00EC1372 /* logoutIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoutIcon.png; path = Images.xcassets/logoutIcon.png; sourceTree = "<group>"; };
 		9137A5581B9E9BB400582973 /* closeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = closeIcon.png; path = Images.xcassets/closeIcon.png; sourceTree = "<group>"; };
 		913F80991BD5F26A007A86BF /* heartIconFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heartIconFilled.png; path = Images.xcassets/heartIconFilled.png; sourceTree = "<group>"; };
 		9153CE431B9D507C00574534 /* addBookIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addBookIcon.png; path = Images.xcassets/addBookIcon.png; sourceTree = "<group>"; };
@@ -133,7 +134,6 @@
 		91C7F6C91B4511A100D70C0D /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		91C7F6DE1B46420D00D70C0D /* ReviewBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewBookViewController.h; sourceTree = "<group>"; };
 		91C7F6DF1B46420D00D70C0D /* ReviewBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewBookViewController.m; sourceTree = "<group>"; };
-		91CB157A1B590AEB00C352B0 /* logoutIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoutIcon.png; path = Images.xcassets/logoutIcon.png; sourceTree = "<group>"; };
 		91D2045D1B4DAD950095A2E9 /* backIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backIcon.png; path = Images.xcassets/backIcon.png; sourceTree = "<group>"; };
 		91D9BA7D1B96FBC10027397F /* kitappLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kitappLogo.png; sourceTree = "<group>"; };
 		91DD90171B4AA0270068B7DB /* MainViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController1.h; sourceTree = "<group>"; };
@@ -349,9 +349,9 @@
 				9153CE441B9D507C00574534 /* allBooksIcon.png */,
 				9153CE471B9D507C00574534 /* trashBinCircleIcon.png */,
 				91D9BA7D1B96FBC10027397F /* kitappLogo.png */,
-				91CB157A1B590AEB00C352B0 /* logoutIcon.png */,
 				91607D2C1B54D24600B30049 /* trashBinIcon.png */,
 				91607D2A1B53D7DB00B30049 /* myProfileIcon.png */,
+				91296BDA1BF1C5DF00EC1372 /* logoutIcon.png */,
 				91607D281B53D63F00B30049 /* heartIcon.png */,
 				913F80991BD5F26A007A86BF /* heartIconFilled.png */,
 				91D2045D1B4DAD950095A2E9 /* backIcon.png */,
@@ -534,11 +534,11 @@
 				91D2045E1B4DAD950095A2E9 /* backIcon.png in Resources */,
 				91032BC51BA9356D00E3997B /* buttonNormalStateImage.png in Resources */,
 				91607D2B1B53D7DB00B30049 /* myProfileIcon.png in Resources */,
-				91CB157B1B590AEB00C352B0 /* logoutIcon.png in Resources */,
 				918957361BA05F2E007AF359 /* 1screen.png in Resources */,
 				91296B0F1B4DA15000693E8D /* Mantika Book W1G Bold Italic.otf in Resources */,
 				917700F61B42869D002864D1 /* Images.xcassets in Resources */,
 				91607D291B53D63F00B30049 /* heartIcon.png in Resources */,
+				91296BDB1BF1C5DF00EC1372 /* logoutIcon.png in Resources */,
 				9153CE491B9D507C00574534 /* allBooksIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
