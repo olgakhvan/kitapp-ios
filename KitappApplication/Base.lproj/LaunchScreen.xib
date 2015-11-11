@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,23 +12,29 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 Kitapp. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                    <rect key="frame" x="20" y="439" width="441" height="21"/>
+                    <rect key="frame" x="20" y="439.5" width="441" height="20.5"/>
+                    <animations/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                     <color key="textColor" red="0.48317155934343436" green="0.48317155934343436" blue="0.48317155934343436" alpha="0.23000000000000001" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="kitappLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="p4V-t5-I0j">
                     <rect key="frame" x="0.0" y="82" width="480" height="258"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="258" id="5cL-15-ynm"/>
+                        <constraint firstAttribute="width" constant="240" id="gMP-mv-uVw"/>
+                    </constraints>
                 </imageView>
             </subviews>
+            <animations/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="p4V-t5-I0j" secondAttribute="trailing" id="IX3-l0-K7p"/>
+                <constraint firstItem="p4V-t5-I0j" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0j3-xc-dQx"/>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
-                <constraint firstItem="p4V-t5-I0j" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="82" id="Rkc-qJ-f5z"/>
+                <constraint firstItem="p4V-t5-I0j" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="120" id="Rkc-qJ-f5z"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
-                <constraint firstItem="p4V-t5-I0j" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eVc-ue-jBI"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

@@ -63,19 +63,19 @@
             </objects>
             <point key="canvasLocation" x="-2477" y="-598"/>
         </scene>
-        <!--Popular Books View Controller-->
+        <!--PopularBooksVC-->
         <scene sceneID="IaK-Ae-ZSG">
             <objects>
-                <viewController id="9WY-2C-wON" customClass="PopularBooksViewController" sceneMemberID="viewController">
+                <viewController title="PopularBooksVC" id="9WY-2C-wON" customClass="PopularBooksViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Sn-zB-Rw0"/>
                         <viewControllerLayoutGuide type="bottom" id="NBp-h4-mB8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Umy-29-2jl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SPx-gB-5e8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SPx-gB-5e8">
                                 <rect key="frame" x="0.0" y="28" width="320" height="491"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,6 +96,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="NBp-h4-mB8" firstAttribute="top" secondItem="SPx-gB-5e8" secondAttribute="bottom" id="UZT-jo-GP0"/>
                             <constraint firstItem="SPx-gB-5e8" firstAttribute="top" secondItem="Umy-29-2jl" secondAttribute="topMargin" constant="100" id="flZ-V9-Kmh"/>
                             <constraint firstItem="SPx-gB-5e8" firstAttribute="leading" secondItem="Umy-29-2jl" secondAttribute="leadingMargin" id="lDR-hL-Hed"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SPx-gB-5e8" secondAttribute="trailing" id="pfL-0L-TG9"/>
@@ -141,7 +142,7 @@
                         <viewControllerLayoutGuide type="bottom" id="3Oi-AG-MPY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="69Y-Fx-XEc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hcr-lz-XHM">
@@ -214,7 +215,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2t0-qR-ug2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xeh-YH-ZX5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -254,10 +255,11 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="BlA-w3-wkN" customClass="TabBarController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="2wJ-ev-W43">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="2wJ-ev-W43">
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.88235294117647056" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.93333333330000001" green="0.88235294119999996" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="9WY-2C-wON" kind="relationship" relationship="viewControllers" id="2Hs-Zw-2uf"/>

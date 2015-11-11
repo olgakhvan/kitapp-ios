@@ -22,6 +22,8 @@
 
 @property (nonatomic) NSMutableArray *myBooksArray;
 @property (nonatomic) NSMutableArray *likedBooksArray;
+@property (nonatomic) NSMutableArray *bookmarks;
+
 
 @property (nonatomic) NSIndexPath *lastSelectedItem;
 @property (nonatomic) NSInteger segmentedControlIndex;
@@ -81,6 +83,7 @@
 {
     NSLog(@"I am here 2");
     self.likedBooksArray = [NSMutableArray new];
+    self.bookmarks = [NSMutableArray new];
     PFQuery *query = [PFQuery queryWithClassName:@"Bookmark"];
     [query whereKey:@"user" equalTo:[PFUser currentUser]];
     [query includeKey:@"book"];
@@ -93,7 +96,12 @@
             NSLog(@"I am here 2.6 with objects = %@", objects);
             for (PFObject *object in objects) {
                 PFObject *bookObject = object[@"book"];
-                if (bookObject) [self.likedBooksArray addObject:bookObject];
+                
+                if (bookObject) {
+                    [self.likedBooksArray addObject:bookObject];
+                    [self.bookmarks addObject:object];
+                }
+                
             }
             NSLog(@"I am here 3");
             [self.hud hide:YES];
@@ -180,8 +188,6 @@
     } else {
         object = self.likedBooksArray[indexPath.row];
     }
-
-    NSLog(@"object is %@", object);
     [object fetchIfNeededInBackgroundWithBlock:^(PFObject * object, NSError * _Nullable error) {
         PFFile *imageFile = [object objectForKey:@"image"];
         [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error){
@@ -190,7 +196,6 @@
             [cell.bookImage setImage:image];
         }];
         cell.titleLabel.text = object[@"title"];
-        NSLog(@"title label:   %@", cell.titleLabel);
         //cell.imageView.image = [[UIImage imageNamed:@"bg2_4s.jpg"] scaledToSize:CGSizeMake(150/2, 200/2)];
         cell.authorLabel.text = object[@"author"];
         cell.priceLabel.text = [NSString stringWithFormat:@"KZT %@", object[@"price"]];
@@ -249,6 +254,39 @@
 {
     return 40.0;
 }
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return YES;
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        PFObject *objectToDelete = nil;
+        
+        if (self.segmentedControlIndex == 0) {
+            objectToDelete = self.myBooksArray[indexPath.row];
+        } else {
+            objectToDelete = self.bookmarks[indexPath.row];
+        }
+        
+        if (objectToDelete) {
+            [self.hud hide:NO];
+            [objectToDelete deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                [self.hud hide:YES];
+                if (!error) {
+                    NSLog(@"Object successfully deleted");
+                    if (self.segmentedControlIndex == 0) {
+                        [self.myBooksArray removeObjectAtIndex:indexPath.row];
+                    } else {
+                        [self.likedBooksArray removeObjectAtIndex:indexPath.row];
+                    }
+                    [self.tableView reloadData];
+                }
+            }];
+        }
+    }
+}
 
 -(void) tableViewHeaderDesign{
     PFUser *currentUser = [PFUser currentUser];
@@ -292,8 +330,6 @@
     
     _logoutButton = [UIButton new];
     _logoutButton.frame = CGRectMake(self.view.frame.size.width-80, 10, 70, 25);
-//    UIImage *image = [UIImage imageNamed:@"logoutIcon.png"];
-//    [_logoutButton setImage:image forState:UIControlStateNormal];
     [_logoutButton setTitle:@"выйти" forState:UIControlStateNormal];
     [_logoutButton setTitleColor:[Colors beigeLightColor] forState:UIControlStateNormal];
     _logoutButton.titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -320,35 +356,3 @@
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -86,29 +86,11 @@
                                                                         views:NSDictionaryOfVariableBindings(_windowTitle)]];
     
      _books = [NSArray new];
-    /*_refreshControl = [CBStoreHouseRefreshControl new];
-    _refreshControl = [CBStoreHouseRefreshControl attachToScrollView:_collectionView
-                                                    target:self
-                                                       refreshAction:@selector(refreshTriggered:)
-                                                    plist:@"plist"
-                                                    color:[UIColor redColor]
-                                                    lineWidth:1.5
-                                                    dropHeight:0
-                                                    scale:1
-                                                    horizontalRandomness:50
-                                                    reverseLoadingAnimation:NO
-                                                    internalAnimationFactor:0.5];*/
-    
-//    _refreshControl = [UIRefreshControl new];
-//    [_refreshControl addTarget:self action:@selector(refreshTriggered:) forControlEvents:UIControlEventValueChanged];
     _tableView.hidden = NO;
-    [self getDataFromParse];
-
-
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    //[self getDataFromParse];
+    [self getDataFromParse];
 }
 
 
@@ -197,9 +179,6 @@
     [self presentViewController:nextVC animated:YES completion:nil];
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 100.0;
-}
 
 #pragma mark - Segue methods
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

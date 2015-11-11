@@ -13,8 +13,14 @@
 #import "MyBooksViewController.h"
 #import "AKPickerView.h"
 #import <TOCropViewController/TOCropViewController.h>
+#import "Colors.h"
+#import "PopularBooksViewController.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
-@interface AddNewBookViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, TOCropViewControllerDelegate>
+#define kOFFSET_FOR_KEYBOARD 80.0
+
+
+@interface AddNewBookViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, TOCropViewControllerDelegate, UITextViewDelegate>
 
 @property (nonatomic) UIImageView *bookView;
 @property (nonatomic) UIButton *uploadButton;
@@ -26,7 +32,6 @@
 @property (nonatomic) UITextField *descriptionTextField;
 @property (nonatomic) UIImage *bookImage;
 
-@property (nonatomic) UIButton *cancelButton;
 @property (nonatomic) UIButton *doneButton;
 
 @property (nonatomic) UIButton *seperator1;
@@ -41,6 +46,9 @@
 @property (nonatomic) NSArray *pickerData;
 @property (nonatomic) int chosenGenre;
 
+@property (nonatomic) MBProgressHUD *hud;
+
+
 @end
 
 @implementation AddNewBookViewController
@@ -49,7 +57,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithRed:255/255.0 green:249/255.0 blue:243/255.0 alpha:1.0];
-    UIColor *darkBrownColor = [UIColor colorWithRed:116/255.0 green:92/255.0 blue:78/255.0 alpha:1];
     //initialization
 
     _scrollView = [UIScrollView new];
@@ -100,6 +107,7 @@
     _priceTextField.textAlignment = NSTextAlignmentLeft;
     _priceTextField.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:20];
     _priceTextField.placeholder = @"цена";
+    self.priceTextField.keyboardType = UIKeyboardTypeNumberPad; 
     _priceTextField.frame = CGRectMake(self.view.bounds.size.width/2 - 100, CGRectGetMaxY(_authorTextField.frame)+3, 200, 40);
     [_scrollView addSubview:_priceTextField];
 
@@ -159,7 +167,6 @@
 
     _descriptionTextView = [UITextView new];
     _descriptionTextView.frame = CGRectMake(self.view.bounds.size.width/2 - 130, CGRectGetMaxY(_genreTextField.frame)+10, 260, 200);
-    _descriptionTextView.textColor = [UIColor colorWithRed:145/255.0 green:113/255.0 blue:84/255.0 alpha:1.0];
     _descriptionTextView.textAlignment = NSTextAlignmentLeft;
     _descriptionTextView.layer.borderWidth = 1.0;
     _descriptionTextView.layer.cornerRadius = 3.f;
@@ -167,9 +174,11 @@
     _descriptionTextView.layer.masksToBounds = YES;
     _descriptionTextView.layer.borderColor = [UIColor colorWithRed:145/255.0 green:113/255.0 blue:84/255.0 alpha:0.1].CGColor;
     _descriptionTextView.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:18];
-    _descriptionTextView.textColor = [UIColor colorWithRed:145/255.0 green:113/255.0 blue:84/255.0 alpha:1.0];
+    _descriptionTextView.textColor = [UIColor lightGrayColor];
+    self.descriptionTextView.delegate = self;
     _descriptionTextView.text = @"Введите краткое описание о книге...";
-    [_scrollView addSubview:_descriptionTextView];    
+    [_scrollView addSubview:_descriptionTextView];
+    
     _genrePicker.frame =CGRectMake(self.view.bounds.size.width/2 - 100, 350, 150, 162);
     [[UIPickerView appearance] setBackgroundColor:[UIColor colorWithRed:244/255.0 green:232/255.0 blue:221/255.0 alpha:1.0]];
 
@@ -177,42 +186,74 @@
     //cancel and done buttons
     _doneButton = [UIButton new];
     _doneButton.layer.masksToBounds = YES;
-   // _doneButton.layer.cornerRadius = 17.5;
-    UIImage *image = [UIImage new];
-    image = [UIImage imageNamed:@"doneTextButton.png"];
-    //[_doneButton setImage:image forState:UIControlStateNormal];
+    _doneButton.layer.cornerRadius = 5.f;
     [_doneButton setTitle:@"Готово" forState:UIControlStateNormal];
-    [_doneButton setTitleColor:darkBrownColor forState:UIControlStateNormal];
-    _doneButton.frame = CGRectMake(self.view.frame.size.width-75,30,70,30);
-    /*UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:_doneButton.bounds];
-    _doneButton.layer.shadowColor = [UIColor blackColor].CGColor;
-    _doneButton.layer.shadowOffset = CGSizeMake(0, 0);
-    _doneButton.layer.shadowOpacity = 0.5f;
-    _doneButton.layer.shadowPath = shadowPath.CGPath;*/
+    [_doneButton setTitleColor:[Colors beigeLightColor] forState:UIControlStateNormal];
+    _doneButton.backgroundColor = [Colors brownColor];
+    _doneButton.frame = CGRectMake(self.view.frame.size.width-85,30,70,30);
     [self.view addSubview:_doneButton];
     [_doneButton addTarget:self action:@selector(okButtonPressed) forControlEvents:UIControlEventTouchDown];
     
-    _cancelButton = [UIButton new];
-    _cancelButton.layer.masksToBounds = YES;
-    _cancelButton.layer.cornerRadius = 15.f;
-    image = [image scaledToSize:CGSizeMake(30, 30)];
-    image = [UIImage imageNamed:@"backIcon.png"];
-    [_cancelButton setImage:image forState:UIControlStateNormal];
-    [_cancelButton addTarget:self action:@selector(cancelButtonPressed) forControlEvents:UIControlEventTouchDown];
-    _cancelButton.frame = CGRectMake(15, 35, 30, 30);
-    [_scrollView addSubview:_cancelButton];
-    
     _scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height+300);
     NSLog(@"%f", CGRectGetMaxY(_descriptionTextView.frame));
+    
+    // gesture recognizer
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+    
+    
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-
 }
 
-#pragma mark - Loading methods 
+#pragma mark - TextView methods 
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@"Введите краткое описание о книге..."]) {
+        textView.text = @"";
+        textView.textColor = [UIColor colorWithRed:145/255.0 green:113/255.0 blue:84/255.0 alpha:1.0]; //optional
+    }
+    [textView becomeFirstResponder];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@""]) {
+        textView.text = @"placeholder text here...";
+        textView.textColor = [UIColor lightGrayColor]; //optional
+    }
+    [textView resignFirstResponder];
+}
+
+#pragma mark - Keyboard scroll methods 
+-(void)dismissKeyboard {
+    [self.descriptionTextView resignFirstResponder];
+    [self.titleTextField resignFirstResponder];
+    [self.priceTextField resignFirstResponder];
+    [self.authorTextField resignFirstResponder];
+    [self.genreTextField resignFirstResponder];
+}
+
+#pragma mark - keyboard
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+    CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    _scrollView.contentInset = UIEdgeInsetsMake(0, 0, keyboardSize.height + 10, 0);
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification
+{
+    _scrollView.contentInset = UIEdgeInsetsMake(0, 0, 20, 0);
+//    _scrollView.contentInset = UIEdgeInsetsMake(0, 0, CGRectGetMaxY(self.descriptionTextView.frame)+10, 0);
+}
+
+#pragma mark - Loading methods
 
 -(void) getGenresFromParse
 {
@@ -286,16 +327,6 @@
     }];
 }
 
-#pragma mark - keyboard
-- (void)keyboardWillShow:(NSNotification *)notification
-{
-    _scrollView.contentInset = UIEdgeInsetsMake(0, 0, 200, 0);
-}
-
-- (void)keyboardWillHide:(NSNotification *)notification
-{
-    _scrollView.contentInset = UIEdgeInsetsMake(0, 0, CGRectGetMaxY(_doneButton.frame)+10, 0);
-}
 
 #pragma mark - picker view
 //The number of columns of data
@@ -379,10 +410,6 @@
     }
 }
 
--(void)cancelButtonPressed{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 -(void)okButtonPressed{
     
     
@@ -391,6 +418,7 @@
         [alert show];
         return;
     }
+    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     PFUser *user = [PFUser currentUser];
     PFObject *newBook = [PFObject objectWithClassName:@"Book"];
@@ -403,26 +431,43 @@
     f.numberStyle = NSNumberFormatterDecimalStyle;
     newBook[@"price"] = [f numberFromString:_priceTextField.text];
     newBook[@"genre"] = self.pickerData[self.chosenGenre];
-    
     UIImage *imageNew = _bookView.image;
     NSData *imageData = UIImageJPEGRepresentation(imageNew, 0.8);
     PFFile *imageFile = [PFFile fileWithName:@"bookImage.jpeg" data:imageData];
-    
     [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
         if(succeeded){
-            
-            
             newBook[@"image"] = imageFile;
             
             [newBook saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                self.hud.hidden = YES;
                 if (succeeded) {
                     NSLog(@"Book was saved");
-                    [self dismissViewControllerAnimated:YES completion:nil];
+                    
+                    self.bookView.image = [UIImage imageNamed:@"noCover.jpg"];
+                    self.titleTextField.text = @"";
+                    self.descriptionTextView.text = @"";
+                    self.priceTextField.text = @"";
+                    self.authorTextField.text = @"";
+                    self.genreTextField.text = @"";
+                    self.chosenGenre = -1;
+                    
+                    [self.descriptionTextView resignFirstResponder];
+                    [self.titleTextField resignFirstResponder];
+                    [self.priceTextField resignFirstResponder];
+                    [self.authorTextField resignFirstResponder];
+                    [self.genreTextField resignFirstResponder];
+                    
+                    [self.scrollView setContentOffset:
+                     CGPointMake(0, -self.scrollView.contentInset.top) animated:YES];
+                    
+                    self.tabBarController.selectedIndex = 0;
                 } else {
                     NSLog(@"error");
                 }
             }];
-            
+        } else {
+            self.hud.hidden = NO;
+            NSLog(@"ERROR!!");
         }
     }];
     

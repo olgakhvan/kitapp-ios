@@ -13,7 +13,6 @@
 @protocol TableViewCellDelegate <NSObject>
 
 @required
--(void)cell: (TableViewCell *)cell deleteButtonPressed: (UIButton *)button;
 -(void)cell: (TableViewCell *)cell likeButtonPressed: (UIButton *)button;
 @end
 
@@ -24,10 +23,7 @@
 @property (nonatomic) UILabel *titleLabel;
 @property (nonatomic) UILabel *authorLabel;
 @property (nonatomic) UILabel *priceLabel;
-
-@property (nonatomic) UIButton *deleteButton;
 @property (nonatomic) UIButton *likeButton;
-@property (nonatomic) UIButton *logoutButton;
 
 @property (nonatomic, weak) id <TableViewCellDelegate> delegate;
 

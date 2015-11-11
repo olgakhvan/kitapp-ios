@@ -9,6 +9,7 @@
 #import "ReviewBookViewController.h"
 #import "Book.h"
 #import "UIImage+Scale.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface ReviewBookViewController ()
 @property (nonatomic) UIImageView *imageView;
@@ -248,8 +249,9 @@
 }
 
 -(void)bookmarkButtonPressed{
-    
+
     if (!_isLiked){
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         PFObject *object = [PFObject objectWithClassName:@"Bookmark"];
         PFUser *user = [PFUser currentUser];
         object[@"user"] = user;
@@ -258,13 +260,16 @@
             if (succeeded){
                 NSLog(@"Bookmarked!");
                 [self getBookmarkState];
+                hud.hidden = YES;
             }
             else{
                 NSLog(@"Some error");
+                hud.hidden = YES;
             }
         }];
     }
     else{
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         PFQuery *query = [PFQuery queryWithClassName:@"Bookmark"];
         PFUser *user = [PFUser currentUser];
         [query whereKey:@"user" equalTo:user];
@@ -275,10 +280,11 @@
                     [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                         if (!error)
                         {
-                            NSLog(@"object was deleted!");
+                            hud.hidden = YES;
                             [self getBookmarkState];
                         }
                         else{
+                            hud.hidden = YES;
                             NSLog(@"Error in object delete");
                         }
                     }];
@@ -307,7 +313,7 @@
 }
 -(void)callButtonPressed{
     PFUser *user = _book[@"owner"];
-    NSString *number = user[@"telephone"];
+    NSString *number = user.username;
     [self call:number];
 }
 
