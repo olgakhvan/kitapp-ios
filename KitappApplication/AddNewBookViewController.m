@@ -11,8 +11,6 @@
 #import "Book.h"
 #import "Parse.h"
 #import "MyBooksViewController.h"
-#import "AKPickerView.h"
-#import <TOCropViewController/TOCropViewController.h>
 #import "Colors.h"
 #import "PopularBooksViewController.h"
 #import <MBProgressHUD/MBProgressHUD.h>
@@ -20,7 +18,7 @@
 #define kOFFSET_FOR_KEYBOARD 80.0
 
 
-@interface AddNewBookViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, TOCropViewControllerDelegate, UITextViewDelegate>
+@interface AddNewBookViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextViewDelegate>
 
 @property (nonatomic) UIImageView *bookView;
 @property (nonatomic) UIButton *uploadButton;
@@ -74,7 +72,7 @@
 
     //image view
     _bookView = [UIImageView new];
-    _bookView.image = [UIImage imageNamed:@"noCover.jpg"];
+    _bookView.image = [UIImage imageNamed:@"bookPlaceHolder.png"];
     _bookView.layer.cornerRadius = 3.f;
     _bookView.frame = CGRectMake(50,70,self.view.frame.size.width-100,(self.view.frame.size.width-100)*1.34);
     _bookView.userInteractionEnabled = YES;
@@ -312,20 +310,6 @@
     
 }
 
-#pragma mark - Cropper Delegate -
-- (void)cropViewController:(TOCropViewController *)cropViewController didCropToImage:(UIImage *)image withRect:(CGRect)cropRect angle:(NSInteger)angle
-{
-    _bookView.image = image;
-    [self layoutImageView];
-    
-    self.navigationItem.rightBarButtonItem.enabled = YES;
-    
-    CGRect viewFrame = [self.view convertRect:_bookView.frame toView:self.navigationController.view];
-    _bookView.hidden = YES;
-    [cropViewController dismissAnimatedFromParentViewController:self withCroppedImage:image toFrame:viewFrame completion:^{
-        _bookView.hidden = NO;
-    }];
-}
 
 
 #pragma mark - picker view
@@ -369,9 +353,6 @@
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     _bookImage = [info valueForKey:UIImagePickerControllerOriginalImage];
-    TOCropViewController *cropViewController = [[TOCropViewController alloc] initWithImage:_bookImage];
-    cropViewController.delegate = self;
-    [self presentViewController:cropViewController animated:YES completion:nil];
     _bookView.image = _bookImage;
     [self dismissViewControllerAnimated:YES completion:nil];
 }

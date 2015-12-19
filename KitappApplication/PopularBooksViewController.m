@@ -14,8 +14,8 @@
 #import "TableViewCell.h"
 #import "ReviewBookViewController.h"
 #import "CollectionViewCellClass.h"
-#import "CBStoreHouseRefreshControl/CBStoreHouseRefreshControl.h"
 #import "Colors.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface PopularBooksViewController () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
@@ -102,6 +102,8 @@
 
 -(void)getDataFromParse
 {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.detailsLabelText = @"Загружаем книги";
     self.booksArray = [NSMutableArray new];
     PFQuery *query = [PFQuery queryWithClassName:@"Book"];
     [query includeKey:@"owner"];
@@ -109,6 +111,8 @@
     [query orderByDescending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
+
+        self.tableView.scrollEnabled = NO;
          if (!error){
              for (Book *object in objects){
                  [self.booksArray addObject:object];
@@ -116,7 +120,8 @@
              }
              [_tableView reloadData];
              //[self.tableView reloadData];
-             [_refreshControl endRefreshing];
+             self.tableView.scrollEnabled = YES;
+             [hud hide:YES];
          }
          else {
              // Log details of the failure

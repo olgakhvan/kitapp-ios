@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C65A8114C3DC7DC39C9D16D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 275CD577A95A2B6AD80141DB /* libPods.a */; };
+		0909696DD02189AC07358A1A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F1B40595321A5864B40BBEC /* libPods.a */; };
 		91032BC51BA9356D00E3997B /* buttonNormalStateImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 91032BC31BA9356D00E3997B /* buttonNormalStateImage.png */; };
 		91032BC61BA9356D00E3997B /* buttonTouchDownStateImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 91032BC41BA9356D00E3997B /* buttonTouchDownStateImage.png */; };
+		910BF2EA1C2420960003BDFE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 910BF2E91C2420960003BDFE /* Podfile */; };
 		912696041B79B7E600825912 /* UIDeviceHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 912696031B79B7E600825912 /* UIDeviceHardware.m */; };
 		91296AD01B4BF05000693E8D /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91296ACF1B4BF05000693E8D /* MyProfileViewController.m */; };
 		91296AD31B4CF68E00693E8D /* AddNewBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91296AD21B4CF68E00693E8D /* AddNewBookViewController.m */; };
@@ -46,6 +47,8 @@
 		918957331B9EF77E007AF359 /* 3screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 918957301B9EF77E007AF359 /* 3screen.png */; };
 		918957361BA05F2E007AF359 /* 1screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 918957341BA05F2E007AF359 /* 1screen.png */; };
 		918957371BA05F2E007AF359 /* 2screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 918957351BA05F2E007AF359 /* 2screen.png */; };
+		919B27F71C1EB80600EE7C9D /* photoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 919B27F51C1EB80600EE7C9D /* photoIcon.png */; };
+		919B27F81C1EB80600EE7C9D /* uploadIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 919B27F61C1EB80600EE7C9D /* uploadIcon.png */; };
 		919BB5FC1BDE139D00312F46 /* bookPlaceHolder.png in Resources */ = {isa = PBXBuildFile; fileRef = 919BB5FB1BDE139D00312F46 /* bookPlaceHolder.png */; };
 		91B4910B1BDE2B930080F17C /* Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B4910A1BDE2B930080F17C /* Colors.m */; };
 		91C61F1A1B68EFDF00550E44 /* plist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91C61F191B68EFDF00550E44 /* plist.plist */; };
@@ -68,10 +71,11 @@
 
 /* Begin PBXFileReference section */
 		021D2E78299435F5B4DAB645 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		275CD577A95A2B6AD80141DB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		68031C8FD573F01B247A6229 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		6F1B40595321A5864B40BBEC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		91032BC31BA9356D00E3997B /* buttonNormalStateImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonNormalStateImage.png; path = Images.xcassets/buttonNormalStateImage.png; sourceTree = "<group>"; };
 		91032BC41BA9356D00E3997B /* buttonTouchDownStateImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonTouchDownStateImage.png; path = Images.xcassets/buttonTouchDownStateImage.png; sourceTree = "<group>"; };
+		910BF2E91C2420960003BDFE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		912696021B79B7E600825912 /* UIDeviceHardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDeviceHardware.h; sourceTree = "<group>"; };
 		912696031B79B7E600825912 /* UIDeviceHardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDeviceHardware.m; sourceTree = "<group>"; };
 		91296ACE1B4BF05000693E8D /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
@@ -110,7 +114,6 @@
 		917700FE1B42869D002864D1 /* KitappApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KitappApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		917701031B42869D002864D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		917701041B42869D002864D1 /* KitappApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KitappApplicationTests.m; sourceTree = "<group>"; };
-		9177010E1B4286B1002864D1 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		917701311B42ABD3002864D1 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		917701321B42ABD3002864D1 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		917701341B42ABE2002864D1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 		918957301B9EF77E007AF359 /* 3screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3screen.png; path = Images.xcassets/3screen.png; sourceTree = "<group>"; };
 		918957341BA05F2E007AF359 /* 1screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1screen.png; path = Images.xcassets/1screen.png; sourceTree = "<group>"; };
 		918957351BA05F2E007AF359 /* 2screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2screen.png; path = Images.xcassets/2screen.png; sourceTree = "<group>"; };
+		919B27F51C1EB80600EE7C9D /* photoIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photoIcon.png; path = Images.xcassets/photoIcon.png; sourceTree = "<group>"; };
+		919B27F61C1EB80600EE7C9D /* uploadIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = uploadIcon.png; path = Images.xcassets/uploadIcon.png; sourceTree = "<group>"; };
 		919BB5FB1BDE139D00312F46 /* bookPlaceHolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bookPlaceHolder.png; path = Images.xcassets/bookPlaceHolder.png; sourceTree = "<group>"; };
 		91B491091BDE2B930080F17C /* Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
 		91B4910A1BDE2B930080F17C /* Colors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colors.m; sourceTree = "<group>"; };
@@ -145,7 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C65A8114C3DC7DC39C9D16D /* libPods.a in Frameworks */,
+				0909696DD02189AC07358A1A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +272,7 @@
 		917700DC1B42869D002864D1 = {
 			isa = PBXGroup;
 			children = (
-				9177010E1B4286B1002864D1 /* Podfile */,
+				910BF2E91C2420960003BDFE /* Podfile */,
 				917700E71B42869D002864D1 /* KitappApplication */,
 				917701011B42869D002864D1 /* KitappApplicationTests */,
 				917700E61B42869D002864D1 /* Products */,
@@ -337,6 +342,8 @@
 		917701691B42B786002864D1 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				919B27F51C1EB80600EE7C9D /* photoIcon.png */,
+				919B27F61C1EB80600EE7C9D /* uploadIcon.png */,
 				919BB5FB1BDE139D00312F46 /* bookPlaceHolder.png */,
 				91032BC31BA9356D00E3997B /* buttonNormalStateImage.png */,
 				91032BC41BA9356D00E3997B /* buttonTouchDownStateImage.png */,
@@ -423,7 +430,7 @@
 		D335CF9ED792F68457F27EA2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				275CD577A95A2B6AD80141DB /* libPods.a */,
+				6F1B40595321A5864B40BBEC /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -441,6 +448,7 @@
 				917700E31B42869D002864D1 /* Resources */,
 				E9DA723BCC14EBDE1D9E8EEE /* Copy Pods Resources */,
 				91C61F1B1B6A3DFC00550E44 /* Run Script */,
+				D8FE93FFBBA9DA9108BB2BB2 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -513,12 +521,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				910BF2EA1C2420960003BDFE /* Podfile in Resources */,
 				91D9BA7E1B96FBC10027397F /* kitappLogo.png in Resources */,
 				91296B0A1B4D9FA700693E8D /* noavatar.png in Resources */,
 				91296B121B4DA15000693E8D /* Mantika Book W1G.otf in Resources */,
 				919BB5FC1BDE139D00312F46 /* bookPlaceHolder.png in Resources */,
 				91032BC61BA9356D00E3997B /* buttonTouchDownStateImage.png in Resources */,
 				917700F41B42869D002864D1 /* Main.storyboard in Resources */,
+				919B27F81C1EB80600EE7C9D /* uploadIcon.png in Resources */,
 				91296B111B4DA15000693E8D /* Mantika Book W1G Italic.otf in Resources */,
 				91607D2D1B54D24600B30049 /* trashBinIcon.png in Resources */,
 				9137A5591B9E9BB400582973 /* closeIcon.png in Resources */,
@@ -540,6 +550,7 @@
 				91607D291B53D63F00B30049 /* heartIcon.png in Resources */,
 				91296BDB1BF1C5DF00EC1372 /* logoutIcon.png in Resources */,
 				9153CE491B9D507C00574534 /* allBooksIcon.png in Resources */,
+				919B27F71C1EB80600EE7C9D /* photoIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +592,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "";
+		};
+		D8FE93FFBBA9DA9108BB2BB2 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		E9DA723BCC14EBDE1D9E8EEE /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

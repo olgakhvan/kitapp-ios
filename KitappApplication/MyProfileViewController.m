@@ -299,6 +299,7 @@
     _avatarImageView = [UIImageView new];
     _avatarImageView.frame = CGRectMake(20,40,100,100);
     _avatarImageView.layer.cornerRadius = 50;
+    _avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
     _avatarImageView.layer.masksToBounds = YES;
     [_tableViewHeaderView addSubview:_avatarImageView];
     PFFile *imageFile = currentUser[@"avatar"];

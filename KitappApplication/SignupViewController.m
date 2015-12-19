@@ -261,6 +261,8 @@
 {
     UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
     [_avatarButton setImage:image forState:UIControlStateNormal];
+    _avatarButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    _avatarButton.imageView.clipsToBounds = YES;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -14,7 +14,6 @@
 #import "TableViewCell.h"
 #import "ReviewBookViewController.h"
 #import "CollectionViewCellClass.h"
-#import "CBStoreHouseRefreshControl/CBStoreHouseRefreshControl.h"
 
 @interface MyBooksViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDataSource, UITableViewDelegate, CollectionViewCellDelegate>
 
@@ -42,7 +41,6 @@
 @property (nonatomic) NSMutableArray *books;
 @property (nonatomic) NSMutableArray *searchResults;
 @property (weak, nonatomic) IBOutlet UITableView *tableView2;
-@property (nonatomic) CBStoreHouseRefreshControl *refreshControl;
 @end
 
 @implementation MyBooksViewController
@@ -666,20 +664,6 @@
     [self performSelector:@selector(finishRefreshControl) withObject:nil afterDelay:0.7 inModes:@[NSRunLoopCommonModes]];
 }
 
-- (void)finishRefreshControl
-{
-    [_refreshControl finishingLoading];
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    [_refreshControl scrollViewDidScroll];
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    [_refreshControl scrollViewDidEndDragging];
-}
 
 
 @end

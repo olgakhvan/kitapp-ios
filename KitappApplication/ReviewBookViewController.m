@@ -47,6 +47,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self bookmarkState];
     //colors
     UIColor *brownColor = [UIColor colorWithRed:118/255.0 green:92/255.0 blue:79/255.0 alpha:1.0];
     self.view.backgroundColor = [UIColor colorWithRed:255/255.0 green:247/255.0 blue:240/255.0 alpha:1.0];
@@ -122,7 +123,7 @@
     
     //genre label
     _genreLabel = [UILabel new];
-    _genreLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:18];
+    _genreLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:22];
     _genreLabel.textColor = brownColor;
     _genreLabel.adjustsFontSizeToFitWidth = YES;
     _genreLabel.text = [NSString stringWithFormat:@"Жанр: %@", self.book.genre[@"title"]];
@@ -132,16 +133,16 @@
     
     //price label
     _priceLabel = [UILabel new];
-    _priceLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:16];
+    _priceLabel.font = [UIFont fontWithName:@"IowanOldStyle-Bold" size:18];
     _priceLabel.textColor = brownColor;
     _priceLabel.lineBreakMode = NSLineBreakByWordWrapping;
     _priceLabel.numberOfLines = 2;
     _priceLabel.backgroundColor = [UIColor whiteColor];
-    _priceLabel.alpha = 0.7;
+    _priceLabel.alpha = 0.85;
     _priceLabel.text = [NSString stringWithFormat:@"KZT: %@", self.book.price ];
     _priceLabel.textAlignment = NSTextAlignmentCenter;
     [_scrollView addSubview:_priceLabel];
-    _priceLabel.frame = CGRectMake(70, _imageView.frame.size.height+40, _imageView.frame.size.width, 20);
+    _priceLabel.frame = CGRectMake(70, _imageView.frame.size.height+20, _imageView.frame.size.width, 40);
 
     //description
     _descriptionLabel = [UILabel new];
@@ -205,9 +206,6 @@
     NSLog(@"telephone number %@ ", user[@"telephone"]);
     
 
-    //[self.titleLabel sizeToFit];
-    //[self.descriptionLabel sizeToFit];
-
 
 
 }
@@ -217,13 +215,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    //[self bookmarkState];
+}
+
 #pragma mark - Button pressed functions
 -(void)backButtonPressed{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void) getBookmarkState
-{
+-(void) bookmarkState{
+    NSLog(@"In bookmark state");
     PFQuery *query = [PFQuery queryWithClassName:@"Bookmark"];
     PFUser *user = [PFUser currentUser];
     [query whereKey:@"user" equalTo:user];
@@ -239,9 +241,36 @@
             } else {
                 // liked
                 _isLiked = YES;
-                NSLog(@"the book is liked");
+                NSLog(@"bookmark State in liked book");
                 UIImage *image = [UIImage imageNamed:@"heartIconFilled.png"];
                 [_bkmrkButton setImage:image forState:UIControlStateNormal];
+                
+            }
+        }
+    }];
+}
+
+-(void) getBookmarkState
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Bookmark"];
+    PFUser *user = [PFUser currentUser];
+    [query whereKey:@"user" equalTo:user];
+    [query whereKey:@"book" equalTo:self.book];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (!error) {
+            if ([objects count] == 0) {
+                // not liked
+                _isLiked = NO;
+                //UIImage *image = [UIImage imageNamed:@"heartIcon.png"];
+                //[_bkmrkButton setImage:image forState:UIControlStateNormal];
+            } else {
+                // liked
+                _isLiked = YES;
+                NSLog(@"the book is liked");
+                //UIImage *image = [UIImage imageNamed:@"heartFilledIcon.png"];
+                //[_bkmrkButton setImage:image forState:UIControlStateNormal];
+
             }
         }
     }];
@@ -251,7 +280,9 @@
 -(void)bookmarkButtonPressed{
 
     if (!_isLiked){
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        UIImage *image = [UIImage imageNamed:@"heartIconFilled.png"];
+        [_bkmrkButton setImage:image forState:UIControlStateNormal];
+        //MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         PFObject *object = [PFObject objectWithClassName:@"Bookmark"];
         PFUser *user = [PFUser currentUser];
         object[@"user"] = user;
@@ -260,16 +291,18 @@
             if (succeeded){
                 NSLog(@"Bookmarked!");
                 [self getBookmarkState];
-                hud.hidden = YES;
+                //hud.hidden = YES;
             }
             else{
                 NSLog(@"Some error");
-                hud.hidden = YES;
+                //hud.hidden = YES;
             }
         }];
     }
     else{
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        UIImage *image = [UIImage imageNamed:@"heartIcon.png"];
+        [_bkmrkButton setImage:image forState:UIControlStateNormal];
+        //MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         PFQuery *query = [PFQuery queryWithClassName:@"Bookmark"];
         PFUser *user = [PFUser currentUser];
         [query whereKey:@"user" equalTo:user];
@@ -280,11 +313,11 @@
                     [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                         if (!error)
                         {
-                            hud.hidden = YES;
+                            //hud.hidden = YES;
                             [self getBookmarkState];
                         }
                         else{
-                            hud.hidden = YES;
+                            //hud.hidden = YES;
                             NSLog(@"Error in object delete");
                         }
                     }];
