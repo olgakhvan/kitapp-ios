@@ -15,8 +15,10 @@
 #import "Colors.h"
 #import "UIImage+Scale.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "UIScrollView+EmptyDataSet.h"
 
-@interface MyProfileViewController ()<TableViewCellDelegate, UITableViewDataSource, UITableViewDelegate>
+
+@interface MyProfileViewController ()<TableViewCellDelegate, UITableViewDataSource, UITableViewDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 //@property (nonatomic) UITableView *tableView;
 
@@ -53,7 +55,10 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.backgroundColor = [Colors beigeLightColor];
-    
+    _tableView.emptyDataSetDelegate = self;
+    _tableView.emptyDataSetSource = self;
+    self.tableView.tableFooterView = [UIView new];
+
     
     
     _tableView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -91,9 +96,7 @@
     [query includeKey:@"book.owner"];
     [query orderByDescending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray * objects, NSError * error) {
-        NSLog(@"I am here 2.5");
         if (!error) {
-            NSLog(@"I am here 2.6 with objects = %@", objects);
             for (PFObject *object in objects) {
                 PFObject *bookObject = object[@"book"];
                 
@@ -103,7 +106,6 @@
                 }
                 
             }
-            NSLog(@"I am here 3");
             [self.hud hide:YES];
             [_tableView reloadData];
         } else {
@@ -355,5 +357,12 @@
     }
     
 }
+
+#pragma mark - Empty data set methods
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
+{
+    return [UIImage imageNamed:@"empty_data.png"];
+}
+
 
 @end

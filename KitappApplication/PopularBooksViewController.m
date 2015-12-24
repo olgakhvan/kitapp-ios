@@ -33,6 +33,7 @@
 @property (nonatomic) NSIndexPath *lastSelectedItem;
 
 @property (nonatomic) UIRefreshControl *refreshControl;
+@property (nonatomic) UISearchBar *searchBar;
 @end
 
 @implementation PopularBooksViewController
@@ -67,6 +68,11 @@
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(_tableView)]];
+    
+    //search bar
+    _searchBar = [UISearchBar new];
+    _searchBar.delegate = self;
+    _searchBar.showsCancelButton = YES;
     
     //title label
     _windowTitle = [UILabel new];
@@ -195,6 +201,8 @@
     }
     
 }
+
+
 
 @end
 
