@@ -17,23 +17,24 @@
 #import "Colors.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 
-@interface PopularBooksViewController () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+@interface PopularBooksViewController () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, UISearchDisplayDelegate>
 
 @property (nonatomic) UIButton *tableViewButton;
 @property (nonatomic) UILabel *windowTitle;
 
-@property (nonatomic) NSMutableArray *booksArray;
+@property (nonatomic) NSMutableArray *booksArray, *searchResults;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic) CollectionViewCellClass *lastCell;
 
-@property (nonatomic) NSArray *books;
-
 @property (nonatomic) NSIndexPath *lastSelectedItem;
 
 @property (nonatomic) UIRefreshControl *refreshControl;
-@property (nonatomic) UISearchBar *searchBar;
+
+@property (nonatomic) UISearchController *searchController;
+
+
 @end
 
 @implementation PopularBooksViewController
@@ -56,6 +57,19 @@
     [self.view addSubview:seperatorView];
     seperatorView.frame = CGRectMake(0, 60, self.view.frame.size.width, 1);
     
+    //setup the search controller
+    _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    _searchController.searchResultsUpdater = self;
+    _searchController.dimsBackgroundDuringPresentation = NO;
+    
+    //add search bar to the tableview header
+    _searchController.searchBar.searchBarStyle = UISearchBarStyleMinimal;
+    _searchController.searchBar.backgroundColor = [Colors beigeLightColor];
+    self.definesPresentationContext = YES;
+    
+    
+    
+    //table view
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _tableView.backgroundColor = [Colors beigeLightColor];
@@ -64,15 +78,11 @@
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(_tableView)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-60-[_tableView]-0-|"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-70-[_tableView]-0-|"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(_tableView)]];
     
-    //search bar
-    _searchBar = [UISearchBar new];
-    _searchBar.delegate = self;
-    _searchBar.showsCancelButton = YES;
     
     //title label
     _windowTitle = [UILabel new];
@@ -90,8 +100,7 @@
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(_windowTitle)]];
-    
-     _books = [NSArray new];
+
     _tableView.hidden = NO;
 }
 
@@ -122,15 +131,12 @@
          if (!error){
              for (Book *object in objects){
                  [self.booksArray addObject:object];
-                // NSLog(@"Title of book: %@", object.title);
              }
              [_tableView reloadData];
-             //[self.tableView reloadData];
              self.tableView.scrollEnabled = YES;
              [hud hide:YES];
          }
          else {
-             // Log details of the failure
              NSLog(@"Error: %@ %@", error, [error userInfo]);
          }
          
@@ -143,7 +149,15 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.booksArray count];
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+    {
+        return [self.searchResults count];
+    }
+    else
+    {
+        return [self.booksArray count];
+    }
+
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -160,7 +174,8 @@
         PFFile *imageFile = [object objectForKey:@"image"];
         [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error){
             UIImage *image = [UIImage imageWithData:data];
-            image = [image scaledToSize:CGSizeMake(150, 210)];
+            cell.bookImage.contentMode = UIViewContentModeScaleAspectFill;
+            //image = [image scaledToSize:CGSizeMake(150, 210)];
             [cell.bookImage setImage:image];
         }];
         cell.titleLabel.text = object[@"title"];
@@ -168,7 +183,7 @@
         cell.priceLabel.text = [NSString stringWithFormat:@"KZT %@", object[@"price"]];
         cell.titleLabel.frame = CGRectMake(cell.bookImage.frame.size.width+15, 10, self.view.frame.size.width-cell.bookImage.frame.size.width-25, 50);
     }];
-    
+
     return cell;
 }
 
@@ -190,6 +205,9 @@
     [self presentViewController:nextVC animated:YES completion:nil];
 }
 
+/*-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    return _searchController.searchBar;
+}*/
 
 #pragma mark - Segue methods
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -202,6 +220,7 @@
     
 }
 
+#pragma mark - Search methods
 
 
 @end

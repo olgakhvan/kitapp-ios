@@ -11,6 +11,8 @@
 #import <AFViewShaker.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "UIImage+Scale.h"
+#import <RSKImageCropper/RSKImageCropper.h>
+
 
 @interface SignupViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -58,7 +60,7 @@
     _avatarButton.layer.cornerRadius = 55.f;
     _avatarButton.backgroundColor = [UIColor brownColor];
     [_avatarButton setImage:[UIImage imageNamed:@"noavatar.png"] forState:UIControlStateNormal];
-    _avatarButton.frame = CGRectMake(self.view.frame.size.width*0.5-55, 100, 110, 110);
+    _avatarButton.frame = CGRectMake(self.view.frame.size.width*0.5-55, 100, 100, 100);
     [self.scrollView addSubview:_avatarButton];
     [_avatarButton addTarget:self action:@selector(avatarUpload) forControlEvents:UIControlEventTouchDown];
     
@@ -278,8 +280,26 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [_scrollView endEditing:YES];
 }
-
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -61,6 +61,7 @@
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error){
         UIImage *image = [UIImage imageWithData:data];
         image = [image scaledToSize:CGSizeMake(self.view.frame.size.width-140, self.view.frame.size.height*0.45)];
+        self.imageView.contentMode = UIViewContentModeScaleAspectFill;
         self.imageView.image = image;
     }];
     [_scrollView addSubview:_imageView];

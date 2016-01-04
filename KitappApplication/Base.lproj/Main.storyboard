@@ -74,7 +74,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SPx-gB-5e8">
-                                <rect key="frame" x="0.0" y="28" width="320" height="491"/>
+                                <rect key="frame" x="0.0" y="170" width="320" height="349"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" id="BZv-GS-KqZ" customClass="TableViewCell">
@@ -99,11 +99,28 @@
                     <tabBarItem key="tabBarItem" title="" id="zhM-jq-fwl"/>
                     <navigationItem key="navigationItem" id="U1u-Y4-OzL"/>
                     <connections>
+                        <outlet property="searchDisplayController" destination="UVk-BL-pT4" id="unX-cG-7aO"/>
                         <outlet property="tableView" destination="SPx-gB-5e8" id="QdC-cj-Sqz"/>
                         <segue destination="hcU-lB-dPK" kind="modal" identifier="toReviewBooksSegue" id="lQh-vm-stm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oDU-eK-heK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="fNt-7n-3xG">
+                    <connections>
+                        <outlet property="delegate" destination="9WY-2C-wON" id="Irx-VA-yjG"/>
+                        <outlet property="searchContentsController" destination="9WY-2C-wON" id="jKK-Qt-D1g"/>
+                        <outlet property="searchResultsDataSource" destination="9WY-2C-wON" id="S7E-bP-azE"/>
+                        <outlet property="searchResultsDelegate" destination="9WY-2C-wON" id="6Xg-YT-6lO"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="UVk-BL-pT4">
+                    <connections>
+                        <outlet property="delegate" destination="9WY-2C-wON" id="2lj-N8-Lhx"/>
+                        <outlet property="searchContentsController" destination="9WY-2C-wON" id="OZd-5M-HLY"/>
+                        <outlet property="searchResultsDataSource" destination="9WY-2C-wON" id="TmW-zO-KQu"/>
+                        <outlet property="searchResultsDelegate" destination="9WY-2C-wON" id="zRR-Ry-7W2"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-176" y="-1239"/>
         </scene>

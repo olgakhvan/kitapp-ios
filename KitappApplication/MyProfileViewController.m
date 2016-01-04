@@ -301,15 +301,17 @@
     _avatarImageView = [UIImageView new];
     _avatarImageView.frame = CGRectMake(20,40,100,100);
     _avatarImageView.layer.cornerRadius = 50;
-    _avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
-    _avatarImageView.layer.masksToBounds = YES;
+    //_avatarImageView.clipsToBounds = YES;
+    //_avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
     [_tableViewHeaderView addSubview:_avatarImageView];
     PFFile *imageFile = currentUser[@"avatar"];
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error){
         if (!error)
         {
             UIImage *image = [UIImage imageWithData:data];
-            image = [image scaledToSize:CGSizeMake(100, 100)];
+            _avatarImageView.clipsToBounds = YES;
+            _avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
+            //image = [image scaledToSize:CGSizeMake(100, 100)];
             _avatarImageView.image = image;
         }
         else{
@@ -356,12 +358,6 @@
         }
     }
     
-}
-
-#pragma mark - Empty data set methods
-- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
-{
-    return [UIImage imageNamed:@"empty_data.png"];
 }
 
 
