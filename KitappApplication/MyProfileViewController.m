@@ -46,12 +46,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     //COLORS
     
     self.view.backgroundColor = [Colors beigeLightColor];
-    
-    
-    
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.backgroundColor = [Colors beigeLightColor];
@@ -360,5 +358,24 @@
     
 }
 
+#pragma mark - Empty data placeholder
+/*- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
+{
+    return [UIImage imageNamed:@"photoIcon.png"];
+}*/
 
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
+{
+    NSString *text = @"Здесь пока ничего нет";
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
+                                 NSForegroundColorAttributeName: [Colors beigeDarkColor]};
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView
+{
+    return self.tableView.frame.size.height*0.17;
+}
 @end
